@@ -1,0 +1,17 @@
+{
+  "name": "KENNY'S MOAS",
+  "short_name": "KENNY'S MOAS",
+  "description": "Module d'Assistance Scolaire — application locale pour organiser cours, devoirs, notes et révisions.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5fb",
+  "theme_color": "#6c5ce7",
+  "lang": "fr",
+  "icons": [
+    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"icon-192-maskable.png","sizes":"192x192","type":"image/png","purpose":"maskable"},
+    {"src":"icon-512-maskable.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ]
+}
