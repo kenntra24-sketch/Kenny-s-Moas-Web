@@ -2348,8 +2348,31 @@ window.KMDriveSync = (function () {
   const FOLDER_NAME = "KENNY'S MOAS";
   const SYNC_INTERVAL_MS = 30000;
 
-  let folderId = null;
-  let fileId = null;
+  const IDS_STORAGE_KEY = 'km:driveIds'; // {folderId, fileId} — persistés pour éviter les doublons après reload
+
+  function loadStoredIds() {
+    try {
+      const raw = localStorage.getItem(IDS_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveStoredIds(ids) {
+    localStorage.setItem(IDS_STORAGE_KEY, JSON.stringify(ids));
+  }
+
+  // Échappe les apostrophes et anti-slashs pour les requêtes Drive (q=...).
+  // Sans ça, un nom contenant une apostrophe (comme "KENNY'S MOAS") casse
+  // la syntaxe de la requête et la recherche échoue silencieusement.
+  function escapeForDriveQuery(str) {
+    return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  }
+
+  const storedIds = loadStoredIds();
+  let folderId = storedIds.folderId || null;
+  let fileId = storedIds.fileId || null;
   let syncTimer = null;
   let syncing = false;
   let lastSyncOk = null;
@@ -2374,12 +2397,13 @@ window.KMDriveSync = (function () {
   async function findOrCreateFolder() {
     if (folderId) return folderId;
     const q = encodeURIComponent(
-      `name='${FOLDER_NAME}' and mimeType='application/vnd.google-apps.folder' and trashed=false`
+      `name='${escapeForDriveQuery(FOLDER_NAME)}' and mimeType='application/vnd.google-apps.folder' and trashed=false`
     );
     const res = await driveFetch(`https://www.googleapis.com/drive/v3/files?q=${q}&spaces=drive&fields=files(id,name)`);
     const data = await res.json();
     if (data.files && data.files.length) {
       folderId = data.files[0].id;
+      saveStoredIds({ folderId, fileId });
       return folderId;
     }
     const createRes = await driveFetch('https://www.googleapis.com/drive/v3/files', {
@@ -2387,16 +2411,22 @@ window.KMDriveSync = (function () {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: FOLDER_NAME, mimeType: 'application/vnd.google-apps.folder' })
     });
+    if (!createRes.ok) throw new Error('Échec création dossier Drive : ' + createRes.status);
     const created = await createRes.json();
     folderId = created.id;
+    saveStoredIds({ folderId, fileId });
     return folderId;
   }
 
   async function findExistingBackupFile(fid) {
-    const q = encodeURIComponent(`name='${FILE_NAME}' and '${fid}' in parents and trashed=false`);
+    const q = encodeURIComponent(
+      `name='${escapeForDriveQuery(FILE_NAME)}' and '${fid}' in parents and trashed=false`
+    );
     const res = await driveFetch(`https://www.googleapis.com/drive/v3/files?q=${q}&spaces=drive&fields=files(id,name)`);
     const data = await res.json();
-    return data.files && data.files.length ? data.files[0].id : null;
+    const found = data.files && data.files.length ? data.files[0].id : null;
+    if (found) { fileId = found; saveStoredIds({ folderId, fileId }); }
+    return found;
   }
 
   function buildBackupPayload() {
@@ -2437,6 +2467,7 @@ window.KMDriveSync = (function () {
     if (!res.ok) throw new Error('Échec upload Drive : ' + res.status);
     const data = await res.json();
     fileId = data.id;
+    saveStoredIds({ folderId, fileId });
     return data;
   }
 
