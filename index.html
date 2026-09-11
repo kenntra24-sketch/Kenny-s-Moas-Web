@@ -2,27 +2,51 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <title>KENNY'S MOAS</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-512.png" type="image/png">
-<link rel="apple-touch-icon" href="icon-192.png">
-<meta name="theme-color" content="#6c5ce7">
+<meta name="theme-color" content="#24345c">
+<meta name="format-detection" content="telephone=no">
+
+<!-- ==== Réglages iOS : ajout à l'écran d'accueil ==== -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="KENNY'S MOAS">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icon-120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icon-152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="icon-167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+<!-- Écrans de démarrage iOS (évite le flash blanc au lancement depuis l'écran d'accueil) -->
+<link rel="apple-touch-startup-image" href="splash/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="apple-touch-startup-image" href="splash/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="apple-touch-startup-image" href="splash/splash-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="apple-touch-startup-image" href="splash/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-1179x2556.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-1284x2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)">
 <style>
 :root{
-  --p:#6c5ce7; --s:#00b894; --bg:#f4f5fb; --card:#ffffff; --txt:#1a1d2b; --mut:#6b7085;
-  --bd:#e6e8f2; --r:16px; --sh:0 2px 10px rgba(20,24,60,.06),0 12px 32px rgba(20,24,60,.07);
-  --sh2:0 4px 18px rgba(20,24,60,.12),0 18px 48px rgba(20,24,60,.14);
+  --p:#24345c; --p2:#24345c; --s:#3f7d56; --bg:#f2ede2; --card:#fffdf8; --txt:#221d15; --mut:#7c7364;
+  --bd:#e2d9c6; --r:10px; --r-sm:7px;
+  --sh:0 1px 0 rgba(34,29,21,.04),0 2px 8px rgba(34,29,21,.05);
+  --sh2:0 4px 14px rgba(34,29,21,.09),0 14px 32px rgba(34,29,21,.12);
+  --nav-w:222px;
 }
 [data-theme="dark"]{
-  --bg:#12141f; --card:#1b1e2e; --txt:#eef0fa; --mut:#9aa0b8; --bd:#2a2e44;
-  --sh:0 2px 10px rgba(0,0,0,.35),0 12px 32px rgba(0,0,0,.35);
-  --sh2:0 4px 18px rgba(0,0,0,.5),0 18px 48px rgba(0,0,0,.5);
+  --p:#8ea3d6; --p2:#8ea3d6; --s:#63b581; --bg:#151310; --card:#1e1b16; --txt:#f1ece1; --mut:#a49a89; --bd:#33291e;
+  --sh:0 1px 0 rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.35);
+  --sh2:0 8px 20px rgba(0,0,0,.42),0 20px 44px rgba(0,0,0,.48);
 }
 *{box-sizing:border-box;margin:0}
 html,body{height:100%}
-:root{--font-main:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--dens-pad:16px;--dens-gap:14px;--dens-font:15px}
-body{font:var(--dens-font)/1.5 var(--font-main);background:var(--bg);color:var(--txt);transition:background .3s,color .3s,font-size .2s}
+:root{--font-main:-apple-system,system-ui,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--font-head:ui-serif,Georgia,"Iowan Old Style","Times New Roman",serif;--dens-pad:16px;--dens-gap:14px;--dens-font:15px}
+body{font:var(--dens-font)/1.55 var(--font-main);background:var(--bg);color:var(--txt);transition:background .3s,color .3s,font-size .2s;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,.brand,.stat .val,.tdisp{font-family:var(--font-head);letter-spacing:-.01em}
 body.noscroll{overflow:hidden}
 [data-font="serif"]{--font-main:Georgia,"Times New Roman",serif}
 [data-font="round"]{--font-main:"Segoe UI Rounded",-apple-system,Verdana,sans-serif}
@@ -32,9 +56,7 @@ body.noscroll{overflow:hidden}
 [data-density="spacious"]{--dens-pad:22px;--dens-gap:20px;--dens-font:16px}
 .card{padding:var(--dens-pad)}
 .grid{gap:var(--dens-gap)}
-[data-layout="wide"] .nav{width:64px}
-[data-layout="wide"] .nav button span{display:none}
-[data-layout="wide"] .nav button{justify-content:center;padding:12px}
+[data-layout="wide"] .nav button span:not(.navico){display:none}
 [data-layout="wide"] main{max-width:1440px}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 input,select,textarea{font:inherit;color:var(--txt);background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:8px 10px;width:100%}
@@ -43,9 +65,11 @@ input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid v
 svg{flex-shrink:0}
 
 /* topbar */
-.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:var(--sh)}
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:var(--sh)}
+body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
 .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px}
-.brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--p),var(--s));display:grid;place-items:center;color:#fff;box-shadow:inset 0 1px 1px rgba(255,255,255,.35),inset 0 -6px 10px rgba(0,0,0,.12),0 3px 8px color-mix(in srgb,var(--p) 45%,transparent)}
+.brand{letter-spacing:-.01em}
+.brand .logo{width:36px;height:36px;border-radius:10px;background:var(--p);display:grid;place-items:center;color:#fff;box-shadow:0 2px 6px color-mix(in srgb,var(--p) 45%,transparent)}
 .class-btn{display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:11px;border:1px solid var(--bd);background:var(--bg);font-weight:600;transition:.2s}
 .class-btn:hover{border-color:var(--p);transform:translateY(-1px)}
 .class-menu{position:absolute;top:56px;left:16px;z-index:60;background:var(--card);border:1px solid var(--bd);border-radius:14px;box-shadow:var(--sh2);padding:8px;min-width:230px;animation:pop .18s ease}
@@ -63,10 +87,31 @@ svg{flex-shrink:0}
 
 /* layout / nav */
 .shell{display:flex;min-height:calc(100vh - 59px)}
-.nav{width:210px;padding:14px 10px;display:flex;flex-direction:column;gap:2px;position:sticky;top:59px;height:calc(100vh - 59px)}
-.nav button{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:11px;color:var(--mut);font-weight:600;transition:.18s;text-align:left}
-.nav button:hover{background:var(--card);color:var(--txt)}
-.nav button.on{background:var(--card);color:var(--p);box-shadow:var(--sh)}
+.nav{width:var(--nav-w);padding:16px 12px;display:flex;flex-direction:column;gap:3px;position:sticky;top:59px;height:calc(100vh - 59px);overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;border-right:1px solid var(--bd)}
+.nav-label{padding:12px 12px 5px;font-size:11.5px;font-weight:700;color:var(--mut)}
+.nav-label:first-child{padding-top:2px}
+.nav-spacer{margin-top:auto}
+[data-layout="wide"] .nav-label{height:1px;padding:0;margin:10px 8px;background:var(--bd);font-size:0;color:transparent}
+.nav button{position:relative;display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:var(--r-sm);color:var(--mut);font-weight:600;font-size:13.5px;transition:.18s;text-align:left}
+.hic{display:inline-flex;flex-shrink:0;vertical-align:-4px;margin-right:7px;color:var(--p)}
+.hic svg{display:block;width:18px;height:18px}
+h2 .hic svg,h3 .hic svg{width:19px;height:19px}
+.btn .hic{margin-right:6px;color:currentColor}
+.btn .hic svg{width:15px;height:15px}
+.prio-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e74c3c;vertical-align:middle;margin-left:2px}
+.guide-title{display:inline-flex;align-items:center}
+.guide-title svg{margin-right:7px;flex-shrink:0}
+.nav button .navico{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;flex-shrink:0;background:transparent;color:var(--mut);transition:.18s}
+.nav button .navico svg{width:17px;height:17px}
+.nav button span:not(.navico){white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav button:hover{color:var(--txt)}
+.nav button:hover .navico{background:var(--bg);color:var(--p)}
+.nav button.on{color:var(--p);background:color-mix(in srgb,var(--p) 8%,transparent)}
+.nav button.on .navico{background:var(--p);color:#fff;box-shadow:0 1px 4px color-mix(in srgb,var(--p) 35%,transparent)}
+.nav button.on::before{content:'';position:absolute;left:-12px;top:50%;translate:0 -50%;width:3px;height:18px;border-radius:0 4px 4px 0;background:var(--p)}
+[data-layout="wide"] .nav{width:66px;align-items:center}
+[data-layout="wide"] .nav button{padding:9px;justify-content:center}
+[data-layout="wide"] .nav button.on::before{left:0}
 main{flex:1;padding:20px clamp(14px,3vw,34px) 110px;max-width:1180px}
 .sec{display:none;animation:fadein .25s ease}
 .sec.on{display:block}
@@ -81,11 +126,11 @@ h3{font-size:15px;margin-bottom:10px}
 .grid{display:grid;gap:14px}
 .g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.stat .lbl{color:var(--mut);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.stat .lbl{color:var(--mut);font-size:12.5px;font-weight:700}
 .stat .val{font-size:28px;font-weight:800;margin-top:2px}
 .stat .val small{font-size:14px;color:var(--mut);font-weight:600}
-.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:11px;background:var(--p);color:#fff;font-weight:700;box-shadow:0 4px 14px color-mix(in srgb,var(--p) 40%,transparent);transition:.18s}
-.btn:hover{transform:translateY(-1px);filter:brightness(1.07)}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:var(--r-sm);background:var(--p);color:#fff;font-weight:700;box-shadow:0 1px 0 rgba(0,0,0,.06),0 2px 8px color-mix(in srgb,var(--p) 25%,transparent);transition:.18s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px color-mix(in srgb,var(--p) 32%,transparent)}
 .btn:active{transform:none}
 .btn.ghost{background:var(--bg);color:var(--txt);border:1px solid var(--bd);box-shadow:none}
 .btn.ghost:hover{border-color:var(--p)}
@@ -136,12 +181,21 @@ td{padding:9px 8px;border-top:1px solid var(--bd);vertical-align:middle}
 .seg button{padding:8px 13px;font-weight:600;font-size:13px;color:var(--mut);transition:.15s}
 .seg button:not(:last-child){border-right:1px solid var(--bd)}
 .seg button.on{background:var(--p);color:#fff}
-.drop{border:2px dashed var(--bd);border-radius:var(--r);padding:26px;text-align:center;color:var(--mut);margin-bottom:14px;transition:.2s}
-.drop.over{border-color:var(--p);background:color-mix(in srgb,var(--p) 6%,transparent)}
-.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:13px}
-.fcard{display:flex;flex-direction:column;gap:10px;padding:14px;background:var(--card);border:1px solid var(--bd);border-radius:16px;cursor:pointer;transition:.18s}
-.fcard:hover{transform:translateY(-2px);box-shadow:var(--sh2);border-color:color-mix(in srgb,var(--p) 30%,var(--bd))}
-.fcard .ftop{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.drop{border:2px dashed var(--bd);border-radius:var(--r);padding:26px;text-align:center;color:var(--mut);margin-bottom:14px;transition:.2s;font-weight:600;font-size:13.5px}
+.drop::before{content:'';display:block;width:26px;height:26px;margin:0 auto 8px;background:currentColor;-webkit-mask:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.8%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M12 3v12%22/%3E%3Cpath d=%22m7 10 5 5 5-5%22/%3E%3Cpath d=%22M4 21h16%22/%3E%3C/svg%3E') center/contain no-repeat;mask:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.8%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M12 3v12%22/%3E%3Cpath d=%22m7 10 5 5 5-5%22/%3E%3Cpath d=%22M4 21h16%22/%3E%3C/svg%3E') center/contain no-repeat}
+.drop.over{border-color:var(--p);background:color-mix(in srgb,var(--p) 6%,transparent);color:var(--p)}
+.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:15px}
+.fcard{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);cursor:pointer;transition:.2s;overflow:hidden}
+.fcard:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:color-mix(in srgb,var(--p) 30%,var(--bd))}
+.fcard .fbody{display:flex;flex-direction:column;gap:9px;padding:13px 14px 14px}
+.fcover{position:relative;height:108px;display:grid;place-items:center;flex-shrink:0;overflow:hidden}
+.fcover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fcover .cover-ic{position:relative;z-index:1;width:42px;height:42px;opacity:.92}
+.fcover .cover-ic svg{width:100%;height:100%;stroke-width:1.4}
+.fchip{position:absolute;left:10px;bottom:9px;z-index:2;padding:2px 8px;border-radius:7px;color:#fff;font-size:10px;font-weight:800;letter-spacing:.03em;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.fcover .acts{position:absolute;top:8px;right:8px;z-index:2;display:flex;gap:5px}
+.fcover .acts .mini{width:27px;height:27px;background:rgba(255,255,255,.82);backdrop-filter:blur(6px);border:none;color:#3a3f55}
+[data-theme="dark"] .fcover .acts .mini{background:rgba(18,20,32,.68);color:#dfe1f0}
 .ftype-ico{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;flex-shrink:0;font-size:17px;font-weight:800;letter-spacing:-.02em}
 .fcard .name{font-weight:700;font-size:14px;line-height:1.35;word-break:break-word;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}
 .fcard .meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px;color:var(--mut)}
@@ -152,8 +206,13 @@ td{padding:9px 8px;border-top:1px solid var(--bd);vertical-align:middle}
 .fcard .acts .mini{width:28px;height:28px}
 .fav.on{color:#f5b301}
 .fbar{height:5px;border-radius:9px;background:var(--bg);overflow:hidden}
-.fbar i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--p),var(--s))}
+.fbar i{display:block;height:100%;border-radius:9px;background:var(--p)}
 .fcard select[data-subj]{margin-top:auto;font-size:12.5px;padding:6px 8px;border-radius:9px}
+.subj-cover{position:relative;height:88px;display:grid;place-items:center;flex-shrink:0;background:color-mix(in srgb,var(--bg) 55%,var(--card))}
+.subj-ico-lg{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;color:#fff}
+.subj-ico-lg svg{width:26px;height:26px;stroke-width:1.7}
+.subj-card:hover .subj-ico-lg{transform:scale(1.08)}
+.subj-ico-lg{transition:.2s}
 .form-file-row{display:flex;gap:8px;align-items:stretch}.form-file-row select{min-width:0;flex:1}.form-file-row .btn{flex:0 0 auto;white-space:nowrap}
 
 /* calendar / schedule */
@@ -180,7 +239,7 @@ td{padding:9px 8px;border-top:1px solid var(--bd);vertical-align:middle}
 .durs button:hover{border-color:var(--p);transform:translateY(-1px)}
 .durs button.on{background:var(--p);color:#fff;border-color:var(--p);box-shadow:0 4px 12px color-mix(in srgb,var(--p) 24%,transparent)}
 .session-list{display:flex;flex-direction:column;gap:9px}
-.session-card{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 13px;border:1px solid var(--bd);border-radius:14px;background:linear-gradient(180deg,var(--card),color-mix(in srgb,var(--bg) 24%,var(--card)));transition:.18s}
+.session-card{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 13px;border:1px solid var(--bd);border-radius:14px;background:var(--card);transition:.18s}
 .session-card:hover{transform:translateY(-1px);box-shadow:var(--sh);border-color:color-mix(in srgb,var(--p) 30%,var(--bd))}
 .session-min{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--p) 12%,var(--bg));color:var(--p);font-weight:850;font-size:13px;line-height:1.05;text-align:center}
 .session-min b{display:block;font-size:17px}
@@ -200,12 +259,12 @@ td{padding:9px 8px;border-top:1px solid var(--bd);vertical-align:middle}
 @media(max-width:620px){.session-card{grid-template-columns:48px minmax(0,1fr)}.session-status{grid-column:2;justify-self:start}.session-min{width:44px;height:44px;border-radius:13px}.session-min b{font-size:15px}}
 
 /* fab & toasts */
-#fab{position:fixed;right:22px;bottom:22px;z-index:70;width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,var(--p),var(--s));color:#fff;font-size:28px;box-shadow:var(--sh2);display:grid;place-items:center;transition:.2s}
-#fab:hover{transform:rotate(90deg) scale(1.05)}
+#fab{position:fixed;right:calc(22px + env(safe-area-inset-right));bottom:calc(22px + env(safe-area-inset-bottom));z-index:70;width:58px;height:58px;border-radius:18px;background:var(--p);color:#fff;font-size:28px;box-shadow:var(--sh2);display:grid;place-items:center;transition:.2s}
+#fab:hover{transform:scale(1.05);box-shadow:0 6px 16px color-mix(in srgb,var(--p) 32%,transparent),var(--sh2)}
 #fabMenu{position:fixed;right:22px;bottom:90px;z-index:70;background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--sh2);padding:8px;min-width:230px;animation:pop .18s ease}
 #fabMenu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:10px;font-weight:600;transition:.15s}
 #fabMenu button:hover{background:var(--bg);color:var(--p)}
-#toasts{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:200;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+#toasts{position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:200;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
 .toast{background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--s);border-radius:12px;box-shadow:var(--sh2);padding:10px 18px;font-weight:600;opacity:0;transform:translateY(10px);transition:.25s}
 .toast.warn{border-left-color:#f59e0b}.toast.err{border-left-color:#e74c3c}
 .toast.in{opacity:1;transform:none}
@@ -220,6 +279,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
 
 /* reader */
 .reader{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column}
+.reader:not(.is-pdf) .pdf-only{display:none!important}
 .rd-bar{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:8px 12px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:var(--sh)}
 .rd-bar .title{font-weight:700;font-size:14px;max-width:26vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .rd-bar select{width:auto;padding:6px 8px}
@@ -247,10 +307,10 @@ dialog h3{margin-bottom:14px;font-size:17px}
 
 /* responsive */
 @media(max-width:820px){
-  .nav{position:fixed;left:0;right:0;bottom:0;top:auto;height:auto;width:auto;flex-direction:row;overflow-x:auto;background:var(--card);border-top:1px solid var(--bd);padding:6px 8px;z-index:60}
+  .nav{position:fixed;left:0;right:0;bottom:0;top:auto;height:auto;width:auto;flex-direction:row;overflow-x:auto;background:var(--card);border-top:1px solid var(--bd);padding:6px 8px calc(6px + env(safe-area-inset-bottom));z-index:60}
   .nav button{flex-direction:column;gap:3px;font-size:10px;padding:6px 10px;flex:0 0 auto}
-  main{padding-bottom:170px}
-  #fab{bottom:86px}#fabMenu{bottom:152px}
+  main{padding-bottom:calc(170px + env(safe-area-inset-bottom))}
+  #fab{bottom:calc(86px + env(safe-area-inset-bottom))}#fabMenu{bottom:calc(152px + env(safe-area-inset-bottom))}
   .rd-bar .title{max-width:100%}
   .day{min-height:56px}.ev{display:none}.day.hasev .n::after{content:"•";color:var(--p);margin-left:2px}
   /* évite le zoom automatique iOS sur les champs (police < 16px) */
@@ -321,13 +381,13 @@ dialog h3{margin-bottom:14px;font-size:17px}
 
 /* sauvegarde fichier (File System Access API) */
 #fsBackupBox .row{margin-top:8px}
-.methods-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.method-card{padding:12px;border:1px solid var(--bd);border-radius:14px;background:linear-gradient(180deg,var(--card),color-mix(in srgb,var(--bg) 30%,var(--card)))}.method-card .method-icon{font-size:20px}.method-card h4{margin:6px 0 4px}.method-card p{margin:0;font-size:12.5px;line-height:1.45;color:var(--mut)}.import-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.import-choice{padding:13px;text-align:left;border:1px solid var(--bd);border-radius:14px;background:var(--card);cursor:pointer}.import-choice:hover{border-color:color-mix(in srgb,var(--p) 35%,var(--bd));transform:translateY(-1px)}.import-choice b{display:block;margin-bottom:4px}.import-choice span{display:block;font-size:12px;color:var(--mut);line-height:1.4}.grade-scale-preview{padding:9px 11px;border:1px dashed var(--bd);border-radius:10px;background:var(--bg);font-size:12.5px;color:var(--mut)}.grade-scale-preview b{color:var(--tx)}
+.methods-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.method-card{padding:12px;border:1px solid var(--bd);border-radius:14px;background:var(--card);cursor:pointer;text-align:left;transition:.15s}.method-card:hover{border-color:color-mix(in srgb,var(--p) 35%,var(--bd));transform:translateY(-1px)}.method-card .method-icon{font-size:20px}.method-card h4{margin:6px 0 4px}.method-card p{margin:0;font-size:12.5px;line-height:1.45;color:var(--mut)}.import-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.import-choice{padding:13px;text-align:left;border:1px solid var(--bd);border-radius:14px;background:var(--card);cursor:pointer}.import-choice:hover{border-color:color-mix(in srgb,var(--p) 35%,var(--bd));transform:translateY(-1px)}.import-choice b{display:block;margin-bottom:4px}.import-choice span{display:block;font-size:12px;color:var(--mut);line-height:1.4}.grade-scale-preview{padding:9px 11px;border:1px dashed var(--bd);border-radius:10px;background:var(--bg);font-size:12.5px;color:var(--mut)}.grade-scale-preview b{color:var(--tx)}
 </style>
 </head>
 <body>
 
 <header class="topbar">
-  <div class="brand"><span class="logo"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 22 8.5 12 12.5 2 8.5z"/><path d="M7.3 9.2h9.4L15 15.5H9z"/><path d="M21.2 9.2v4.8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="21.2" cy="15" r="1.3"/></svg></span><span class="brand-txt">KENNY'S MOAS</span></div>
+  <div class="brand"><span class="logo"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 4v16"/><path d="M7 13 18 4"/><path d="M7 13 18 20"/></svg></span><span class="brand-txt">KENNY'S MOAS</span></div>
   <button id="classBtn" class="class-btn"></button>
   <div id="classMenu" class="class-menu hidden"></div>
   <div id="timerChip" class="timer-chip hidden">
@@ -350,7 +410,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
 <section class="sec on" id="sec-dash">
   <h2>Bonjour</h2>
   <div class="card" id="todayCard" style="margin-bottom:14px">
-    <h3>📅 Aujourd'hui</h3>
+    <h3><span class="hic" data-hic="calendar"></span>Aujourd'hui</h3>
     <div id="todayList" class="list"></div>
   </div>
   <div class="grid g4" style="margin-bottom:14px">
@@ -360,25 +420,25 @@ dialog h3{margin-bottom:14px;font-size:17px}
     <div class="card stat"><div class="lbl">Documents</div><div class="val" id="dFiles">0</div></div>
   </div>
   <div class="grid g2">
-    <div class="card"><h3>🎯 Ma prochaine action</h3><div id="dNext" class="muted">Rien d'urgent.</div></div>
-    <div class="card"><h3>📅 Prochaines échéances (14 jours)</h3><div id="dEv" class="list"></div></div>
+    <div class="card"><h3><span class="hic" data-hic="target"></span>Ma prochaine action</h3><div id="dNext" class="muted">Rien d'urgent.</div></div>
+    <div class="card"><h3><span class="hic" data-hic="calendar"></span>Prochaines échéances (14 jours)</h3><div id="dEv" class="list"></div></div>
     <div class="card"><h3>Fichiers récents</h3><div id="dRecent" class="list"></div></div>
     <div class="card"><h3>Progression vers l'objectif</h3><div id="dProg"></div></div>
   </div>
 </section>
 
 <section class="sec" id="sec-guide">
-  <h2>👋 Présentation de KENNY'S MOAS</h2>
+  <h2>Présentation de KENNY'S MOAS</h2>
   <p class="muted" style="margin-bottom:16px;max-width:760px">Un petit tour des fonctionnalités pour ne pas être perdu. Chaque onglet du menu de gauche correspond à une carte ci-dessous — clique sur son nom pour t'y rendre directement.</p>
   <div class="grid g2" id="guideCards"></div>
 </section>
 
 <section class="sec" id="sec-lib">
-  <div class="page-intro"><div><h2>📚 Bibliothèque</h2><div class="sub">Tous tes supports à apprendre, classés par matière.</div></div></div>
+  <div class="page-intro"><div><h2><span class="hic" data-hic="book"></span>Bibliothèque</h2><div class="sub">Tous tes supports à apprendre, classés par matière.</div></div></div>
   <div class="lib-toolbar">
     <div class="lib-tools">
-      <button class="btn" onclick="openCourse()">📚 Ajouter un cours</button>
-      <button class="btn ghost" onclick="openLibraryImport()">📄 Ajouter un fichier</button>
+      <button class="btn" onclick="openCourse()"><span class="hic" data-hic="book"></span>Ajouter un cours</button>
+      <button class="btn ghost" onclick="openLibraryImport()"><span class="hic" data-hic="file"></span>Ajouter un fichier</button>
     </div>
     <div class="row" id="libBreadcrumb" style="display:none;align-items:center;gap:10px;margin:0 0 12px">
       <button class="btn ghost sm" id="libBackBtn">← Toutes les matières</button>
@@ -403,7 +463,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
 </section>
 
 <section class="sec" id="sec-hw">
-  <div class="page-intro"><div><h2>📝 Devoirs & échéances</h2><div class="sub">Une vue claire de ce qui est à faire, par nature de travail.</div></div><div class="row" style="gap:8px"><button class="btn" onclick="openHW()">Ajouter un devoir</button><button class="btn ghost" onclick="openHomeworkImport()">📥 Importer un travail</button></div></div>
+  <div class="page-intro"><div><h2><span class="hic" data-hic="hw"></span>Devoirs & échéances</h2><div class="sub">Une vue claire de ce qui est à faire, par nature de travail.</div></div><div class="row" style="gap:8px"><button class="btn" onclick="openHW()">Ajouter un devoir</button><button class="btn ghost" onclick="openHomeworkImport()"><span class="hic" data-hic="download"></span>Importer un travail</button></div></div>
   <div class="cat-seg" id="hwCatSeg"></div>
   <div class="list" id="hwList"></div>
   <h3 style="margin-top:20px">Terminés</h3>
@@ -424,7 +484,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
       <button class="icon-btn" id="calPrev" aria-label="Mois précédent" title="Mois précédent">‹</button>
       <h3 id="calTitle" style="margin:0;flex:1;text-align:center"></h3>
       <button class="icon-btn" id="calNext" aria-label="Mois suivant" title="Mois suivant">›</button>
-      <button class="btn sm ghost" id="icsPlanBtn" type="button">📆 Exporter .ics</button>
+      <button class="btn sm ghost" id="icsPlanBtn" type="button"><span class="hic" data-hic="calendar"></span>Exporter .ics</button>
       <button class="btn sm" onclick="openEvent()">Événement</button>
     </div>
     <div class="cal" id="cal"></div>
@@ -451,7 +511,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
       <div id="sessWeek" class="session-week" style="margin:8px 0"></div>
       <div id="sessList" class="session-list" style="margin-top:10px"></div>
     </div>
-    <div class="card" style="grid-column:1/-1"><div class="row spread"><div><h3 style="margin:0">🧠 Méthodes de révision</h3><div class="sub">Des méthodes différentes selon ce que tu veux retenir.</div></div><span class="task-cat">À tester</span></div><div id="revisionMethods" class="methods-grid" style="margin-top:12px"></div></div>
+    <div class="card" style="grid-column:1/-1"><div class="row spread"><div><h3 style="margin:0"><span class="hic" data-hic="lightbulb"></span>Méthodes de révision</h3><div class="sub">Des méthodes différentes selon ce que tu veux retenir.</div></div><span class="task-cat">À tester</span></div><div id="revisionMethods" class="methods-grid" style="margin-top:12px"></div></div>
   </div>
 </section>
 
@@ -459,7 +519,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
   <h2>Notes & progression</h2>
   <div class="row spread" style="margin-bottom:12px">
     <div class="card stat" style="flex:1"><div class="lbl">Moyenne générale pondérée</div><div class="val" id="gAvg">—</div></div>
-    <div class="row" style="gap:8px"><button class="btn ghost" onclick="openGradeImport()">📎 Importer une note</button><button class="btn" onclick="openGrade()">Ajouter une note</button></div>
+    <div class="row" style="gap:8px"><button class="btn ghost" onclick="openGradeImport()"><span class="hic" data-hic="paperclip"></span>Importer une note</button><button class="btn" onclick="openGrade()">Ajouter une note</button></div>
   </div>
   <div class="card" style="overflow-x:auto">
     <table><thead><tr><th>Matière</th><th>Coef</th><th>Notes</th><th>Moyenne /20</th></tr></thead><tbody id="gBody"></tbody></table>
@@ -468,8 +528,8 @@ dialog h3{margin-bottom:14px;font-size:17px}
 </section>
 
 <section class="sec" id="sec-errors">
-  <h2>🧠 Mes remarques &amp; erreurs</h2>
-  <button class="btn" style="margin-bottom:14px" onclick="openError()">🧠 Ajouter une remarque / erreur</button>
+  <h2><span class="hic" data-hic="lightbulb"></span>Mes remarques &amp; erreurs</h2>
+  <button class="btn" style="margin-bottom:14px" onclick="openError()"><span class="hic" data-hic="lightbulb"></span>Ajouter une remarque / erreur</button>
   <div class="grid g2">
     <div class="card"><h3>Statistiques</h3><div id="errStats"></div></div>
     <div><div class="list" id="errList"></div></div>
@@ -509,14 +569,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
       <div class="row" style="margin-top:8px">
         <button class="btn ghost" id="expBtn">Exporter (JSON)</button>
         <button class="btn ghost" id="expFullBtn">Exporter complet (avec fichiers)</button>
-        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border,#e5e5e5)">
-          <p class="muted" style="font-size:13px;margin-bottom:8px">☁️ Sauvegarde automatique optionnelle vers ton Google Drive (toutes les 30s + à la fermeture). Rien n'est obligatoire — l'app reste 100% locale si tu ne te connectes pas.</p>
-          <button class="btn ghost" id="driveConnectBtn">🔑 Connecter à Google Drive</button>
-          <button class="btn ghost hidden" id="driveDisconnectBtn">Déconnecter Google Drive</button>
-          <button class="btn ghost hidden" id="driveRestoreBtn">📥 Restaurer depuis Drive</button>
-          <div id="driveSyncStatus" class="muted" style="font-size:12px;margin-top:6px"></div>
-        </div>
-        <button class="btn ghost" id="icsExportBtn" title="Créer un fichier calendrier importable dans Google Calendar, Outlook ou Apple Calendar">📆 Exporter calendrier (.ics)</button>
+        <button class="btn ghost" id="icsExportBtn" title="Créer un fichier calendrier importable dans Google Calendar, Outlook ou Apple Calendar"><span class="hic" data-hic="calendar"></span>Exporter calendrier (.ics)</button>
         <button class="btn ghost" onclick="impInput.click()">Importer</button>
         <button class="btn danger" id="resetBtn">Tout réinitialiser</button>
       </div>
@@ -524,14 +577,21 @@ dialog h3{margin-bottom:14px;font-size:17px}
       <p class="muted" style="font-size:13px">En plus de l'export manuel, l'appli garde toute seule quelques instantanés récents de tes données (notes, devoirs, réglages... — pas les fichiers de la bibliothèque) sur cet appareil. Pratique en cas de fausse manipulation, mais ça ne remplace pas un export régulier vers un autre support.</p>
       <div id="autoBackupBox" style="margin-top:8px"></div>
     </div>
+    <div class="card" id="gdriveCard">
+      <h3 style="margin-top:0">Google Drive</h3>
+      <p class="muted" style="font-size:13px">Connecte ton compte Google pour synchroniser automatiquement tes données (notes, devoirs, réglages…) et les documents de la Bibliothèque entre tes appareils via ton propre Google Drive. Tant que tu n'es pas connecté, tout continue de fonctionner uniquement en local, comme avant.</p>
+      <div id="gdriveStatus" style="margin-top:10px"></div>
+      <div class="row" id="gdriveActions" style="margin-top:10px;flex-wrap:wrap;gap:8px"></div>
+      <div id="gdriveAutoBox" style="margin-top:14px"></div>
+    </div>
   </div>
 </section>
 
 <section class="sec" id="sec-faq">
-  <h2>❓ FAQ — À propos de KENNY'S MOAS</h2>
+  <h2><span class="hic" data-hic="help"></span>FAQ — À propos de KENNY'S MOAS</h2>
   <div class="grid g2" style="align-items:start">
     <div class="card">
-      <h3>🧑‍🎓 L'histoire du projet</h3>
+      <h3><span class="hic" data-hic="grad"></span>L'histoire du projet</h3>
       <div id="faqStory" class="muted" style="font-size:14px;line-height:1.7"></div>
     </div>
     <div class="card" id="faqQA"></div>
@@ -549,7 +609,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
 
 <!-- PALETTE DE COMMANDES (Ctrl+K / Cmd+K) -->
 <dialog id="paletteDlg" aria-label="Palette de commandes">
-  <div class="pInput"><span aria-hidden="true">🔎</span><input id="pQ" type="text" placeholder="Rechercher, ou taper + pour une commande rapide…" autocomplete="off" aria-label="Rechercher ou saisir une commande"></div>
+  <div class="pInput"><span aria-hidden="true" class="hic" data-hic="search"></span><input id="pQ" type="text" placeholder="Rechercher, ou taper + pour une commande rapide…" autocomplete="off" aria-label="Rechercher ou saisir une commande"></div>
   <div class="pHint">Astuce : <b>+ devoir texte matière jour</b> · <b>+ note matière x/20</b> · <b>+ erreur matière texte</b> · mots-clés <b>pomodoro</b>, <b>export</b>, <b>aujourd'hui</b></div>
   <div class="pResults" id="pResults" role="listbox" aria-label="Résultats"></div>
 </dialog>
@@ -563,7 +623,7 @@ dialog h3{margin-bottom:14px;font-size:17px}
 
 <!-- IMPORT PRIORITAIRE (premier lancement sur l'hébergement, stockage vide) -->
 <dialog id="firstRunDlg" aria-label="Bienvenue">
-  <h3>👋 Bienvenue sur KENNY'S MOAS</h3>
+  <h3>Bienvenue sur KENNY'S MOAS</h3>
   <p class="muted" style="margin-bottom:14px">Cet appareil n'a encore aucune donnée pour cette appli. Si tu utilisais déjà KENNY'S MOAS ailleurs (version locale ou autre appareil), importe ta sauvegarde. Sinon, tu peux commencer directement.</p>
   <div class="row spread">
     <button class="btn ghost" id="firstRunSkip">Commencer sans importer</button>
@@ -576,31 +636,31 @@ dialog h3{margin-bottom:14px;font-size:17px}
   <div class="rd-bar">
     <button class="icon-btn" id="rdBack" aria-label="Retour" title="Retour">‹</button>
     <span class="title" id="rdTitle"></span>
-    <span class="chip">p. <b id="rdPage">1</b>/<span id="rdCount">1</span></span>
-    <button class="icon-btn" id="rdPrev" aria-label="Page précédente">‹</button><button class="icon-btn" id="rdNext" aria-label="Page suivante">›</button>
-    <button class="icon-btn" id="rdZm" aria-label="Réduire le zoom">−</button><span id="rdZoom" style="font-size:12px;font-weight:700;min-width:38px;text-align:center">100%</span><button class="icon-btn" id="rdZp" aria-label="Augmenter le zoom">+</button>
-    <select id="rdMode">
+    <span class="chip pdf-only" id="rdPageChip">p. <b id="rdPage">1</b>/<span id="rdCount">1</span></span>
+    <button class="icon-btn pdf-only" id="rdPrev" aria-label="Page précédente">‹</button><button class="icon-btn pdf-only" id="rdNext" aria-label="Page suivante">›</button>
+    <button class="icon-btn pdf-only" id="rdZm" aria-label="Réduire le zoom">−</button><span class="pdf-only" id="rdZoom" style="font-size:12px;font-weight:700;min-width:38px;text-align:center">100%</span><button class="icon-btn pdf-only" id="rdZp" aria-label="Augmenter le zoom">+</button>
+    <select id="rdMode" class="pdf-only">
       <option value="single">Page unique</option><option value="continuous">Défilement continu</option>
       <option value="two">Deux pages</option><option value="presentation">Présentation</option><option value="lecture">Lecture</option>
     </select>
-    <button class="icon-btn tool" id="rdSearchT" title="Rechercher" aria-label="Rechercher dans le document">🔍</button>
-    <button class="icon-btn tool" id="rdAnnT" title="Annoter" aria-label="Activer l'annotation">✏️</button>
-    <button class="icon-btn" id="rdBmAdd" title="Ajouter un marque-page" aria-label="Ajouter un marque-page">＋🔖</button>
-    <button class="icon-btn" id="rdBmT" title="Marque-pages" aria-label="Afficher les marque-pages">🔖</button>
-    <button class="icon-btn" id="rdPrint" title="Imprimer ce document" aria-label="Imprimer ce document">🖨️</button>
+    <button class="icon-btn tool pdf-only" id="rdSearchT" title="Rechercher" aria-label="Rechercher dans le document"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+    <button class="icon-btn tool pdf-only" id="rdAnnT" title="Annoter" aria-label="Activer l'annotation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button>
+    <button class="icon-btn pdf-only" id="rdBmAdd" title="Ajouter un marque-page" aria-label="Ajouter un marque-page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9v18l-4.5-3L6 21Z"/><path d="M18 7h4M20 5v4"/></svg></button>
+    <button class="icon-btn pdf-only" id="rdBmT" title="Marque-pages" aria-label="Afficher les marque-pages"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4Z"/></svg></button>
+    <button class="icon-btn" id="rdPrint" title="Imprimer ce document" aria-label="Imprimer ce document"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
   </div>
   <div class="searchbar hidden" id="rdSearch">
     <input id="rdQ" placeholder="Rechercher dans le document…" style="max-width:280px">
     <button class="btn sm" id="rdGo">Chercher</button>
     <span id="rdHits" class="muted"></span>
     <button class="icon-btn" id="rdSPrev" aria-label="Résultat précédent">‹</button><button class="icon-btn" id="rdSNext" aria-label="Résultat suivant">›</button>
-    <button class="icon-btn" id="rdSClose" aria-label="Fermer la recherche">✕</button>
+    <button class="icon-btn" id="rdSClose" aria-label="Fermer la recherche"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   </div>
   <div class="annbar hidden" id="annBar">
-    <button class="icon-btn tool on" data-tool="hl" title="Surligneur" aria-label="Outil surligneur">🖍</button>
-    <button class="icon-btn tool" data-tool="pen" title="Stylo" aria-label="Outil stylo">🖊</button>
+    <button class="icon-btn tool on" data-tool="hl" title="Surligneur" aria-label="Outil surligneur"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 6-6 4 4-6 6H9v-4Z"/><path d="M8 21h8"/><path d="m6 16 3 3-2 2H3v-4Z"/></svg></button>
+    <button class="icon-btn tool" data-tool="pen" title="Stylo" aria-label="Outil stylo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button>
     <button class="icon-btn tool" data-tool="erase" title="Gomme" aria-label="Outil gomme">⌫</button>
-    <button class="icon-btn tool" data-tool="note" title="Note" aria-label="Outil note">📝</button>
+    <button class="icon-btn tool" data-tool="note" title="Note" aria-label="Outil note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></button>
     <span id="annCols" class="row"></span>
     <input type="range" id="annSize" min="1" max="10" value="3" style="width:90px">
   </div>
@@ -609,18 +669,21 @@ dialog h3{margin-bottom:14px;font-size:17px}
   <div id="bmPanel" class="hidden"></div>
 </div>
 
-<!-- PDF.js chargé en local (Ronde 10, P1.2) : pdf.min.js/pdf.worker.min.js sont
-     absents du zip par conception (voir DEPLOIEMENT.md) et récupérés une fois
-     via download-pdfjs.sh/.ps1. Aucune dépendance réseau au chargement une
-     fois ces fichiers présents. Si absents, pdfjsLib reste undefined et le
-     lecteur affiche "indisponible" (voir plus bas) sans casser le reste de
-     l'appli — même dégradation gracieuse qu'avant, juste sans réseau requis.
-     Repli CDN + attribut integrity= (P2.8) : non fait, voir fichier relais. -->
-<script src="./pdf.min.js"></script>
+<!-- PDF.js embarqué en local (pdf.min.mjs/pdf.worker.min.mjs, build officiel
+     Mozilla, licence Apache-2.0) : 100% hors-ligne dès la livraison, aucun
+     téléchargement ni accès réseau requis, y compris à la première ouverture.
+     Chargé en module ES (import) car les builds pdf.js récents ne fournissent
+     plus de bundle UMD classique. Si les fichiers venaient à manquer, pdfjsLib
+     reste undefined et le lecteur affiche "indisponible" (voir plus bas) sans
+     casser le reste de l'appli. -->
+<script type="module">
+import * as pdfjsLib from './pdf.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.min.mjs';
+window.pdfjsLib = pdfjsLib;
+</script>
 <script>
 (()=>{
 'use strict';
-if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc='./pdf.worker.min.js';
 
 /* ================= UTILS ================= */
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
@@ -654,7 +717,7 @@ function defaultSubjectsForClass(cl){
 function getDefaultForKey(k){const d=structuredClone(DEFS[k]); if(k==='subjects') return defaultSubjectsForClass(cls); return d;}
 const DEFS={subjects:DEF_SUBJ,grades:[],homework:[],errors:[],events:[],sessions:[],schedule:{},extraHours:[],goal:null};
 const S=new Proxy({},{get:(_,k)=>LS.g(K(k),getDefaultForKey(k)),set:(_,k,v)=>(LS.s(K(k),v),true)});
-let SET=LS.g('me:settings',{mode:'auto',primary:'#6c5ce7',secondary:'#00b894',font:'system',density:'comfortable',layout:'normal'});
+let SET=LS.g('me:settings',{mode:'auto',primary:'#28409e',secondary:'#00b894',font:'system',density:'comfortable',layout:'normal'});
 SET.font??='system';SET.density??='comfortable';SET.layout??='normal';
 const saveSet=()=>LS.s('me:settings',SET);
 
@@ -682,6 +745,50 @@ const dbPut=(st,v)=>dbP(st,'readwrite',o=>o.put(v)),dbGet=(st,k)=>dbP(st,'readon
 
 /* ================= ICÔNES SVG MATIÈRES ================= */
 const I=p=>`<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const Is=(p,s)=>`<svg viewBox="0 0 24 24" width="${s||16}" height="${s||16}" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+/* Bibliothèque d'icônes de contenu (remplace les émojis dans toute l'interface) */
+const HI={
+ calendar:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/>',
+ calendarCheck:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m8.5 15 2 2 4-4"/>',
+ target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/>',
+ book:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+ file:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>',
+ note:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/>',
+ hw:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+ lightbulb:'<path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a6 6 0 0 0-4 10.2c.6.5 1 1.3 1 2.1V15h6v-.7c0-.8.4-1.6 1-2.1A6 6 0 0 0 12 2z"/>',
+ help:'<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+ grad:'<path d="m22 10-10-5L2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/>',
+ search:'<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+ edit:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+ highlighter:'<path d="m9 11 6-6 4 4-6 6H9v-4z"/><path d="M8 21h8"/><path d="m6 16 3 3-2 2H3v-4z"/>',
+ bookmark:'<path d="M6 3h12v18l-6-4-6 4z"/>',
+ bookmarkAdd:'<path d="M6 3h12v18l-6-4-6 4z"/><path d="M9 8h6M12 5v6"/>',
+ print:'<path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>',
+ close:'<path d="M18 6 6 18M6 6l12 12"/>',
+ paperclip:'<path d="M17 6.5 8.7 14.8a3 3 0 1 0 4.2 4.2l8-8a5 5 0 1 0-7-7l-8 8a7 7 0 0 0 9.9 9.9"/>',
+ bell:'<path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+ check:'<path d="M20 6 9 17l-5-5"/>',
+ checkCircle:'<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',
+ xCircle:'<circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/>',
+ star:'<path d="m12 2 2.9 6.3 6.9.7-5.2 4.7 1.5 6.8L12 17l-6.1 3.5 1.5-6.8L2.2 9l6.9-.7z"/>',
+ folder:'<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+ download:'<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/>',
+ repeat:'<path d="m17 2 4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>',
+ pin:'<path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="10" r="2.3"/>',
+ plus:'<path d="M12 5v14M5 12h14"/>',
+ zap:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+ box:'<path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/>',
+ save:'<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/>',
+ map:'<path d="M9 3 3 5v16l6-2 6 2 6-2V3l-6 2-6-2z"/><path d="M9 3v16M15 5v16"/>',
+ layers:'<path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/>',
+ message:'<path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.5 4.5 8.4 8.4 0 0 1-4-1L3 20l1-4.5a8.4 8.4 0 0 1-1-4A8.5 8.5 0 0 1 7.5 3 8.4 8.4 0 0 1 12 2a8.5 8.5 0 0 1 8.9 8.4z"/>',
+ warning:'<path d="M10.3 4 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
+ chart:'<path d="M6 20V10M12 20V4M18 20v-7"/>'
+};
+const H=(k,s)=>Is(HI[k]||'',s);
+document.querySelectorAll('[data-hic]').forEach(el=>{el.innerHTML=Is(HI[el.dataset.hic]||'',19)});
+const SUBJ_PALETTE=['#3d5a80','#5b7f4f','#c17f2e','#7d5a8c','#3f8078','#b0533f','#6b6f3f','#9c5f7a'];
+function subjColor(name){let h=0;for(const c of (name||''))h=(h*31+c.charCodeAt(0))>>>0;return SUBJ_PALETTE[h%SUBJ_PALETTE.length]}
 function subjIcon(name){const n=(name||'').toLowerCase();
  if(n.includes('fran'))return I('<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/>');
  if(n.includes('angl'))return I('<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M8 10h8M8 14h5"/>');
@@ -697,6 +804,15 @@ function subjIcon(name){const n=(name||'').toLowerCase();
 }
 /* Type de fichier : badge coloré + libellé d'extension, pour repérer un fichier au premier
    coup d'œil dans la bibliothèque sans avoir à lire son nom en entier (Ronde 11). */
+const FTYPE_ICONS={
+ pdf:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h1.5a1.5 1.5 0 0 0 0-3H9v5"/><path d="M13.5 17v-5H15a2 2 0 0 1 0 5h-1.5"/><path d="M18 12v5"/><path d="M18 14.2h1.6"/>',
+ img:'<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
+ doc:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/>',
+ xls:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M11 13v7"/>',
+ ppt:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="5" rx="1"/>',
+ txt:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 16.5h8M8 9.5h3"/>',
+ file:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>'
+};
 function fileTypeMeta(f){
  const ext=(f.name.split('.').pop()||'').toLowerCase();
  const isPdf=f.type==='application/pdf'||ext==='pdf';
@@ -705,13 +821,13 @@ function fileTypeMeta(f){
  const isExcel=['xls','xlsx','csv'].includes(ext);
  const isPpt=['ppt','pptx'].includes(ext);
  const isText=['txt','md','json','html','css','js','log'].includes(ext);
- if(isPdf)return{label:'PDF',bg:'rgba(231,76,60,.14)',color:'#e74c3c'};
- if(isImg)return{label:'IMG',bg:'rgba(52,152,219,.14)',color:'#3498db'};
- if(isWord)return{label:'DOC',bg:'rgba(52,120,219,.14)',color:'#3478db'};
- if(isExcel)return{label:'XLS',bg:'rgba(46,160,110,.14)',color:'#2ea06e'};
- if(isPpt)return{label:'PPT',bg:'rgba(230,126,34,.14)',color:'#e67e22'};
- if(isText)return{label:'TXT',bg:'rgba(149,165,166,.16)',color:'#7f8c9a'};
- return{label:(ext||'FILE').slice(0,4).toUpperCase(),bg:'rgba(149,165,166,.16)',color:'#7f8c9a'};
+ if(isPdf)return{label:'PDF',bg:'rgba(231,76,60,.14)',color:'#e74c3c',ic:FTYPE_ICONS.pdf};
+ if(isImg)return{label:'IMG',bg:'rgba(52,152,219,.14)',color:'#3498db',ic:FTYPE_ICONS.img};
+ if(isWord)return{label:'DOC',bg:'rgba(52,120,219,.14)',color:'#3478db',ic:FTYPE_ICONS.doc};
+ if(isExcel)return{label:'XLS',bg:'rgba(46,160,110,.14)',color:'#2ea06e',ic:FTYPE_ICONS.xls};
+ if(isPpt)return{label:'PPT',bg:'rgba(230,126,34,.14)',color:'#e67e22',ic:FTYPE_ICONS.ppt};
+ if(isText)return{label:'TXT',bg:'rgba(149,165,166,.16)',color:'#7f8c9a',ic:FTYPE_ICONS.txt};
+ return{label:(ext||'FILE').slice(0,4).toUpperCase(),bg:'rgba(149,165,166,.16)',color:'#7f8c9a',ic:FTYPE_ICONS.file};
 }
 function subjOpts(v){
  const opts=S.subjects.map(s=>`<option value="${esc(s.name)}" ${s.name===v?'selected':''}>${esc(s.name)}</option>`).join('');
@@ -731,26 +847,34 @@ const SECS=[['dash','Accueil','<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 
  ['goals','Objectifs','<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>'],
  ['settings','Réglages','<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>'],
  ['faq','FAQ','<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>']];
-$('#nav').innerHTML=SECS.map(([id,lbl,ic])=>`<button data-sec="${id}">${I(ic)}<span>${lbl}</span></button>`).join('');
+$('#nav').innerHTML=(()=>{const M=Object.fromEntries(SECS.map(s=>[s[0],s]));
+ const btn=id=>{const s=M[id];return `<button data-sec="${id}"><span class="navico">${I(s[2])}</span><span>${s[1]}</span></button>`};
+ const groups=[
+  {label:null,ids:['dash','guide']},
+  {label:'Travail scolaire',ids:['lib','hw','plan','rev']},
+  {label:'Suivi',ids:['grades','errors','goals']},
+  {label:null,ids:['settings','faq'],pushBottom:true}];
+ return groups.map(g=>(g.pushBottom?'<div class="nav-spacer"></div>':'')+(g.label?`<div class="nav-label">${g.label}</div>`:'')+g.ids.map(btn).join('')).join('')
+})();
 $('#nav').onclick=e=>{const b=e.target.closest('[data-sec]');if(!b)return;show(b.dataset.sec)};
 function show(id){$$('.sec').forEach(s=>s.classList.toggle('on',s.id==='sec-'+id));$$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.sec===id))}
 show('dash');
 
 /* ================= PRÉSENTATION (GUIDE) ================= */
 const GUIDE=[
- ['dash','🏠 Accueil','Vue d\'ensemble en un coup d\'œil : ta moyenne générale, ton objectif, le nombre de devoirs à faire et de documents dans ta bibliothèque, ta prochaine action prioritaire et tes échéances des 14 prochains jours.'],
- ['lib','📚 Bibliothèque','Range tes cours et documents (PDF) par matière. Ouvre-les dans le lecteur intégré : zoom, recherche dans le texte, surlignage, annotations, marque-pages, mode présentation ou lecture continue.'],
- ['hw','📝 Devoirs','Liste de tout ce que tu as à faire, avec échéance et rappel (30 min, 1 h ou 1 jour avant) envoyé sous forme de notification si tu les as activées dans les Réglages.'],
- ['plan','🗓️ Planning','Ton emploi du temps et tes événements (contrôles, sorties, rendez-vous) avec rappels, pour ne rien manquer.'],
- ['rev','⏱️ Révisions','Lance des sessions de révision chronométrées (technique Pomodoro et compagnie) pour rester concentré sans y penser.'],
- ['grades','📈 Notes','Saisis tes notes par matière et coefficient. La moyenne se calcule automatiquement, avec un petit graphique d\'évolution pour voir si ça monte (ou pas).'],
- ['errors','🚫 Erreurs','Garde une trace de tes erreurs récurrentes (fautes, méthodes ratées…) pour ne plus les refaire — un carnet de bord de tes points faibles à retravailler.'],
- ['goals','🎯 Objectifs','Fixe-toi une moyenne à atteindre et suis ta progression réelle vers cet objectif, matière par matière.'],
- ['settings','⚙️ Réglages','Matières et coefficients, thème clair/sombre/auto, couleurs et personnalisation avancée (police, densité, disposition), notifications et sauvegarde/export de tes données.'],
- ['faq','❓ FAQ','L\'histoire du projet et les réponses aux questions qu\'on se pose souvent sur les fonctionnalités.'],
+ ['dash','Accueil','Vue d\'ensemble en un coup d\'œil : ta moyenne générale, ton objectif, le nombre de devoirs à faire et de documents dans ta bibliothèque, ta prochaine action prioritaire et tes échéances des 14 prochains jours.'],
+ ['lib','Bibliothèque','Range tes cours et documents (PDF) par matière. Ouvre-les dans le lecteur intégré : zoom, recherche dans le texte, surlignage, annotations, marque-pages, mode présentation ou lecture continue.'],
+ ['hw','Devoirs','Liste de tout ce que tu as à faire, avec échéance et rappel (30 min, 1 h ou 1 jour avant) envoyé sous forme de notification si tu les as activées dans les Réglages.'],
+ ['plan','Planning','Ton emploi du temps et tes événements (contrôles, sorties, rendez-vous) avec rappels, pour ne rien manquer.'],
+ ['rev','Révisions','Lance des sessions de révision chronométrées (technique Pomodoro et compagnie) pour rester concentré sans y penser.'],
+ ['grades','Notes','Saisis tes notes par matière et coefficient. La moyenne se calcule automatiquement, avec un petit graphique d\'évolution pour voir si ça monte (ou pas).'],
+ ['errors','Erreurs','Garde une trace de tes erreurs récurrentes (fautes, méthodes ratées…) pour ne plus les refaire — un carnet de bord de tes points faibles à retravailler.'],
+ ['goals','Objectifs','Fixe-toi une moyenne à atteindre et suis ta progression réelle vers cet objectif, matière par matière.'],
+ ['settings','Réglages','Matières et coefficients, thème clair/sombre/auto, couleurs et personnalisation avancée (police, densité, disposition), notifications et sauvegarde/export de tes données.'],
+ ['faq','FAQ','L\'histoire du projet et les réponses aux questions qu\'on se pose souvent sur les fonctionnalités.'],
 ];
 function renderGuide(){
- $('#guideCards').innerHTML=GUIDE.map(([id,title,txt])=>`<div class="card"><h3><button data-goto="${id}" style="font-weight:800;font-size:15px;color:var(--p)">${title}</button></h3><p class="muted" style="font-size:13.5px;line-height:1.55">${txt}</p></div>`).join('');
+ $('#guideCards').innerHTML=GUIDE.map(([id,title,txt])=>{const sec=SECS.find(s=>s[0]===id);return `<div class="card"><h3><button data-goto="${id}" class="guide-title" style="font-weight:800;font-size:15px;color:var(--p)">${sec?I(sec[2]):''}${title}</button></h3><p class="muted" style="font-size:13.5px;line-height:1.55">${txt}</p></div>`}).join('');
  $$('#guideCards [data-goto]').forEach(b=>b.onclick=()=>show(b.dataset.goto));
 }
 renderGuide();
@@ -772,8 +896,8 @@ const FAQ_ITEMS=[
  ['Comment ajouter ou gérer mes matières ?','Les matières se créent et se modifient dans Réglages (nom et coefficient). Elles peuvent aussi être ajoutées à la volée depuis certains formulaires (ex. « Ajouter un cours ») via le bouton « + matière », sans quitter le formulaire en cours.'],
  ['Quelle différence entre « Ajouter un cours » et « Ajouter un fichier » ?','« Ajouter un cours » ouvre un vrai formulaire (titre, matière, type de support, chapitre) avant d\'importer le fichier : il est directement classé dans la Bibliothèque avec ces informations. « Ajouter un fichier » sert à importer/classer rapidement un document sans ce formulaire détaillé.'],
  ['Comment naviguer dans la Bibliothèque ?','En ouvrant l\'onglet Bibliothèque, tu arrives d\'abord sur une grille de matières (avec le nombre de documents de chacune, et une carte « Sans matière » si besoin). Clique sur une matière pour voir ses cours/fiches/autres documents ; une fois dedans, les onglets Tous/Cours/Fiches/Schémas/Autres, les tags et la recherche filtrent à l\'intérieur de cette matière. Le bouton « ← Toutes les matières » ou le menu déroulant des matières permettent de changer de matière ou de revenir à la grille.'],
- ['Comment noter une erreur ou une remarque ?','Dans Remarques & erreurs, ouvre « 🧠 Ajouter une remarque / erreur ». Choisis d\'abord où elle se trouve (devoir/exercice, cours/fichier, note, ou aucun élément précis), puis précise la matière, le chapitre, le problème, l\'erreur commise, la bonne méthode et éventuellement un fichier. Les remarques peuvent ensuite être révisées avec la répétition espacée.'],
- ['Où retrouver les remarques liées à un devoir, un cours ou une note ?','Un badge « 🧠 N remarque(s) » apparaît sur la fiche du devoir, la carte du cours dans la Bibliothèque, la note concernée dans le tableau, et dans la fiche détail d\'une note. Cliquer dessus ouvre la liste des remarques liées, avec la possibilité d\'en ajouter une nouvelle.'],
+ ['Comment noter une erreur ou une remarque ?','Dans Remarques & erreurs, ouvre « Ajouter une remarque / erreur ». Choisis d\'abord où elle se trouve (devoir/exercice, cours/fichier, note, ou aucun élément précis), puis précise la matière, le chapitre, le problème, l\'erreur commise, la bonne méthode et éventuellement un fichier. Les remarques peuvent ensuite être révisées avec la répétition espacée.'],
+ ['Où retrouver les remarques liées à un devoir, un cours ou une note ?','Un badge « N remarque(s) » apparaît sur la fiche du devoir, la carte du cours dans la Bibliothèque, la note concernée dans le tableau, et dans la fiche détail d\'une note. Cliquer dessus ouvre la liste des remarques liées, avec la possibilité d\'en ajouter une nouvelle.'],
  ['Comment fonctionne la répétition espacée ?','Les erreurs passent par plusieurs paliers. Une erreur réussie avance dans les boîtes ; une erreur ratée revient au premier palier afin d\'être revue plus vite.'],
  ['Puis-je annoter mes documents ?','Oui. Le lecteur intégré prend en charge les fonctions prévues par l\'application, notamment le zoom, la recherche, les annotations et les marque-pages pour les documents compatibles.'],
  ['Mes données sont-elles envoyées sur un serveur ?','Non : les données de travail sont stockées localement dans le navigateur. Pour changer d\'appareil, utilise une sauvegarde exportée depuis Réglages.'],
@@ -791,7 +915,7 @@ function buildClassMenu(){
  $('#classBtn').innerHTML=`${esc(cls)} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>`;
  const built=Object.entries(CLASSES).map(([lvl,arr])=>`<h5>${lvl}</h5>`+arr.map(c=>`<button data-c="${esc(c)}" class="${c===cls?'on':''}">${esc(c)}${c===cls?' ✓':''}</button>`).join('')).join('');
  const custom=customClasses.length?`<h5>Personnalisées</h5>`+customClasses.map(c=>`<button data-c="${esc(c)}" class="${c===cls?'on':''}">${esc(c)}${c===cls?' ✓':''}</button>`).join(''):'';
- $('#classMenu').innerHTML=built+custom+`<hr style="border:0;border-top:1px solid var(--bd);margin:7px 0"><button data-addclass="1">➕ Ajouter une classe</button>`;
+ $('#classMenu').innerHTML=built+custom+`<hr style="border:0;border-top:1px solid var(--bd);margin:7px 0"><button data-addclass="1">${H('plus')} Ajouter une classe</button>`;
 }
 $('#classBtn').onclick=e=>{e.stopPropagation();$('#classMenu').classList.toggle('hidden')};
 $('#classMenu').onclick=e=>{
@@ -881,21 +1005,33 @@ function askText(title,label,val,cb,opts={}){
 /* ================= NOTES ================= */
 const GRADE_TYPES=[['devoir','Devoir'],['devoir-maison','Devoir maison'],['interrogation','Interrogation'],['controle','Contrôle'],['examen','Examen'],['oral','Oral'],['autre','Autre']];
 const GRADE_SCALES=[20,10,5,100];
-const gradeScaleOptions=()=>GRADE_SCALES.map(v=>`<option value="${v}">${v}/20</option>`).join('')+'<option value="custom">Personnalisé…</option>';
+const gradeScaleOptions=(sel=null)=>GRADE_SCALES.map(v=>`<option value="${v}" ${sel!=null&&String(v)===sel?'selected':''}>${v}/20</option>`).join('')+`<option value="custom" ${sel==='custom'?'selected':''}>Personnalisé…</option>`;
 const gradeTypeLabel=t=>GRADE_TYPES.find(x=>x[0]===t)?.[1]||t||'Note';
 const gradeDateISO=g=>{if(typeof g.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(g.date))return g.date;const n=Number(g.date);if(!Number.isFinite(n))return todayISO();const d=new Date(n);return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`};
 const gradeDisplayScore=g=>{const max=Number(g.maxScore||20),raw=Number(g.rawScore??g.value);return {raw,max,value:max>0?raw/max*20:Number(g.value||0)}};
 const subjAvg=n=>{const g=S.grades.filter(x=>x.subject===n);if(!g.length)return null;const c=g.reduce((a,x)=>a+(+x.coef||1),0);return g.reduce((a,x)=>a+gradeDisplayScore(x).value*(+x.coef||1),0)/c};
 function overallAvg(){let s=0,c=0;for(const sub of S.subjects){const a=subjAvg(sub.name);if(a!=null){s+=a*sub.coef;c+=sub.coef}}return c?s/c:null};
-window.openGrade=()=>{dlg('Ajouter une note',F('Matière',`<select id="fS">${subjOpts()}</select>`)+
- `<div class="cols">${F('Note obtenue','<input id="fV" type="number" min="0" step="0.01" placeholder="ex. 420">')+F('Barème','<select id="fScale">'+gradeScaleOptions()+'</select>')}</div>`+
- `<div id="customScaleWrap" class="hidden">${F('Barème personnalisé','<input id="fMax" type="number" min="0.01" step="0.01" value="600" placeholder="ex. 600">')}</div>`+
+/* Correction (audit) : openGrade() ne permettait pas de modifier une note existante (seulement
+   d'en créer une). Elle accepte maintenant un id optionnel : si fourni, le formulaire est
+   pré-rempli avec la note existante et l'enregistrement met à jour l'entrée au lieu d'en créer
+   une nouvelle. Un bouton « Supprimer » est aussi ajouté dans ce cas, sur le même modèle que
+   openHW(). Voir aussi le bouton ✎ ajouté dans renderGrades() (data-editg) et dans
+   openGradeDetail(). */
+window.openGrade=(id)=>{const g=id?S.grades.find(x=>x.id===id):null;
+ const curScale=g?(GRADE_SCALES.includes(g.maxScore)?String(g.maxScore):'custom'):null;
+ dlg(id?'Modifier la note':'Ajouter une note',F('Matière',`<select id="fS">${subjOpts(g?.subject)}</select>`)+
+ `<div class="cols">${F('Note obtenue',`<input id="fV" type="number" min="0" step="0.01" placeholder="ex. 420" value="${g?g.rawScore:''}">`)+F('Barème',`<select id="fScale">${gradeScaleOptions(curScale)}</select>`)}</div>`+
+ `<div id="customScaleWrap" class="${curScale==='custom'?'':'hidden'}">${F('Barème personnalisé',`<input id="fMax" type="number" min="0.01" step="0.01" value="${g?g.maxScore:600}" placeholder="ex. 600">`)}</div>`+
  `<div id="gradeScalePreview" class="grade-scale-preview">Saisis la note et le barème pour voir la conversion sur 20.</div>`+
- `<div class="cols">${F('Coefficient','<input id="fC" type="number" min="0.5" step="0.5" value="1">')+F("Type d'évaluation",`<select id="fGT">${GRADE_TYPES.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`)}</div>`+
- `<div class="cols">${F('Date',`<input id="fGD" type="date" value="${todayISO()}">`)+F('Devoir associé',`<select id="fHW"><option value="">— Aucun —</option>${S.homework.map(h=>`<option value="${h.id}">${esc(h.title)}${h.subject?' · '+esc(h.subject):''}</option>`).join('')}</select>`)}</div>`+
- F('Description','<input id="fD" placeholder="Chapitre, contrôle, devoir…">')+F('Preuve / sujet rendu',fileFieldHTML()),
- d=>{const raw=parseFloat($('#fV',d).value),scale=$('#fScale',d)?.value,max=scale==='custom'?parseFloat($('#fMax',d).value):parseFloat(scale||20);if(!Number.isFinite(raw)||!Number.isFinite(max)||raw<0||max<=0||raw>max){toast('Note ou barème invalide','warn');return false}let co=parseFloat($('#fC',d).value);if(isNaN(co)||co<=0)co=1;const subj=$('#fS',d).value,desc=$('#fD',d).value,type=$('#fGT',d).value,date=$('#fGD',d).value||todayISO(),fileId=$('#fF',d).value||null,homeworkId=$('#fHW',d).value||null,value=raw/max*20;S.grades=[...S.grades,{id:uid(),subject:subj,value,rawScore:raw,maxScore:max,coef:co,desc,type,date,fileId,homeworkId}];renderGrades();renderDash();renderGoals();renderHW();toast(`Note enregistrée — ${raw}/${max} = ${value.toFixed(2)}/20`);if(value<10)toast('Note faible : pense à noter les erreurs','warn')});
- setTimeout(()=>{fillFileSelect('#fF',null);wireFileImport('#fF',{kind:'grade'});const scale=$('#fScale'),custom=$('#customScaleWrap');if(scale&&custom)scale.onchange=()=>custom.classList.toggle('hidden',scale.value!=='custom');const upd=()=>{const raw=parseFloat($('#fV').value),sel=scale?.value,max=sel==='custom'?parseFloat($('#fMax').value):parseFloat(sel||20),p=$('#gradeScalePreview');if(Number.isFinite(raw)&&Number.isFinite(max)&&max>0)p.innerHTML=`<b>${raw}/${max}</b> = <b>${(raw/max*20).toFixed(2)}/20</b>`;else p.textContent='Choisis le barème exact de l\'évaluation.'};$('#fV').oninput=upd;$('#fMax')?.addEventListener('input',upd);upd()},0);};
+ `<div class="cols">${F('Coefficient',`<input id="fC" type="number" min="0.5" step="0.5" value="${g?g.coef:1}">`)+F("Type d'évaluation",`<select id="fGT">${GRADE_TYPES.map(([v,l])=>`<option value="${v}" ${g&&g.type===v?'selected':''}>${l}</option>`).join('')}</select>`)}</div>`+
+ `<div class="cols">${F('Date',`<input id="fGD" type="date" value="${g?gradeDateISO(g):todayISO()}">`)+F('Devoir associé',`<select id="fHW"><option value="">— Aucun —</option>${S.homework.map(h=>`<option value="${h.id}" ${g&&g.homeworkId===h.id?'selected':''}>${esc(h.title)}${h.subject?' · '+esc(h.subject):''}</option>`).join('')}</select>`)}</div>`+
+ F('Description',`<input id="fD" placeholder="Chapitre, contrôle, devoir…" value="${esc(g?.desc||'')}">`)+F('Preuve / sujet rendu',fileFieldHTML()),
+ d=>{const raw=parseFloat($('#fV',d).value),scale=$('#fScale',d)?.value,max=scale==='custom'?parseFloat($('#fMax',d).value):parseFloat(scale||20);if(!Number.isFinite(raw)||!Number.isFinite(max)||raw<0||max<=0||raw>max){toast('Note ou barème invalide','warn');return false}let co=parseFloat($('#fC',d).value);if(isNaN(co)||co<=0)co=1;const subj=$('#fS',d).value,desc=$('#fD',d).value,type=$('#fGT',d).value,date=$('#fGD',d).value||todayISO(),fileId=$('#fF',d).value||null,homeworkId=$('#fHW',d).value||null,value=raw/max*20;const rec={id:id||uid(),subject:subj,value,rawScore:raw,maxScore:max,coef:co,desc,type,date,fileId,homeworkId};S.grades=id?S.grades.map(x=>x.id===id?rec:x):[...S.grades,rec];renderGrades();renderDash();renderGoals();renderHW();toast(id?`Note modifiée — ${raw}/${max} = ${value.toFixed(2)}/20`:`Note enregistrée — ${raw}/${max} = ${value.toFixed(2)}/20`);if(value<10)toast('Note faible : pense à noter les erreurs','warn')},
+ id?'<button class="btn danger sm" id="gDelGrade">Supprimer</button>':'');
+ setTimeout(()=>{fillFileSelect('#fF',g?.fileId||null);wireFileImport('#fF',{kind:'grade'});const scale=$('#fScale'),custom=$('#customScaleWrap');if(scale&&custom)scale.onchange=()=>custom.classList.toggle('hidden',scale.value!=='custom');const upd=()=>{const raw=parseFloat($('#fV').value),sel=scale?.value,max=sel==='custom'?parseFloat($('#fMax').value):parseFloat(sel||20),p=$('#gradeScalePreview');if(Number.isFinite(raw)&&Number.isFinite(max)&&max>0)p.innerHTML=`<b>${raw}/${max}</b> = <b>${(raw/max*20).toFixed(2)}/20</b>`;else p.textContent='Choisis le barème exact de l\'évaluation.'};$('#fV').oninput=upd;$('#fMax')?.addEventListener('input',upd);upd();
+  const delBtn=$('#gDelGrade');if(delBtn)delBtn.onclick=()=>{const idx=S.grades.findIndex(x=>x.id===id),removed=S.grades[idx];S.grades=S.grades.filter(x=>x.id!==id);$('#gdlg').close();renderGrades();renderDash();renderGoals();renderHW();
+   toast('Note supprimée','ok',{label:'Annuler',cb:()=>{const a=S.grades.slice();a.splice(idx,0,removed);S.grades=a;renderGrades();renderDash();renderGoals();renderHW()}})};
+ },0);};
 window.openGradeImport=()=>{const inp=document.createElement('input');inp.type='file';inp.multiple=false;inp.onchange=async()=>{if(!inp.files.length)return;const ids=await importFiles(inp.files,{kind:'grade'});if(ids&&ids[0])openGradeWithFile(ids[0])};inp.click()};
 window.openGradeWithFile=async(fileId)=>{openGrade();setTimeout(async()=>{await fillFileSelect('#fF',fileId);},180)};
 function renderGrades(){
@@ -904,30 +1040,28 @@ function renderGrades(){
  const es=$('#gEmptyState');if(es)es.remove();
  $('#gBody').innerHTML=S.subjects.map(sub=>{const g=S.grades.filter(x=>x.subject===sub.name);const a=subjAvg(sub.name);
   return `<tr><td><div class="row" style="flex-wrap:nowrap"><span class="subj-ico">${subjIcon(sub.name)}</span><b>${esc(sub.name)}</b></div></td><td>${sub.coef}</td>
-  <td>${g.map(x=>`<span class="grade-entry"><span class="row" style="display:inline-flex;gap:4px;margin:2px 4px 2px 0"><button class="chip" data-open="${x.id}" title="${esc(x.desc||'')} — cliquer pour voir le détail">${gradeDisplayScore(x).raw}/${gradeDisplayScore(x).max}${x.coef!==1?`<small>(${x.coef})</small>`:''}</button>${x.fileId?`<button class="mini" style="width:24px;height:24px" data-openf="${x.fileId}" title="Ouvrir la preuve">📎</button>`:''}${errorsLinkedTo('grade',x.id).length?`<button class="mini" style="width:auto;padding:0 6px" data-remarks="${x.id}" title="Remarques liées">🧠 ${errorsLinkedTo('grade',x.id).length}</button>`:''}<button class="mini" style="width:24px;height:24px" data-del="${x.id}" title="Supprimer">✕</button></span><small class="muted" title="${esc(x.desc||'')}">${esc(gradeTypeLabel(x.type))} · ${fmtD(gradeDateISO(x))} · ${gradeDisplayScore(x).value.toFixed(2)}/20</small></span>`).join(' ')||'<span class="muted">—</span>'}</td>
+  <td>${g.map(x=>`<span class="grade-entry"><span class="row" style="display:inline-flex;gap:4px;margin:2px 4px 2px 0"><button class="chip" data-open="${x.id}" title="${esc(x.desc||'')} — cliquer pour voir le détail">${gradeDisplayScore(x).raw}/${gradeDisplayScore(x).max}${x.coef!==1?`<small>(${x.coef})</small>`:''}</button>${x.fileId?`<button class="mini" style="width:24px;height:24px" data-openf="${x.fileId}" title="Ouvrir la preuve">${H('paperclip',14)}</button>`:''}${errorsLinkedTo('grade',x.id).length?`<button class="mini" style="width:auto;padding:0 6px" data-remarks="${x.id}" title="Remarques liées">${H('lightbulb',14)} ${errorsLinkedTo('grade',x.id).length}</button>`:''}<button class="mini" style="width:24px;height:24px" data-editg="${x.id}" title="Modifier">✎</button><button class="mini" style="width:24px;height:24px" data-del="${x.id}" title="Supprimer">✕</button></span><small class="muted" title="${esc(x.desc||'')}">${esc(gradeTypeLabel(x.type))} · ${fmtD(gradeDateISO(x))} · ${gradeDisplayScore(x).value.toFixed(2)}/20</small></span>`).join(' ')||'<span class="muted">—</span>'}</td>
   <td><b style="color:${a==null?'inherit':a>=10?'var(--s)':'#e74c3c'}">${a!=null?a.toFixed(2):'—'}</b></td></tr>`}).join('');renderGradeCharts();
  $$('#gBody [data-open]').forEach(b=>b.onclick=()=>openGradeDetail(b.dataset.open));
+ $$('#gBody [data-editg]').forEach(b=>b.onclick=e=>{e.stopPropagation();openGrade(b.dataset.editg)});
  $$('#gBody [data-del]').forEach(b=>b.onclick=e=>{e.stopPropagation();const id=b.dataset.del,idx=S.grades.findIndex(x=>x.id===id),removed=S.grades[idx];
   S.grades=S.grades.filter(x=>x.id!==id);renderGrades();renderDash();renderGoals();
   toast('Note supprimée','ok',{label:'Annuler',cb:()=>{const a=S.grades.slice();a.splice(idx,0,removed);S.grades=a;renderGrades();renderDash();renderGoals()}})});
  $$('#gBody [data-openf]').forEach(b=>b.onclick=e=>{e.stopPropagation();openFile(b.dataset.openf)});
  $$('#gBody [data-remarks]').forEach(b=>b.onclick=e=>{e.stopPropagation();const g=S.grades.find(x=>x.id===b.dataset.remarks);openRemarksPanel('grade',b.dataset.remarks,g?esc(g.subject):'')});
 }
-/* Ronde 11 (suite) — chantier 1 : vue détail d'une note. Lecture seule (voir RELAIS) : la seule
-   action réellement possible avant l'implémentation d'un vrai formulaire d'édition est de
-   naviguer vers le devoir associé, le fichier preuve, ou les remarques liées. Déclenchée par un
-   clic sur le chip de note dans renderGrades() (data-open). Note pour la suite : le relais reçu
-   supposait à tort qu'openGrade() permettait déjà de modifier une note existante — en réalité
-   cette fonction ne fait qu'en créer une nouvelle (pas de paramètre id, pas de préremplissage).
-   Il n'existe donc aujourd'hui aucun moyen de modifier une note déjà enregistrée (seulement
-   ajouter/supprimer) ; à signaler si l'édition devient une priorité. */
+/* Ronde 11 (suite) — chantier 1 : vue détail d'une note, déclenchée par un clic sur le chip de
+   note dans renderGrades() (data-open). Permet de naviguer vers le devoir associé, le fichier
+   preuve, ou les remarques liées. Correction (audit) : ajout d'un bouton « ✎ Modifier » qui
+   ouvre openGrade(id) en mode édition — l'édition d'une note existante est désormais possible
+   (auparavant seuls l'ajout et la suppression l'étaient). */
 window.openGradeDetail=(gradeId)=>{
  const g=S.grades.find(x=>x.id===gradeId);if(!g)return;
  let d=$('#gradeDetailDlg');if(!d){d=document.createElement('dialog');d.id='gradeDetailDlg';document.body.append(d)}
  const disp=gradeDisplayScore(g);
  const hw=g.homeworkId?S.homework.find(h=>h.id===g.homeworkId):null;
  const remarks=errorsLinkedTo('grade',g.id);
- d.innerHTML=`<h3>📈 ${esc(g.subject)} — ${esc(gradeTypeLabel(g.type))}</h3>
+ d.innerHTML=`<h3>${H('chart')} ${esc(g.subject)} — ${esc(gradeTypeLabel(g.type))}</h3>
   <div class="frm">
    <div style="text-align:center;padding:6px 0 12px">
     <div style="font-size:30px;font-weight:800;color:${disp.value>=10?'var(--s)':'#e74c3c'}">${disp.value.toFixed(2)}<small style="font-size:15px;font-weight:600">/20</small></div>
@@ -935,13 +1069,14 @@ window.openGradeDetail=(gradeId)=>{
    </div>
    <div class="cols">${F('Coefficient',`<b style="display:block;padding:8px 0">${g.coef}</b>`)}${F('Date',`<b style="display:block;padding:8px 0">${fmtD(gradeDateISO(g))}</b>`)}</div>
    ${g.desc?F('Description',`<span style="display:block;padding:8px 0">${esc(g.desc)}</span>`):''}
-   ${hw?F('Devoir associé',`<button type="button" class="btn ghost sm" id="gdHW">📝 ${esc(hw.title)}</button>`):''}
-   ${g.fileId?F('Preuve / sujet rendu',`<button type="button" class="btn ghost sm" id="gdFile">📎 Ouvrir le document</button>`):''}
-   ${F('Remarques liées',remarks.length?`<button type="button" class="btn ghost sm" id="gdRemarks">🧠 ${remarks.length} remarque${remarks.length>1?'s':''}</button>`:'<span class="muted" style="display:block;padding:8px 0">Aucune</span>')}
+   ${hw?F('Devoir associé',`<button type="button" class="btn ghost sm" id="gdHW">${H('hw')} ${esc(hw.title)}</button>`):''}
+   ${g.fileId?F('Preuve / sujet rendu',`<button type="button" class="btn ghost sm" id="gdFile">${H('paperclip')} Ouvrir le document</button>`):''}
+   ${F('Remarques liées',remarks.length?`<button type="button" class="btn ghost sm" id="gdRemarks">${H('lightbulb')} ${remarks.length} remarque${remarks.length>1?'s':''}</button>`:'<span class="muted" style="display:block;padding:8px 0">Aucune</span>')}
   </div>
-  <div class="row spread" style="margin-top:16px"><span style="flex:1"></span><button class="btn ghost" id="gdClose">Fermer</button></div>`;
+  <div class="row spread" style="margin-top:16px"><button class="btn ghost" id="gdEdit" type="button">✎ Modifier</button><span style="flex:1"></span><button class="btn ghost" id="gdClose">Fermer</button></div>`;
  d.showModal();
  $('#gdClose',d).onclick=()=>d.close();
+ $('#gdEdit',d).onclick=()=>{d.close();openGrade(g.id)};
  if(hw)$('#gdHW',d).onclick=()=>{d.close();show('hw');setTimeout(()=>openHW(hw.id),50)};
  if(g.fileId)$('#gdFile',d).onclick=()=>{d.close();openFile(g.fileId)};
  if(remarks.length)$('#gdRemarks',d).onclick=()=>{d.close();openRemarksPanel('grade',g.id,esc(g.subject))};
@@ -998,12 +1133,12 @@ window.openHW=(id,preset={})=>{const h=S.homework.find(x=>x.id===id)||preset||{}
    S.homework=id?S.homework.map(x=>x.id===id?rec:x):[...S.homework,rec];
    if(rec.reminder&&'Notification' in window&&Notification.permission==='default')Notification.requestPermission();
    renderHW();renderDash();renderCal();toast(id?'Devoir modifié':'Devoir ajouté');show('hw')},
-  (id?'<button class="btn danger sm" id="gDel">Supprimer</button>':'')+'<button class="btn ghost sm" id="gPlan" type="button">🗓️ Planifier une séance</button>');
+  (id?'<button class="btn danger sm" id="gDel">Supprimer</button>':'')+'<button class="btn ghost sm" id="gPlan" type="button">'+H('calendar')+' Planifier une séance</button>');
  fillFileSelect('#fF',h.fileId);wireFileImport('#fF',{homeworkType:$('#fTy')?.value||'devoir'});$('#fTy').onchange=()=>wireFileImport('#fF',{homeworkType:$('#fTy').value});
  /* Chantier 3, ligne 5 : suggère l'échéance = prochain cours de la matière choisie */
  const renderSuggest=()=>{const subj=$('#fS').value;const nx=nextLessonDate(subj,todayISO());const wrap=$('#fSuggestWrap');
   if(!wrap)return;
-  wrap.innerHTML=nx&&nx!==$('#fDt').value?`📅 Prochain cours de ${esc(subj)} : <b>${fmtD(nx)}</b> — <button class="mini" type="button" id="fSuggestBtn" style="width:auto;padding:2px 8px;display:inline">utiliser cette date</button>`:'';
+  wrap.innerHTML=nx&&nx!==$('#fDt').value?`${H('calendar')} Prochain cours de ${esc(subj)} : <b>${fmtD(nx)}</b> — <button class="mini" type="button" id="fSuggestBtn" style="width:auto;padding:2px 8px;display:inline">utiliser cette date</button>`:'';
   const sb=$('#fSuggestBtn');if(sb)sb.onclick=()=>{$('#fDt').value=nx};};
  $('#fS').onchange=renderSuggest;renderSuggest();
  const del=$('#gDel');if(del)del.onclick=()=>{const idx=S.homework.findIndex(x=>x.id===id),removed=S.homework[idx];
@@ -1021,8 +1156,8 @@ function hwItem(h){const late=!h.done&&h.due&&h.due<todayISO();
  return `<div class=\"item\" style=\"border-left:4px solid ${kc}${h.done?';opacity:.7':''}\"><input type=\"checkbox\" ${h.done?'checked':''} data-tgl=\"${h.id}\" style=\"width:auto;margin-top:4px\">
  <span class=\"subj-ico\">${subjIcon(h.subject)}</span><div class=\"body\"><h4 style=\"${h.done?'text-decoration:line-through;opacity:.6':''}\">${esc(h.title)}</h4>
  <div class=\"task-row\">${taskBadge(k)}<span class=\"muted\">${esc(h.subject)}</span>${h.priority==='haute'?'<span class=\"chip\" style=\"color:#e74c3c\">haute</span>':''}</div>
- <div class=\"row\" style=\"margin-top:6px\"><span class=\"chip\" style=\"${late?'color:#e74c3c;border-color:#e74c3c':''}\">${late?'⚠ Retard · ':''}${fmtD(h.due)}</span>
- ${h.reminder?`<span class=\"chip\">🔔 ${h.reminder>=1440?'1 j':h.reminder+' min'}</span>`:''}${h.fileId?`<button class=\"chip\" data-open=\"${h.fileId}\">📎 fichier</button>`:''}${homeworkLinkedProofs(h).filter(g=>g.fileId&&g.fileId!==h.fileId).map(g=>`<button class=\"chip\" data-open=\"${g.fileId}\">🏷️ preuve</button>`).join('')}${errorsLinkedTo('homework',h.id).length?`<button class=\"chip\" data-remarks=\"${h.id}\">🧠 ${errorsLinkedTo('homework',h.id).length} remarque(s)</button>`:''}<button class=\"chip\" data-planhw=\"${h.id}\">🗓️ Planifier</button></div>
+ <div class=\"row\" style=\"margin-top:6px\"><span class=\"chip\" style=\"${late?'color:#e74c3c;border-color:#e74c3c':''}\">${late?H('warning',14)+' Retard · ':''}${fmtD(h.due)}</span>
+ ${h.reminder?`<span class=\"chip\">${H('bell',14)} ${h.reminder>=1440?'1 j':h.reminder+' min'}</span>`:''}${h.fileId?`<button class=\"chip\" data-open=\"${h.fileId}\">${H('paperclip',14)} fichier</button>`:''}${homeworkLinkedProofs(h).filter(g=>g.fileId&&g.fileId!==h.fileId).map(g=>`<button class=\"chip\" data-open=\"${g.fileId}\">${H('bookmark',14)} preuve</button>`).join('')}${errorsLinkedTo('homework',h.id).length?`<button class=\"chip\" data-remarks=\"${h.id}\">${H('lightbulb',14)} ${errorsLinkedTo('homework',h.id).length} remarque(s)</button>`:''}<button class=\"chip\" data-planhw=\"${h.id}\">${H('calendar',14)} Planifier</button></div>
  ${h.desc?`<div class=\"muted\" style=\"font-size:12px;margin-top:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\">${esc(h.desc)}</div>`:''}</div>
  <button class=\"mini\" data-edit=\"${h.id}\" title=\"Modifier\">✎</button></div>`}
 function renderHW(){
@@ -1035,7 +1170,7 @@ function renderHW(){
  $$('#hwCatSeg button').forEach(b=>b.onclick=()=>{hwCat=b.dataset.cat;renderHW()});
  const matches=h=>hwCat==='all'||NORMALIZE_TASK_TYPE(h.type)===hwCat;
  const p=S.homework.filter(h=>!h.done&&matches(h)).sort((a,b)=>(a.due||'9')>(b.due||'9')?1:-1),dn=S.homework.filter(h=>h.done&&matches(h));
- $('#hwList').innerHTML=p.map(hwItem).join('')||'<p class=\"muted\">Aucun élément dans cette catégorie 🎉</p>';
+ $('#hwList').innerHTML=p.map(hwItem).join('')||'<p class=\"muted\">Aucun élément dans cette catégorie.</p>';
  $('#hwDone').innerHTML=dn.map(hwItem).join('')||'<p class=\"muted\">—</p>';
  $$('#sec-hw [data-tgl]').forEach(c=>c.onchange=()=>{S.homework=S.homework.map(x=>x.id===c.dataset.tgl?{...x,done:c.checked}:x);renderHW();renderDash();renderCal()});
  $$('#sec-hw [data-edit]').forEach(b=>b.onclick=()=>openHW(b.dataset.edit));
@@ -1053,12 +1188,12 @@ function renderHW(){
    déjà existants, conservés pour compatibilité et pour les remarques sans cible précise.
    Nouveaux champs sur S.errors (rétro-compatibles, absents = null sur les anciennes remarques) :
    linkType: 'homework' | 'file' | 'grade' | null, linkId: id de l'élément ciblé | null. */
-const REMARK_TARGETS=[['homework','📝 Devoir / exercice','Une remarque sur un devoir ou un exercice précis.'],['file','📚 Cours / feuille / document','Une remarque sur un cours ou un document de la Bibliothèque.'],['grade','📈 Note','Une remarque liée à une note obtenue.'],['none','— Aucun élément précis —','Juste une matière et un chapitre, comme avant.']];
+const REMARK_TARGETS=[['homework',H('hw')+' Devoir / exercice','Une remarque sur un devoir ou un exercice précis.'],['file',H('book')+' Cours / feuille / document','Une remarque sur un cours ou un document de la Bibliothèque.'],['grade',H('chart')+' Note','Une remarque liée à une note obtenue.'],['none','— Aucun élément précis —','Juste une matière et un chapitre, comme avant.']];
 function errorsLinkedTo(type,id){return S.errors.filter(e=>e.linkType===type&&e.linkId===id)}
 function remarkTargetLabel(e){if(!e.linkType||!e.linkId)return null;
- if(e.linkType==='homework'){const h=S.homework.find(x=>x.id===e.linkId);return h?{label:'📝 '+h.title,open:()=>{show('hw');setTimeout(()=>openHW(h.id),50)}}:null}
- if(e.linkType==='grade'){const g=S.grades.find(x=>x.id===e.linkId);return g?{label:'📈 '+esc(g.subject)+' '+gradeDisplayScore(g).raw+'/'+gradeDisplayScore(g).max,open:()=>show('grades')}:null}
- if(e.linkType==='file')return{label:'📚 fichier lié',open:()=>openFile(e.linkId)};
+ if(e.linkType==='homework'){const h=S.homework.find(x=>x.id===e.linkId);return h?{label:H('hw')+' '+h.title,open:()=>{show('hw');setTimeout(()=>openHW(h.id),50)}}:null}
+ if(e.linkType==='grade'){const g=S.grades.find(x=>x.id===e.linkId);return g?{label:H('chart')+' '+esc(g.subject)+' '+gradeDisplayScore(g).raw+'/'+gradeDisplayScore(g).max,open:()=>show('grades')}:null}
+ if(e.linkType==='file')return{label:H('book')+' fichier lié',open:()=>openFile(e.linkId)};
  return null}
 /* Panneau de lecture seule listant les remarques liées à un élément (devoir, fichier, note) —
    dialogue dédié (pas #gdlg) pour pouvoir s'ouvrir par-dessus une fiche déjà affichée sans lui
@@ -1066,7 +1201,7 @@ function remarkTargetLabel(e){if(!e.linkType||!e.linkId)return null;
 function openRemarksPanel(type,id,title){
  let d=$('#remarksDlg');if(!d){d=document.createElement('dialog');d.id='remarksDlg';document.body.append(d)}
  const list=errorsLinkedTo(type,id);
- d.innerHTML=`<h3>🧠 Remarques — ${esc(title||'')}</h3><div class="frm">${list.map(e=>`<div class="item" style="display:block">
+ d.innerHTML=`<h3>${H('lightbulb')} Remarques — ${esc(title||'')}</h3><div class="frm">${list.map(e=>`<div class="item" style="display:block">
    ${e.question?`<div style="font-size:13px"><b>Q :</b> ${esc(e.question)}</div>`:''}
    ${e.mistake?`<div style="font-size:13px;color:#e74c3c"><b>✗</b> ${esc(e.mistake)}</div>`:''}
    ${e.method?`<div style="font-size:13px;color:var(--s)"><b>✓</b> ${esc(e.method)}</div>`:''}
@@ -1086,7 +1221,7 @@ window.openError=(presetSubject,presetDesc,presetLink=null)=>{
   const openFormWithTarget=async()=>{
    if(linkType==='file')targetFieldHTML=F('Cours / fichier',await buildFileOpts());
    const linkedSubject=linkType==='homework'?S.homework.find(h=>h.id===linkId)?.subject:linkType==='grade'?S.grades.find(g=>g.id===linkId)?.subject:null;
-   dlg('🧠 Ajouter une remarque / erreur',
+   dlg(H('lightbulb')+' Ajouter une remarque / erreur',
     (targetFieldHTML?targetFieldHTML:'')+
     F('Matière',`<select id="fS">${subjOpts(linkedSubject||presetSubject)}</select>`)+F('Chapitre',`<input id="fCh" value="${esc(presetDesc||'')}">`)+F('Question / problème','<input id="fQ">')+
     F('Erreur commise / à retenir','<textarea id="fE" rows="2"></textarea>')+F('Bonne méthode / correction','<textarea id="fM" rows="2"></textarea>')+
@@ -1103,13 +1238,13 @@ window.openError=(presetSubject,presetDesc,presetLink=null)=>{
 function renderErrors(){
  const es=S.errors;
  const dues=erreursDues(es).length;
- $('#errList').innerHTML=(dues?`<div class="item" style="background:color-mix(in srgb,var(--p) 8%,var(--card))"><div class="body"><h4>🔁 ${dues} erreur(s) à réviser aujourd'hui</h4><div class="muted" style="font-size:12.5px">Répétition espacée (méthode Leitner)</div></div><button class="btn sm" id="btnRevAll">Réviser maintenant</button></div>`:'')+
+ $('#errList').innerHTML=(dues?`<div class="item" style="background:color-mix(in srgb,var(--p) 8%,var(--card))"><div class="body"><h4>${H('repeat')} ${dues} erreur(s) à réviser aujourd'hui</h4><div class="muted" style="font-size:12.5px">Répétition espacée (méthode Leitner)</div></div><button class="btn sm" id="btnRevAll">Réviser maintenant</button></div>`:'')+
   es.slice().reverse().map(e=>`<div class="item"><span class="subj-ico">${subjIcon(e.subject)}</span><div class="body">
   <h4>${esc(e.subject)}${e.chapter?' · '+esc(e.chapter):''}</h4>
   ${e.question?`<div style="font-size:13px"><b>Q :</b> ${esc(e.question)}</div>`:''}
   ${e.mistake?`<div style="font-size:13px;color:#e74c3c"><b>✗</b> ${esc(e.mistake)}</div>`:''}
   ${e.method?`<div style="font-size:13px;color:var(--s)"><b>✓</b> ${esc(e.method)}</div>`:''}
-  <div class="row" style="margin-top:4px">${e.fileId?`<button class="chip" data-openf="${e.fileId}">📎 fichier</button>`:''}${remarkTargetLabel(e)?`<button class="chip" data-gotolink="${e.id}">${remarkTargetLabel(e).label}</button>`:''}<span class="chip" style="${(e.prochaineRevision??todayISO())<=todayISO()?'color:var(--s);border-color:var(--s)':''}">boîte ${(e.boite??0)+1}/5</span></div>
+  <div class="row" style="margin-top:4px">${e.fileId?`<button class="chip" data-openf="${e.fileId}">${H('paperclip',14)} fichier</button>`:''}${remarkTargetLabel(e)?`<button class="chip" data-gotolink="${e.id}">${remarkTargetLabel(e).label}</button>`:''}<span class="chip" style="${(e.prochaineRevision??todayISO())<=todayISO()?'color:var(--s);border-color:var(--s)':''}">boîte ${(e.boite??0)+1}/5</span></div>
   <div class="muted" style="font-size:11.5px">${new Date(e.date).toLocaleDateString('fr-FR')}</div></div>
   <button class="mini" data-del="${e.id}">✕</button></div>`).join('')||'<p class="muted">Aucune remarque enregistrée.</p>';
  $$('#errList [data-del]').forEach(b=>b.onclick=()=>{const id=b.dataset.del,idx=S.errors.findIndex(x=>x.id===id),removed=S.errors[idx];
@@ -1161,7 +1296,7 @@ function migrateErrorsToLeitner(){
 let leitnerQueue=[],leitnerIdx=0,leitnerRevealed=false;
 function startLeitnerSession(reviewSubject=null){
  leitnerQueue=erreursDues(S.errors,reviewSubject);
- if(!leitnerQueue.length){toast('Aucune erreur due pour le moment 🎉');return}
+ if(!leitnerQueue.length){toast('Aucune erreur due pour le moment.');return}
  leitnerIdx=0;leitnerRevealed=false;
  $('#leitnerTitle').textContent=reviewSubject?`Révision — ${reviewSubject}`:'Révision de mes erreurs';
  renderLeitnerCard();
@@ -1180,8 +1315,8 @@ function renderLeitnerCard(){
     ${e.mistake?`<p style="color:#e74c3c"><b>✗</b> ${esc(e.mistake)}</p>`:''}
     ${e.method?`<p style="color:var(--s);margin-top:6px"><b>✓</b> ${esc(e.method)}</p>`:''}
     <div class="row" style="justify-content:center;margin-top:16px">
-     <button class="btn ghost" id="leitnerFail">❌ À revoir</button>
-     <button class="btn" id="leitnerOk">✅ Réussi</button>
+     <button class="btn ghost" id="leitnerFail">${H('xCircle')} À revoir</button>
+     <button class="btn" id="leitnerOk">${H('checkCircle')} Réussi</button>
     </div>
    </div>`:`<div class="row" style="justify-content:center;margin-top:10px"><button class="btn" id="leitnerReveal">Afficher la réponse</button></div>`);
  const rv=$('#leitnerReveal');if(rv)rv.onclick=()=>{leitnerRevealed=true;renderLeitnerCard()};
@@ -1283,7 +1418,7 @@ window.openEvent=(id,presetType)=>{const ev=S.events.find(x=>x.id===id)||{type:p
    }
    if(base.reminder&&'Notification' in window&&Notification.permission==='default')Notification.requestPermission();
    renderCal();renderDash();toast(id?'Événement modifié':(isRange?'Événements créés pour la période':'Événement créé'));show('plan')},
-  (id?'<button class="btn danger sm" id="gDel">Supprimer</button>':'')+(ev.fileId?'<button class="btn ghost sm" id="gOpen">📎 Ouvrir le fichier</button>':''));
+  (id?'<button class="btn danger sm" id="gDel">Supprimer</button>':'')+(ev.fileId?'<button class="btn ghost sm" id="gOpen">'+H('paperclip')+' Ouvrir le fichier</button>':''));
  fillFileSelect('#fF',ev.fileId);wireFileImport('#fF');
  const del=$('#gDel');if(del)del.onclick=()=>{const idx=S.events.findIndex(x=>x.id===id),removed=S.events[idx];
   S.events=S.events.filter(x=>x.id!==id);$('#gdlg').close();renderCal();renderDash();
@@ -1294,7 +1429,7 @@ window.openEvent=(id,presetType)=>{const ev=S.events.find(x=>x.id===id)||{type:p
  if(cc&&ev.subject){const dueN=erreursDues(S.errors,ev.subject).length;
   cc.innerHTML=`<button class="btn ghost sm" type="button" id="gSeeErr">Voir mes erreurs de ${esc(ev.subject)}</button>`+
    `<button class="btn sm" type="button" id="gRevNow">▶️ Réviser maintenant</button>`+
-   (dueN?`<button class="btn ghost sm" type="button" id="gRevCards">🔁 Réviser mes erreurs dues (${dueN})</button>`:'');
+   (dueN?`<button class="btn ghost sm" type="button" id="gRevCards">${H('repeat')} Réviser mes erreurs dues (${dueN})</button>`:'');
   const se=$('#gSeeErr');if(se)se.onclick=()=>{$('#gdlg').close();show('errors')};
   const rn=$('#gRevNow');if(rn)rn.onclick=()=>{$('#gdlg').close();startPomodoroTagged(ev.subject,ev.id)};
   const rc=$('#gRevCards');if(rc)rc.onclick=()=>{$('#gdlg').close();startLeitnerSession(ev.subject)};
@@ -1376,8 +1511,51 @@ function renderSessWeek(){
 }
 function sessionRelative(ts){const d=Date.now()-ts,m=Math.floor(d/60000),h=Math.floor(d/3600000),j=Math.floor(d/86400000);if(m<1)return `à l'instant`;if(m<60)return`il y a ${m} min`;if(h<24)return`il y a ${h} h`;if(j===1)return'hier';if(j<7)return`il y a ${j} j`;return new Date(ts).toLocaleDateString('fr-FR')}
 function sessionLinkLabel(s){const l=s.links?.[0];if(!l)return'';const e=l.type==='event'?S.events.find(x=>x.id===l.id):null;return e?` · ${TASK_TYPE_LABEL(e.type)} : ${e.title}`:''}
-const REV_METHODS=[['⚡','Rappel actif','Ferme le cours et restitue les idées, définitions ou étapes sans regarder.'],['🧑‍🏫','Méthode Feynman','Explique la notion avec des mots simples comme si tu l’enseignais.'],['🔁','Répétition espacée','Revois la même notion à des intervalles progressivement plus longs.'],['📝','Tests de pratique','Travaille avec des questions, exercices ou sujets sans consulter la correction avant d’avoir essayé.'],['🧩','Entrelacement','Alterne chapitres et types d’exercices pour apprendre à choisir la bonne méthode.'],['🗺️','Double codage','Associe texte et schéma, tableau, frise ou carte mentale.'],['🗣️','Blurting','Écris tout ce dont tu te souviens, puis compare au cours et complète les oublis.'],['🎯','Exemples travaillés','Étudie un exemple étape par étape, cache une partie et tente de la reconstruire.']];
-function renderRevisionMethods(){const r=$('#revisionMethods');if(!r)return;r.innerHTML=REV_METHODS.map(m=>`<article class="method-card"><div class="method-icon">${m[0]}</div><h4>${m[1]}</h4><p>${m[2]}</p></article>`).join('')}
+const REV_METHODS=[[H('zap'),'Rappel actif','Ferme le cours et restitue les idées, définitions ou étapes sans regarder.'],[H('grad'),'Méthode Feynman','Explique la notion avec des mots simples comme si tu l’enseignais.'],[H('repeat'),'Répétition espacée','Revois la même notion à des intervalles progressivement plus longs.'],[H('note'),'Tests de pratique','Travaille avec des questions, exercices ou sujets sans consulter la correction avant d’avoir essayé.'],[H('layers'),'Entrelacement','Alterne chapitres et types d’exercices pour apprendre à choisir la bonne méthode.'],[H('map'),'Double codage','Associe texte et schéma, tableau, frise ou carte mentale.'],[H('message'),'Blurting','Écris tout ce dont tu te souviens, puis compare au cours et complète les oublis.'],[H('target'),'Exemples travaillés','Étudie un exemple étape par étape, cache une partie et tente de la reconstruire.']];
+/* Détail de chaque méthode : contenu affiché au clic sur une carte, dans le même style
+   que les autres fiches détail de l'app (openGradeDetail). Rédigé à partir des grandes lignes
+   de la science cognitive de l'apprentissage (effet de test, courbe de l'oubli d'Ebbinghaus,
+   entrelacement, double codage) — même ordre que REV_METHODS. */
+const REV_METHOD_DETAILS=[
+ {concept:"Plutôt que de relire ou surligner, on ferme le cours et on essaie de ressortir l'information de mémoire, sans aucun support.",
+  why:"Chaque fois que le cerveau doit retrouver une information par lui-même, ça renforce le circuit neuronal qui y mène. C'est l'effort de récupération — pas la relecture — qui fixe durablement un souvenir (« effet de test »).",
+  tips:["Feuille blanche : écris tout ce dont tu te souviens sur un chapitre, puis compare avec le cours et corrige d'une autre couleur.","Flashcards pour le vocabulaire, les dates, les formules ou les définitions précises.","Transforme chaque titre de chapitre en question et réponds-y à voix haute avant de relire."]},
+ {concept:"Expliquer une notion avec des mots très simples, comme si on l'enseignait à quelqu'un qui n'y connaît rien — sans aucun jargon technique.",
+  why:"Le vocabulaire technique cache souvent nos propres zones d'ombre. Se forcer à reformuler simplement révèle immédiatement ce qu'on ne maîtrise pas vraiment : c'est un test sans pitié de la compréhension réelle.",
+  tips:["Écris le nom de la notion en haut d'une feuille, puis explique-la sans un seul terme technique.","Utilise des comparaisons de tous les jours (ex. « le réseau sanguin, c'est comme un réseau d'autoroutes »).","Repère où tu bloques dans ton explication, et retourne étudier précisément ce point-là."]},
+ {concept:"Revoir la même notion à des intervalles de temps de plus en plus longs (ex. J+1, J+3, J+7, J+21) plutôt qu'en une seule session massée.",
+  why:"Le cerveau élimine naturellement ce qu'il juge inutile. Réviser une notion juste avant de l'oublier envoie un signal fort : cette information est importante. L'espacement laisse aussi le sommeil faire son travail de consolidation.",
+  tips:["Utilise le système de boîtes Leitner déjà intégré dans l'onglet Révisions de l'app.","Planifie tes relectures sur plusieurs semaines plutôt que de tout revoir la veille.","Des outils comme Anki ou Quizlet calculent automatiquement le bon intervalle."]},
+ {concept:"S'entraîner avec de vrais exercices, questions ou sujets d'examen, sans regarder la correction avant d'avoir vraiment cherché.",
+  why:"Se mettre en situation d'épreuve entraîne la récupération sous contrainte, comme le jour J, et révèle les vraies lacunes — contrairement à un exercice fait en gardant le cours ouvert à côté.",
+  tips:["Refais d'anciens contrôles ou sujets d'examen en conditions réelles (chronométré, sans note).","Corrige après coup, d'une couleur différente, pour bien repérer tes erreurs.","Ne consulte la correction qu'après avoir sérieusement essayé, même si tu bloques."]},
+ {concept:"Mélanger différents types d'exercices ou de chapitres au sein d'une même session, plutôt que de les enchaîner en bloc.",
+  why:"Travailler un seul type d'exercice à la suite donne une fausse impression de maîtrise, car on applique la même méthode par automatisme. L'entrelacement oblige à identifier le type de problème avant de choisir la démarche — exactement comme le jour de l'examen.",
+  tips:["Mélange des exercices de plusieurs chapitres de maths ou physique dans une même séance.","En langues, alterne grammaire, vocabulaire et compréhension plutôt que 2h de conjugaison pure.","Évite de faire 20 exercices identiques d'affilée — 5 variés valent mieux."]},
+ {concept:"Associer systématiquement un contenu verbal (texte, cours) à un support visuel (schéma, frise, carte mentale) pour la même notion.",
+  why:"Le cerveau traite les informations visuelles et verbales par deux voies distinctes. En stimulant les deux à la fois, on crée deux chemins différents pour retrouver la même information — ce qui double les chances de s'en souvenir.",
+  tips:["Transforme un texte chronologique en frise temporelle.","Dessine une carte mentale pour visualiser les liens entre les concepts d'un chapitre.","Annote un schéma de mémoire plutôt que de le recopier passivement."]},
+ {concept:"Sur une feuille blanche, écris tout ce dont tu te souviens sur un sujet, sans aucun support, puis compare avec le cours.",
+  why:"C'est une version très directe du rappel actif : l'écriture spontanée force une vraie récupération en mémoire, et la comparaison qui suit montre immédiatement, noir sur blanc, ce qui a été oublié.",
+  tips:["Une feuille par chapitre, à vider entièrement avant de regarder le cours.","Corrige les oublis d'une couleur bien visible pour les repérer d'un coup d'œil.","Refais l'exercice quelques jours plus tard, en te concentrant sur les points oubliés la fois précédente."]},
+ {concept:"Étudier un exemple déjà résolu étape par étape, puis cacher une partie de la solution et essayer de la reconstruire seul.",
+  why:"Suivre une démarche déjà résolue réduit la charge mentale au début de l'apprentissage d'une méthode complexe, avant de passer progressivement à une résolution en autonomie complète.",
+  tips:["Repars d'un exercice déjà corrigé en classe.","Cache les dernières étapes de la solution et essaie de les refaire seul.","Vérifie, puis recommence en cachant une part plus grande la fois suivante."]}
+];
+window.openMethodDetail=(i)=>{
+ const m=REV_METHODS[i],d2=REV_METHOD_DETAILS[i];if(!m||!d2)return;
+ let d=$('#methodDetailDlg');if(!d){d=document.createElement('dialog');d.id='methodDetailDlg';document.body.append(d)}
+ d.innerHTML=`<h3>${m[0]} ${esc(m[1])}</h3>
+  <div class="frm">
+   ${F('Le concept',`<span style="display:block;padding:8px 0">${esc(d2.concept)}</span>`)}
+   ${F('Pourquoi ça marche ?',`<span style="display:block;padding:8px 0">${esc(d2.why)}</span>`)}
+   ${F('Comment l’appliquer',`<ul style="margin:8px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:var(--tx)">${d2.tips.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`)}
+  </div>
+  <div class="row spread" style="margin-top:16px"><span style="flex:1"></span><button class="btn ghost" id="mdClose">Fermer</button></div>`;
+ d.showModal();
+ $('#mdClose',d).onclick=()=>d.close();
+};
+function renderRevisionMethods(){const r=$('#revisionMethods');if(!r)return;r.innerHTML=REV_METHODS.map((m,i)=>`<article class="method-card" data-mi="${i}"><div class="method-icon">${m[0]}</div><h4>${m[1]}</h4><p>${m[2]}</p></article>`).join('');$$('#revisionMethods .method-card').forEach(c=>c.onclick=()=>openMethodDetail(+c.dataset.mi))}
 function renderSess(){
  renderTSubj();renderSessWeek();renderRevisionMethods();
  const items=S.sessions.slice(-12).reverse();
@@ -1391,10 +1569,42 @@ function renderSess(){
    existante (catégories/tags/recherche restent des filtres secondaires une fois dans une
    matière). subj garde son rôle habituel (matière active, '' = "sans matière"). */
 const lib={q:'',f:'all',subj:'',sort:'date',cat:'all',tags:[],view:'subjects'};
+let libCoverURLs=[];
+function libCoverHTML(f,ft){
+ if(/^image\//.test(f.type)&&f.blob){const u=URL.createObjectURL(f.blob);libCoverURLs.push(u);return `<img src="${u}" alt="" loading="lazy">`}
+ if(f.thumb)return `<img src="${f.thumb}" alt="" loading="lazy">`;
+ return `<span class="cover-ic" style="color:${ft.color}">${I(ft.ic)}</span>`;
+}
+/* Miniature PDF : aperçu réel de la 1ʳᵉ page via PDF.js (embarqué en local), mis en cache
+   sur le fichier (f.thumb) pour n'être calculé qu'une fois. Les images avaient déjà un
+   aperçu réel via libCoverHTML() ; seuls les PDF en manquaient et affichaient l'icône
+   générique. Aucun effet sur les autres formats. */
+async function pdfToThumb(blob){
+ if(!window.pdfjsLib)return null;
+ const buf=await blob.arrayBuffer();
+ const pdf=await pdfjsLib.getDocument({data:buf,isEvalSupported:false,enableScripting:false}).promise;
+ try{
+  const page=await pdf.getPage(1),vp0=page.getViewport({scale:1}),scale=280/vp0.width,vp=page.getViewport({scale});
+  const c=document.createElement('canvas');c.width=Math.max(1,Math.round(vp.width));c.height=Math.max(1,Math.round(vp.height));
+  await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;
+  return c.toDataURL('image/jpeg',0.72);
+ }finally{pdf.destroy&&pdf.destroy()}
+}
+function renderLibPdfThumbs(fs){
+ fs.filter(f=>!f.thumb&&(f.type==='application/pdf'||(f.name.split('.').pop()||'').toLowerCase()==='pdf')).forEach(async f=>{
+  let url=null;try{url=await pdfToThumb(f.blob)}catch(e){console.error('Miniature PDF impossible pour',f.name,e)}
+  if(!url)return;
+  f.thumb=url;await dbPut('files',f);
+  const cov=document.querySelector(`#libGrid [data-open="${f.id}"] .fcover`);
+  if(!cov)return;
+  const ic=cov.querySelector('.cover-ic');if(ic)ic.remove();
+  cov.insertAdjacentHTML('afterbegin',`<img src="${url}" alt="" loading="lazy">`);
+ });
+}
 /* Filtre simple par catégorie au-dessus de la grille (Ronde 11 suite) : regroupe les
    variantes de fiches sous un seul onglet pour rester lisible, comme demandé
    ("les cours, les fiches" comme les deux grandes familles à distinguer). */
-const LIB_CATS=[['all','Tous'],['cours','📘 Cours'],['fiches','🧠 Fiches'],['schema','🗺️ Schémas'],['autre-support','📄 Autres']];
+const LIB_CATS=[['all','Tous'],['cours',H('book')+' Cours'],['fiches',H('lightbulb')+' Fiches'],['schema',H('map')+' Schémas'],['autre-support',H('file')+' Autres']];
 function libCatMatches(f,cat){
  if(cat==='all')return true;
  if(cat==='fiches')return (f.libraryType||'').startsWith('fiche-');
@@ -1405,7 +1615,7 @@ function libCatMatches(f,cat){
    repère le type d'un coup d'œil dans la grille. */
 const LIB_TYPE_META={cours:'#0f766e','fiche-revision':'#6c5ce7','fiche-resume':'#0ea5e9','fiche-methode':'#f59e0b','fiche-explicative':'#d97706',schema:'#7c3aed','autre-support':'#94a3b8'};
 function libTypeColor(f){return LIB_TYPE_META[f.libraryType]||LIB_TYPE_META['autre-support']}
-function libTypeBadge(f){const c=libTypeColor(f),label=LIB_IMPORT_TYPES.find(x=>x[0]===f.libraryType)?.[1]||'📄 Autre support';
+function libTypeBadge(f){const c=libTypeColor(f),label=LIB_IMPORT_TYPES.find(x=>x[0]===f.libraryType)?.[1]||'Autre support';
  return `<span class="task-cat" style="color:${c};border-color:color-mix(in srgb,${c} 28%,var(--bd));background:color-mix(in srgb,${c} 7%,var(--bg))"><span class="dot"></span>${esc(label)}</span>`}
 const pendingFileDeletes=new Map(); /* id -> timer, pour permettre "Annuler" avant suppression réelle du fichier en base */
 ['libQ','libSort'].forEach(id=>$('#'+id).addEventListener('input',()=>{lib.q=$('#libQ').value.toLowerCase();lib.sort=$('#libSort').value;renderLib()}));
@@ -1420,11 +1630,11 @@ const drop=$('#drop');
 ['dragover','dragenter'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over')}));
 ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over')}));
 drop.addEventListener('drop',e=>chooseImportType('Classer les fichiers dans la Bibliothèque',LIB_IMPORT_TYPES,type=>importFiles(e.dataTransfer.files,{libraryType:type})));
-const LIB_IMPORT_TYPES=[['cours','📘 Cours / leçon','Contenu de cours à apprendre ou comprendre.'],['fiche-revision','🧠 Fiche de révision','Synthèse à relire pour mémoriser l’essentiel.'],['fiche-resume','📝 Fiche résumé','Résumé condensé d’un chapitre ou thème.'],['fiche-methode','🛠️ Fiche méthode','Méthode, démarche, formule ou procédure à retenir.'],['fiche-explicative','💡 Fiche explicative','Document qui explique une notion ou un point difficile.'],['schema','🗺️ Schéma / carte mentale','Support visuel à mémoriser.'],['autre-support','📄 Autre support','Tout autre document utile pour apprendre.']];
+const LIB_IMPORT_TYPES=[['cours','Cours / leçon','Contenu de cours à apprendre ou comprendre.'],['fiche-revision','Fiche de révision','Synthèse à relire pour mémoriser l’essentiel.'],['fiche-resume','Fiche résumé','Résumé condensé d’un chapitre ou thème.'],['fiche-methode','Fiche méthode','Méthode, démarche, formule ou procédure à retenir.'],['fiche-explicative','Fiche explicative','Document qui explique une notion ou un point difficile.'],['schema','Schéma / carte mentale','Support visuel à mémoriser.'],['autre-support','Autre support','Tout autre document utile pour apprendre.']];
 /* Ronde 11 session 8 (suite) : mêmes 3 catégories que le formulaire "Ajouter un devoir"
    (voir SELECTABLE_TASK_TYPES) — contrôle/examen/interrogation/échéance/annales/sujet
    d'entraînement se créent désormais comme événements du calendrier, pas comme devoirs. */
-const HW_IMPORT_TYPES=[["devoir","📝 Devoir","Travail à rendre ou à faire pour un cours."],["exercice","✎ Exercice","Exercice ou série d'exercices à effectuer."],["autre","📄 Autre","Tout autre travail à faire."]];
+const HW_IMPORT_TYPES=[["devoir",H('hw')+" Devoir","Travail à rendre ou à faire pour un cours."],["exercice","✎ Exercice","Exercice ou série d'exercices à effectuer."],["autre",H('file')+" Autre","Tout autre travail à faire."]];
 function chooseImportType(title,types,cb){const d=dlg(title,`<div class="import-choice-grid">${types.map(([k,l,desc])=>`<button type="button" class="import-choice" data-import="${k}"><b>${l}</b><span>${desc||'Document classé dans cette catégorie.'}</span></button>`).join('')}</div>`,()=>false);d.querySelectorAll('[data-import]').forEach(b=>b.onclick=()=>{d.close();cb(b.dataset.import)});return d}
 window.openLibraryImport=()=>chooseImportType('Que veux-tu importer dans la Bibliothèque ?',LIB_IMPORT_TYPES,type=>{const inp=document.createElement('input');inp.type='file';inp.multiple=true;inp.onchange=()=>importFiles(inp.files,{libraryType:type});inp.click()});
 window.openHomeworkImport=()=>chooseImportType('Quel type de travail veux-tu importer ?',HW_IMPORT_TYPES,type=>{const inp=document.createElement('input');inp.type='file';inp.multiple=true;inp.onchange=()=>importFiles(inp.files,{homeworkType:type});inp.click()});
@@ -1472,7 +1682,7 @@ async function importFiles(list,meta={}){if(!list||!list.length)return[];let ok=
    bibliothèque mais seul le dernier est associé au formulaire (un formulaire ne référence
    qu'un seul fichier à la fois) — comportement jugé raisonnable en l'absence de précision
    contraire, à revalider à l'usage réel comme les autres choix non spécifiés du relais. */
-function fileFieldHTML(){return `<div class="form-file-row"><select id="fF"><option value="">— Aucun —</option></select><button type="button" class="btn ghost sm" id="fFImportBtn">📁 Importer</button></div><input type="file" id="fFImportInput" hidden>`}
+function fileFieldHTML(){return `<div class="form-file-row"><select id="fF"><option value="">— Aucun —</option></select><button type="button" class="btn ghost sm" id="fFImportBtn">${H('folder')} Importer</button></div><input type="file" id="fFImportInput" hidden>`}
 function wireFileImport(selId='#fF',opts={}){
  const btn=$('#fFImportBtn'),inp=$('#fFImportInput');
  if(!btn||!inp)return;
@@ -1499,18 +1709,22 @@ async function renderLib(){
   $('#drop').style.display='none';$('#libGrid').style.display='none';
   $('#libSubjGrid').style.display='';
   const withoutSubj=allFiles.filter(f=>!f.subject).length;
-  const cards=S.subjects.map(sub=>{const n=allFiles.filter(f=>f.subject===sub.name).length;
-   return `<div class="fcard" data-subjcard="${esc(sub.name)}" style="align-items:center;text-align:center;justify-content:center">
-    <span class="subj-ico" style="width:48px;height:48px">${subjIcon(sub.name)}</span>
-    <div class="name" style="min-height:auto">${esc(sub.name)}</div>
-    <div class="meta" style="justify-content:center">${n} document${n>1?'s':''}</div>
+  const cards=S.subjects.map(sub=>{const n=allFiles.filter(f=>f.subject===sub.name).length,sc=subjColor(sub.name);
+   return `<div class="fcard subj-card" data-subjcard="${esc(sub.name)}" style="border-top:3px solid ${sc}">
+    <div class="subj-cover"><span class="subj-ico-lg" style="background:${sc}">${subjIcon(sub.name)}</span></div>
+    <div class="fbody" style="align-items:center;text-align:center">
+     <div class="name" style="min-height:auto">${esc(sub.name)}</div>
+     <div class="meta" style="justify-content:center">${n} document${n>1?'s':''}</div>
+    </div>
    </div>`}).join('');
-  const noSubjCard=withoutSubj?`<div class="fcard" data-subjcard="" style="align-items:center;text-align:center;justify-content:center">
-    <span class="subj-ico" style="width:48px;height:48px">📄</span>
-    <div class="name" style="min-height:auto">Sans matière</div>
-    <div class="meta" style="justify-content:center">${withoutSubj} document${withoutSubj>1?'s':''}</div>
+  const noSubjCard=withoutSubj?`<div class="fcard subj-card" data-subjcard="" style="border-top:3px solid var(--bd)">
+    <div class="subj-cover"><span class="subj-ico-lg" style="background:var(--mut)">${H('file',28)}</span></div>
+    <div class="fbody" style="align-items:center;text-align:center">
+     <div class="name" style="min-height:auto">Sans matière</div>
+     <div class="meta" style="justify-content:center">${withoutSubj} document${withoutSubj>1?'s':''}</div>
+    </div>
    </div>`:'';
-  $('#libSubjGrid').innerHTML=(cards+noSubjCard)||'<p class="muted">📥 Ajoute d’abord une matière dans Réglages, ou importe un premier document.</p>';
+  $('#libSubjGrid').innerHTML=(cards+noSubjCard)||'<p class="muted">Ajoute d’abord une matière dans Réglages, ou importe un premier document.</p>';
   $$('#libSubjGrid [data-subjcard]').forEach(c=>c.onclick=()=>{lib.subj=c.dataset.subjcard;lib.view='files';renderLib()});
   return;
  }
@@ -1518,7 +1732,8 @@ async function renderLib(){
  /* ÉCRAN FICHIERS D'UNE MATIÈRE : mêmes filtres qu'avant (catégorie/tags/recherche/tri),
     appliqués à l'intérieur de la matière déjà choisie plutôt qu'à toute la bibliothèque. */
  $('#libBreadcrumb').style.display='flex';
- $('#libActiveSubj').textContent=lib.subj?'📁 '+esc(lib.subj):'📁 Sans matière';
+ $('#libSubjGrid').style.display='none';
+ $('#libActiveSubj').textContent=lib.subj?esc(lib.subj):'Sans matière';
  $('#libFileTools').style.display='';$('#libCatSeg').style.display='';$('#libTagSeg').style.display='';
  $('#drop').style.display='';$('#libGrid').style.display='';
  let fs=allFiles.filter(f=>(f.subject||'')===lib.subj);
@@ -1538,15 +1753,22 @@ async function renderLib(){
  if(lib.f==='fav')fs=fs.filter(f=>f.fav);
  if(lib.f==='recent')fs=fs.filter(f=>f.lastOpened).sort((a,b)=>b.lastOpened-a.lastOpened);
  fs.sort((a,b)=>lib.sort==='name'?a.name.localeCompare(b.name):lib.sort==='size'?b.size-a.size:b.date-a.date);
+ libCoverURLs.forEach(u=>URL.revokeObjectURL(u));libCoverURLs=[];
  $('#libGrid').innerHTML=fs.map(f=>{const ft=fileTypeMeta(f),tc=libTypeColor(f);return `<div class="fcard" data-open="${f.id}" style="border-top:3px solid ${tc}">
-  <div class="ftop"><span class="ftype-ico" style="background:${ft.bg};color:${ft.color}">${ft.label}</span>
-   <span class="acts"><button class="mini fav ${f.fav?'on':''}" data-fav="${f.id}" title="Favori">★</button><button class="mini" data-ren="${f.id}" title="Renommer">✎</button><button class="mini" data-del="${f.id}" title="Supprimer">✕</button></span></div>
+  <div class="fcover" style="background:color-mix(in srgb,${ft.color} 10%,var(--bg))">
+   ${libCoverHTML(f,ft)}
+   <span class="fchip" style="background:${ft.color}">${ft.label}</span>
+   <span class="acts" onclick="event.stopPropagation()"><button class="mini fav ${f.fav?'on':''}" data-fav="${f.id}" title="Favori">★</button><button class="mini" data-ren="${f.id}" title="Renommer">✎</button><button class="mini" data-del="${f.id}" title="Supprimer">✕</button></span>
+  </div>
+  <div class="fbody">
   <div class="name" title="${esc(f.name)}">${esc(f.name)}</div>
   <div class="meta">${f.subject?`<span class="subj-chip">${subjIcon(f.subject)}${esc(f.subject)}</span><span class="dot"></span>`:''}<span>${fmtSize(f.size)}</span><span class="dot"></span><span>${new Date(f.date).toLocaleDateString('fr-FR')}</span></div>
   ${f.progress?`<div class="fbar"><i style="width:${f.progress}%"></i></div>`:''}
   <div class="file-tags" onclick="event.stopPropagation()">${(f.tags||[]).map(t=>`<span class="tag-chip">#${esc(t)}<button data-untag-id="${f.id}" data-untag-tag="${esc(t)}" title="Retirer ce tag">×</button></span>`).join('')}<button class="tag-add" type="button" data-addtag="${f.id}">+ tag</button></div>
-  <div class="file-foot">${libTypeBadge(f)}${errorsLinkedTo('file',f.id).length?`<button class="chip" data-remarks="${f.id}" onclick="event.stopPropagation()">🧠 ${errorsLinkedTo('file',f.id).length}</button>`:''}<select data-subj="${f.id}" onclick="event.stopPropagation()"><option value="">Matière…</option>${S.subjects.map(s=>`<option ${f.subject===s.name?'selected':''}>${esc(s.name)}</option>`).join('')}</select><span class="open-hint">Ouvrir →</span></div></div>`}).join('')
-  ||'<p class="muted">📥 Glisse ton premier cours ici, ou clique sur « Importer ».</p>';
+  <div class="file-foot">${libTypeBadge(f)}${errorsLinkedTo('file',f.id).length?`<button class="chip" data-remarks="${f.id}" onclick="event.stopPropagation()">${H('lightbulb',14)} ${errorsLinkedTo('file',f.id).length}</button>`:''}<select data-subj="${f.id}" onclick="event.stopPropagation()"><option value="">Matière…</option>${S.subjects.map(s=>`<option ${f.subject===s.name?'selected':''}>${esc(s.name)}</option>`).join('')}</select><span class="open-hint">Ouvrir →</span></div>
+  </div></div>`}).join('')
+  ||'<p class="muted">Glisse ton premier cours ici, ou clique sur « Importer ».</p>';
+ renderLibPdfThumbs(fs);
  $$('#libGrid [data-open]').forEach(c=>c.onclick=()=>openFile(c.dataset.open));
  $$('#libGrid [data-fav]').forEach(b=>b.onclick=async e=>{e.stopPropagation();const f=await dbGet('files',b.dataset.fav);f.fav=!f.fav;await dbPut('files',f);renderLib()});
  $$('#libGrid [data-ren]').forEach(b=>b.onclick=async e=>{e.stopPropagation();const f=await dbGet('files',b.dataset.ren);askText('Renommer le fichier','Nouveau nom',f.name,async n=>{f.name=n;await dbPut('files',f);renderLib();toast('Fichier renommé')})});
@@ -1575,12 +1797,13 @@ window.openFile=async id=>{
  f.lastOpened=Date.now();await dbPut('files',f);
  Object.assign(R,{file:f,pdf:null,page:1,zoom:1,mode:'single',annOn:false,annData:{},textCache:{},search:{q:'',flat:[],idx:-1},bookmarks:[]});
  readerOpenerEl=document.activeElement;
- $('#reader').classList.remove('hidden','annotating','presenting');document.body.classList.add('noscroll');
+ const ext=f.name.split('.').pop().toLowerCase();
+ const isPdf=f.type==='application/pdf'||ext==='pdf';
+ $('#reader').classList.remove('hidden','annotating','presenting');$('#reader').classList.toggle('is-pdf',isPdf);document.body.classList.add('noscroll');
  $('.shell').inert=true;$('.topbar').inert=true;$('#fab').inert=true;
  $('#rdTitle').textContent=f.name;$('#rdSearch').classList.add('hidden');$('#annBar').classList.add('hidden');$('#bmPanel').classList.add('hidden');$('#rdResume').classList.add('hidden');
  const body=$('#rdBody');body.innerHTML='<p class="muted">Chargement…</p>';
- const ext=f.name.split('.').pop().toLowerCase();
- if(f.type==='application/pdf'||ext==='pdf'){
+ if(isPdf){
   if(!window.pdfjsLib){body.innerHTML='<p class="muted">Lecteur PDF indisponible (PDF.js non chargé).</p>';return}
   try{
    const buf=await f.blob.arrayBuffer();
@@ -1661,7 +1884,7 @@ async function renderPage(n,wrap,widthFactor=1){
  wrap.append(c);
  const tc=R.textCache[n]||(R.textCache[n]=await page.getTextContent());
  const tl=document.createElement('div');tl.className='textLayer';tl.style.setProperty('--scale-factor',vp.scale);wrap.append(tl);
- try{pdfjsLib.renderTextLayer({textContentSource:tc,container:tl,viewport:vp,textDivs:[]})}catch(e){}
+ try{await new pdfjsLib.TextLayer({textContentSource:tc,container:tl,viewport:vp}).render()}catch(e){}
  if(R.search.q){const ql=R.search.q.toLowerCase();tc.items.forEach(it=>{if(!it.str||!it.str.toLowerCase().includes(ql))return;
   const t=pdfjsLib.Util.transform(vp.transform,it.transform);const hh=Math.hypot(t[2],t[3])||11;
   const d=document.createElement('div');d.className='hit';d.style.cssText=`left:${t[4]}px;top:${t[5]-hh}px;width:${it.width*vp.scale}px;height:${hh*1.25}px`;wrap.append(d)})}
@@ -1782,11 +2005,11 @@ function computeNextAction(){
 function renderNextAction(){
  const n=computeNextAction();const box=$('#dNext');
  if(!n){box.innerHTML='<span class="muted">Rien d\'urgent — profite pour réviser.</span>';return}
- if(n.kind==='late'){const h=n.item;box.innerHTML=`<div class="item"><span class="subj-ico">${subjIcon(h.subject)}</span><div class="body"><h4 style="color:#e74c3c">⚠ En retard : ${esc(h.title)}</h4><div class="muted" style="font-size:12.5px">${esc(h.subject)} · attendu pour le ${fmtD(h.due)}</div></div></div>`;return}
- if(n.kind==='leitner'){const e=n.item;box.innerHTML=`<div class="item"><span class="subj-ico">${subjIcon(e.subject)}</span><div class="body"><h4>🔁 Revois tes ${n.dueN} erreur(s) de ${esc(e.subject)} avant ${e.type==='examen'?"l'examen":'le contrôle'} du ${fmtD(e.date)}</h4><div class="muted" style="font-size:12.5px">Répétition espacée — ${e.title}</div></div><button class="btn sm" id="dNextLeitner">Réviser</button></div>`;$('#dNextLeitner').onclick=()=>startLeitnerSession(e.subject);return}
- if(n.kind==='hw'){const h=n.item;box.innerHTML=`<div class="item"><span class="subj-ico">${subjIcon(h.subject)}</span><div class="body"><h4>${esc(h.title)}${h.priority==='haute'?' 🔴':''}</h4><div class="muted" style="font-size:12.5px">${esc(h.subject)} · pour le ${fmtD(h.due)}</div></div></div>`;return}
- if(n.kind==='event'){const e=n.item;box.innerHTML=`<div class="item"><div class="body"><h4>📌 ${esc(e.title)} approche</h4><div class="muted" style="font-size:12.5px">${e.type} le ${fmtD(e.date)} · pense à réviser</div></div></div>`;return}
- if(n.kind==='weak'){const{s,a}=n.item;box.innerHTML=`<div class="item"><span class="subj-ico">${subjIcon(s.name)}</span><div class="body"><h4>💡 Point à travailler : ${esc(s.name)}</h4><div class="muted" style="font-size:12.5px">Moyenne actuelle ${a.toFixed(1)}/20 — un exercice de révision serait utile</div></div></div>`;return}
+ if(n.kind==='late'){const h=n.item;box.innerHTML=`<div class="item"><span class="subj-ico">${subjIcon(h.subject)}</span><div class="body"><h4 style="color:#e74c3c">${H('warning',15)} En retard : ${esc(h.title)}</h4><div class="muted" style="font-size:12.5px">${esc(h.subject)} · attendu pour le ${fmtD(h.due)}</div></div></div>`;return}
+ if(n.kind==='leitner'){const e=n.item;box.innerHTML=`<div class="item"><span class="subj-ico">${subjIcon(e.subject)}</span><div class="body"><h4>${H('repeat',15)} Revois tes ${n.dueN} erreur(s) de ${esc(e.subject)} avant ${e.type==='examen'?"l'examen":'le contrôle'} du ${fmtD(e.date)}</h4><div class="muted" style="font-size:12.5px">Répétition espacée — ${e.title}</div></div><button class="btn sm" id="dNextLeitner">Réviser</button></div>`;$('#dNextLeitner').onclick=()=>startLeitnerSession(e.subject);return}
+ if(n.kind==='hw'){const h=n.item;box.innerHTML=`<div class="item"><span class="subj-ico">${subjIcon(h.subject)}</span><div class="body"><h4>${esc(h.title)}${h.priority==='haute'?' <span class=\"prio-dot\"></span>':''}</h4><div class="muted" style="font-size:12.5px">${esc(h.subject)} · pour le ${fmtD(h.due)}</div></div></div>`;return}
+ if(n.kind==='event'){const e=n.item;box.innerHTML=`<div class="item"><div class="body"><h4>${H('pin',15)} ${esc(e.title)} approche</h4><div class="muted" style="font-size:12.5px">${e.type} le ${fmtD(e.date)} · pense à réviser</div></div></div>`;return}
+ if(n.kind==='weak'){const{s,a}=n.item;box.innerHTML=`<div class="item"><span class="subj-ico">${subjIcon(s.name)}</span><div class="body"><h4>${H('lightbulb',15)} Point à travailler : ${esc(s.name)}</h4><div class="muted" style="font-size:12.5px">Moyenne actuelle ${a.toFixed(1)}/20 — un exercice de révision serait utile</div></div></div>`;return}
 }
 async function renderDash(){
  const avg=overallAvg();$('#dAvg').innerHTML=avg!=null?avg.toFixed(2)+'<small>/20</small>':'—';
@@ -1804,7 +2027,7 @@ async function renderDash(){
 /* ================= RÉGLAGES : MATIÈRES / EXPORT ================= */
 function renderSettings(){
  $('#subjList').innerHTML=S.subjects.map((s,i)=>`<div class="item"><span class="subj-ico">${subjIcon(s.name)}</span><div class="body"><b>${esc(s.name)}</b></div>
-  <label class="row" style="gap:5px;font-size:12px">Coef <input type="number" min="0.5" step="0.5" value="${s.coef}" data-coef="${i}" style="width:64px"></label>
+  <label class="row" style="gap:5px;font-size:12px" title="Coefficient"><input type="number" min="0.5" step="0.5" value="${s.coef}" data-coef="${i}" style="width:64px" aria-label="Coefficient"></label>
   <button class="mini" data-renS="${i}" title="Renommer la matière">✎</button><button class="mini" data-rmS="${i}" title="Supprimer la matière">✕</button></div>`).join('');
  $$('#subjList [data-coef]').forEach(inp=>inp.onchange=()=>{let v=parseFloat(inp.value);if(isNaN(v)||v<=0)v=1;inp.value=v;const a=S.subjects;a[+inp.dataset.coef].coef=v;S.subjects=a;renderGrades();renderDash();toast('Coefficient mis à jour')});
  $$('#subjList [data-renS]').forEach(b=>b.onclick=()=>{const idx=+b.dataset.renS,s=S.subjects[idx];if(!s)return;askText('Renommer la matière','Nouveau nom',s.name,n=>{if(!n||n===s.name)return;if(S.subjects.some((x,i)=>i!==idx&&x.name.toLowerCase()===n.toLowerCase())){toast('Cette matière existe déjà','warn');return}const old=s.name;S.subjects=S.subjects.map((x,i)=>i===idx?{...x,name:n}:x);S.grades=S.grades.map(x=>x.subject===old?{...x,subject:n}:x);S.homework=S.homework.map(x=>x.subject===old?{...x,subject:n}:x);S.errors=S.errors.map(x=>x.subject===old?{...x,subject:n}:x);S.events=S.events.map(x=>x.subject===old?{...x,subject:n}:x);S.schedule=Object.fromEntries(Object.entries(S.schedule).map(([k,v])=>[k,v&&v.subject===old?{...v,subject:n}:v]));dbAll('files').then(fs=>Promise.all(fs.filter(f=>f.classId===cls&&f.subject===old).map(f=>dbPut('files',{...f,subject:n})))).then(()=>{renderAll();toast('Matière renommée')});});});
@@ -1815,6 +2038,7 @@ function renderSettings(){
    renderAll();toast('Matière supprimée')},{danger:true,okLabel:'Supprimer'})});
  renderNotifUI();
  renderAutoBackups();
+ if(typeof renderGDriveUI==='function')renderGDriveUI();
 }
 function renderNotifUI(){
  const b=$('#notifBtn');if(!b)return;
@@ -1907,15 +2131,15 @@ function renderToday(){
  const lim3=new Date(Date.now()+3*864e5).toISOString().slice(0,10);
  const items=[];
  if(todayLabel)edtHours().forEach(h=>{const c=S.schedule[todayLabel+h];if(c)items.push({time:h,label:`${c.subject}${c.room?' · '+c.room:''}`})});
- S.events.filter(e=>e.date===iso&&e.type==='revision').forEach(e=>items.push({time:e.time||'',label:'🔁 '+e.title}));
- S.events.filter(e=>e.date===iso&&(e.type==='controle'||e.type==='examen')).forEach(e=>items.push({time:e.time||'',label:'⚠️ '+e.title}));
+ S.events.filter(e=>e.date===iso&&e.type==='revision').forEach(e=>items.push({time:e.time||'',label:H('repeat',14)+' '+e.title}));
+ S.events.filter(e=>e.date===iso&&(e.type==='controle'||e.type==='examen')).forEach(e=>items.push({time:e.time||'',label:H('warning',14)+' '+e.title}));
  items.sort((a,b)=>(a.time||'99:99')<(b.time||'99:99')?-1:1);
  let html=items.map(i=>`<div class="item"><span class="when">${esc(i.time||'—')}</span><div class="body"><h4 style="margin:0;font-size:14px">${esc(i.label)}</h4></div></div>`).join('');
  const hwTom=S.homework.filter(h=>!h.done&&h.due===isoTom);
- html+=hwTom.map(h=>`<div class="item"><span class="when">demain</span><div class="body"><h4 style="margin:0;font-size:14px">📌 ${esc(h.title)} <span class="muted">(${esc(h.subject)})</span></h4></div></div>`).join('');
+ html+=hwTom.map(h=>`<div class="item"><span class="when">demain</span><div class="body"><h4 style="margin:0;font-size:14px">${H('pin',14)} ${esc(h.title)} <span class="muted">(${esc(h.subject)})</span></h4></div></div>`).join('');
  const ctrlSoon=S.events.filter(e=>(e.type==='controle'||e.type==='examen')&&e.date>iso&&e.date<=lim3);
- html+=ctrlSoon.map(e=>`<div class="item"><span class="when">${fmtD(e.date)}</span><div class="body"><h4 style="margin:0;font-size:14px">⚠️ ${esc(e.title)}</h4></div></div>`).join('');
- box.innerHTML=html||'<p class="muted">Rien de prévu aujourd\'hui 🎉</p>';
+ html+=ctrlSoon.map(e=>`<div class="item"><span class="when">${fmtD(e.date)}</span><div class="body"><h4 style="margin:0;font-size:14px">${H('warning',14)} ${esc(e.title)}</h4></div></div>`).join('');
+ box.innerHTML=html||'<p class="muted">Rien de prévu aujourd\'hui.</p>';
 }
 
 /* ================= BANDEAUX (migration, digest, rappel export) ================= */
@@ -1933,7 +2157,7 @@ function showBandeau(id,html,persist){
 const isLocalLegacy=()=>['localhost','127.0.0.1'].includes(location.hostname)||location.protocol==='file:';
 function checkMigrationBanner(){
  if(!isLocalLegacy())return;
- const div=showBandeau('migration',`<span class="txt">📦 KENNY'S MOAS déménage vers une adresse en ligne → <b>1.</b> Exporte tes données (complet) <b>2.</b> Ouvre la nouvelle adresse <b>3.</b> Importe-les là-bas.</span><button class="btn sm" type="button" id="bdMigExport">Exporter maintenant</button>`,true);
+ const div=showBandeau('migration',`<span class="txt">${H('box',15)} KENNY'S MOAS déménage vers une adresse en ligne → <b>1.</b> Exporte tes données (complet) <b>2.</b> Ouvre la nouvelle adresse <b>3.</b> Importe-les là-bas.</span><button class="btn sm" type="button" id="bdMigExport">Exporter maintenant</button>`,true);
  if(div)$('#bdMigExport').onclick=()=>{show('settings');setTimeout(()=>$('#expFullBtn')?.click(),50)};
 }
 async function checkFirstRun(){
@@ -1958,11 +2182,11 @@ function checkDigest(){
  if(dueSoon)parts.push(`${dueSoon} échéance(s) très proche(s)`);
  if(nextCtrl){const days=Math.max(0,Math.round((new Date(nextCtrl.date)-new Date(iso))/864e5));parts.push(`${esc(nextCtrl.title)} dans ${days} j`);}
  if(!parts.length)return;
- showBandeau('digest',`<span class="txt">👋 Depuis ta dernière visite : ${parts.join(', ')}.</span>`,false);
+ showBandeau('digest',`<span class="txt">Depuis ta dernière visite : ${parts.join(', ')}.</span>`,false);
 }
 function checkExportReminder(){
  if(Date.now()-(+LS.g('me:lastExport',0))<7*864e5)return;
- const div=showBandeau('exportReminder',`<span class="txt">💾 Plus de 7 jours sans export complet — pense à sauvegarder tes données.</span><button class="btn sm" type="button" id="bdExpBtn">Exporter maintenant</button>`,false);
+ const div=showBandeau('exportReminder',`<span class="txt">${H('save',15)} Plus de 7 jours sans export complet — pense à sauvegarder tes données.</span><button class="btn sm" type="button" id="bdExpBtn">Exporter maintenant</button>`,false);
  if(div)$('#bdExpBtn').onclick=()=>{show('settings');setTimeout(()=>$('#expFullBtn')?.click(),50)};
 }
 /* derniereVisite : stockée uniquement à la fermeture/mise en arrière-plan, jamais à l'ouverture (Chantier 5) */
@@ -1970,7 +2194,7 @@ window.addEventListener('visibilitychange',()=>{if(document.visibilityState==='h
 window.addEventListener('pagehide',()=>LS.s('me:lastVisit',Date.now()));
 
 /* ================= FAB ================= */
-const FABS=[['📚 Ajouter un cours',()=>openCourse()],['📄 Ajouter un fichier',()=>openLibraryImport()],['Ajouter un devoir',()=>openHW()],['Ajouter une note',()=>openGrade()],['Ajouter un événement',()=>openEvent()],['Séance de révision',()=>openEvent(null,'revision')],['🧠 Ajouter une remarque / erreur',()=>openError()],['Modifier l\'objectif',()=>{show('goals');setTimeout(()=>$('#setGoal').click(),50)}]];
+const FABS=[[H('book')+' Ajouter un cours',()=>openCourse()],[H('file')+' Ajouter un fichier',()=>openLibraryImport()],['Ajouter un devoir',()=>openHW()],['Ajouter une note',()=>openGrade()],['Ajouter un événement',()=>openEvent()],['Séance de révision',()=>openEvent(null,'revision')],[H('lightbulb')+' Ajouter une remarque / erreur',()=>openError()],['Modifier l\'objectif',()=>{show('goals');setTimeout(()=>$('#setGoal').click(),50)}]];
 $('#fabMenu').innerHTML=FABS.map((f,i)=>`<button data-f="${i}">${f[0]}</button>`).join('');
 $('#fab').onclick=e=>{e.stopPropagation();$('#fabMenu').classList.toggle('hidden')};
 $('#fabMenu').onclick=e=>{const b=e.target.closest('[data-f]');if(!b)return;$('#fabMenu').classList.add('hidden');FABS[+b.dataset.f][1]()};$('#fab').onkeydown=e=>{if((e.key==='Enter'||e.key===' ')&&!e.altKey){e.preventDefault();$('#fabMenu').classList.toggle('hidden');if(!$('#fabMenu').classList.contains('hidden'))setTimeout(()=>$('#fabMenu button')?.[0]?.focus(),0)}};
@@ -1980,11 +2204,536 @@ $('#fabMenu').addEventListener('keydown',e=>{const bs=$$('#fabMenu button');if(e
 function renderAll(){buildClassMenu();renderDash();renderToday();renderLib();renderHW();renderEDT();renderCal();renderSess();renderGrades();renderErrors();renderGoals();renderSettings();renderThemeUI()}
 migrateErrorsToLeitner();
 renderAll();tickT();window.addEventListener('online',()=>toast('Connexion rétablie'));window.addEventListener('offline',()=>toast('Mode hors-ligne activé','warn'));
+window.addEventListener('online',()=>{if(typeof gdriveOnReconnect==='function')gdriveOnReconnect()});
 checkMigrationBanner();checkFirstRun();checkDigest();checkExportReminder();
 /* Sauvegarde automatique : un essai au démarrage (se déclenche seulement si la dernière remonte à plus de 6h), puis vérifié toutes les heures pendant que l'app reste ouverte */
 autoBackup();setInterval(autoBackup,3600000);
 /* PWA — actif uniquement si servi via http(s) avec sw.js à côté */
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+
+/* ================= SYNCHRONISATION GOOGLE DRIVE =================
+   Ajouté pour permettre une sauvegarde/synchronisation optionnelle des
+   données (notes, devoirs, réglages...) et des fichiers de la
+   Bibliothèque via le propre Google Drive de l'utilisateur.
+
+   Principes :
+   - 100% optionnel : tant que l'utilisateur ne clique pas sur
+     "Se connecter avec Google", aucune requête réseau liée à Google
+     n'est faite (l'app reste utilisable hors-ligne comme avant).
+   - Scope minimal "drive.file" : l'appli ne peut lire/écrire que les
+     fichiers qu'elle a elle-même créés dans le Drive de l'utilisateur
+     (dossier "KENNY'S MOAS"), plus les fichiers explicitement choisis
+     par l'utilisateur via le sélecteur Google (Picker) lors d'un
+     import. Elle n'a jamais un accès large au Drive de l'utilisateur.
+   - Deux éléments synchronisés séparément pour rester efficace :
+       1) kennys-moas-data.json  → notes/devoirs/matières/réglages...
+          (petit fichier JSON, resynchronisé en entier à chaque
+          changement — la structure existante de collectLS() est
+          réutilisée telle quelle)
+       2) dossier "Bibliothèque" → un fichier Drive par document
+          importé (synchronisation incrémentale : seuls les nouveaux
+          fichiers sont envoyés/récupérés, jamais tout retéléchargé)
+   - Conflits : si les deux côtés ont changé depuis la dernière sync,
+     rien n'est écrasé automatiquement — une sauvegarde locale est
+     prise (réutilise le mécanisme de "Sauvegarde automatique" déjà en
+     place) puis l'utilisateur choisit quelle version garder.
+   Voir SETUP.md pour la configuration (Client ID / clé API) et
+   HANDOFF_TO_NEXT_AI.md pour le détail d'architecture.
+   ================================================================== */
+(function(){
+'use strict';
+
+/* --- Configuration à personnaliser (voir SETUP.md) ---
+   Le Client ID et la clé API sont propres à CHAQUE projet Google
+   Cloud. Ce ne sont pas des secrets au sens classique : ils sont
+   conçus pour être visibles côté navigateur et sont protégés par la
+   liste d'origines autorisées côté Google Cloud Console, pas par le
+   fait d'être cachés. Aucun secret client / mot de passe n'est stocké
+   ici. */
+const GD_CLIENT_ID = 'REMPLACE_PAR_TON_CLIENT_ID.apps.googleusercontent.com';
+const GD_API_KEY    = 'REMPLACE_PAR_TA_CLE_API';
+const GD_SCOPES = 'https://www.googleapis.com/auth/drive.file openid email profile';
+const GD_APP_FOLDER = "KENNY'S MOAS";
+const GD_LIB_FOLDER = 'Bibliothèque';
+const GD_DATA_FILE = 'kennys-moas-data.json';
+const GD_AUTOSYNC_DEFAULT = 30; // minutes
+
+const configured = ()=>!GD_CLIENT_ID.startsWith('REMPLACE_')&&!GD_API_KEY.startsWith('REMPLACE_');
+
+/* --- État --- */
+let gAccessToken=null, gTokenExpiresAt=0, gTokenClient=null, gPickerLoaded=false, gGisLoaded=false;
+let isSyncing=false, autoTimer=null;
+const GS = { // GS = "Google Sync state", persisté séparément des données synchronisées (jamais inclus dans la sync elle-même)
+  get connected(){return !!LS.g('me:sync:connected',false)},
+  set connected(v){LS.s('me:sync:connected',v)},
+  get account(){return LS.g('me:sync:account',null)},
+  set account(v){LS.s('me:sync:account',v)},
+  get folderId(){return LS.g('me:sync:folderId',null)},
+  set folderId(v){LS.s('me:sync:folderId',v)},
+  get libFolderId(){return LS.g('me:sync:libFolderId',null)},
+  set libFolderId(v){LS.s('me:sync:libFolderId',v)},
+  get dataFileId(){return LS.g('me:sync:dataFileId',null)},
+  set dataFileId(v){LS.s('me:sync:dataFileId',v)},
+  get lastPushedHash(){return LS.g('me:sync:lastPushedHash',null)},
+  set lastPushedHash(v){LS.s('me:sync:lastPushedHash',v)},
+  get lastRemoteModified(){return LS.g('me:sync:lastRemoteModified',null)},
+  set lastRemoteModified(v){LS.s('me:sync:lastRemoteModified',v)},
+  get lastSyncAt(){return LS.g('me:sync:lastSyncAt',null)},
+  set lastSyncAt(v){LS.s('me:sync:lastSyncAt',v)},
+  get autoMinutes(){return LS.g('me:sync:autoMinutes',GD_AUTOSYNC_DEFAULT)},
+  set autoMinutes(v){LS.s('me:sync:autoMinutes',v)},
+  get lastError(){return LS.g('me:sync:lastError',null)},
+  set lastError(v){LS.s('me:sync:lastError',v)},
+  get deviceId(){let d=LS.g('me:sync:deviceId',null);if(!d){d=uid();LS.s('me:sync:deviceId',d)}return d}
+};
+
+class GDError extends Error{constructor(type,message){super(message||type);this.type=type}}
+
+/* ---------- Chargement paresseux des scripts Google (jamais chargés hors-ligne / sans interaction) ---------- */
+function loadScript(src){return new Promise((res,rej)=>{
+ if(document.querySelector(`script[src="${src}"]`))return res();
+ const s=document.createElement('script');s.src=src;s.async=true;s.defer=true;
+ s.onload=()=>res();s.onerror=()=>rej(new GDError('network','Échec de chargement de '+src));
+ document.head.appendChild(s);
+})}
+async function ensureGis(){
+ if(gGisLoaded&&window.google&&window.google.accounts&&window.google.accounts.oauth2)return;
+ await loadScript('https://accounts.google.com/gsi/client');
+ gGisLoaded=true;
+}
+async function ensurePicker(){
+ if(gPickerLoaded&&window.google&&window.google.picker)return;
+ await loadScript('https://apis.google.com/js/api.js');
+ await new Promise((res,rej)=>window.gapi.load('picker',{callback:res,onerror:()=>rej(new GDError('network','Échec de chargement du sélecteur Google'))}));
+ gPickerLoaded=true;
+}
+
+/* ---------- Authentification ---------- */
+function getTokenClient(){
+ if(!gTokenClient){
+  gTokenClient=google.accounts.oauth2.initTokenClient({client_id:GD_CLIENT_ID,scope:GD_SCOPES,callback:()=>{}});
+ }
+ return gTokenClient;
+}
+function requestToken(promptMode){
+ return new Promise((res,rej)=>{
+  const tc=getTokenClient();
+  tc.callback=(resp)=>{
+   if(resp.error){rej(new GDError('auth',resp.error));return}
+   gAccessToken=resp.access_token;
+   gTokenExpiresAt=Date.now()+((resp.expires_in||3600)*1000)-60000;
+   res(gAccessToken);
+  };
+  tc.error_callback=(err)=>rej(new GDError('auth',(err&&err.type)||'oauth_error'));
+  tc.requestAccessToken({prompt:promptMode});
+ });
+}
+async function getValidToken(interactive){
+ if(gAccessToken&&Date.now()<gTokenExpiresAt)return gAccessToken;
+ await ensureGis();
+ try{return await requestToken(interactive?'consent':'')}
+ catch(e){
+  if(interactive)throw e;
+  throw new GDError('auth_required','Reconnexion nécessaire');
+ }
+}
+
+async function connectGoogle(){
+ if(!configured()){toast("Google Drive n'est pas encore configuré pour cette app (voir SETUP.md)",'err');return}
+ try{
+  await ensureGis();
+  await requestToken('consent');
+  const info=await fetchUserInfo();
+  GS.account=info; GS.connected=true; GS.lastError=null;
+  renderGDriveUI();
+  toast('Connecté à Google — '+(info.email||''));
+  syncNow({silent:true});
+ }catch(e){
+  console.error('Connexion Google échouée',e);
+  toast('Connexion Google impossible : '+(e.message||e.type||'erreur inconnue'),'err');
+ }
+}
+async function fetchUserInfo(){
+ const r=await fetch('https://www.googleapis.com/oauth2/v3/userinfo',{headers:{Authorization:'Bearer '+gAccessToken}});
+ if(!r.ok)throw new GDError('auth','Impossible de récupérer le profil Google');
+ const d=await r.json();
+ return {email:d.email||'',name:d.name||d.email||'Compte Google',picture:d.picture||''};
+}
+function disconnectGoogle(){
+ confirmDlg("Déconnecter Google Drive ? Tes données restent sur cet appareil, seule la synchronisation s'arrête.",()=>{
+  try{if(gAccessToken&&window.google&&window.google.accounts&&window.google.accounts.oauth2)google.accounts.oauth2.revoke(gAccessToken,()=>{})}catch(e){}
+  gAccessToken=null;gTokenExpiresAt=0;
+  GS.connected=false;GS.account=null;GS.lastError=null;
+  stopAutoSync();
+  renderGDriveUI();
+  toast('Déconnecté de Google Drive');
+ });
+}
+
+/* ---------- Appels Drive REST ---------- */
+async function driveFetch(url,opts){
+ opts=opts||{};
+ const token=await getValidToken(false);
+ const headers=Object.assign({},opts.headers,{Authorization:'Bearer '+token});
+ let r;
+ try{r=await fetch(url,Object.assign({},opts,{headers}))}
+ catch(networkErr){throw new GDError('network','Pas de connexion à Google Drive')}
+ if(r.status===401){
+  gAccessToken=null;
+  const token2=await getValidToken(false);
+  const r2=await fetch(url,Object.assign({},opts,{headers:Object.assign({},opts.headers,{Authorization:'Bearer '+token2})}));
+  if(!r2.ok)throw await driveErrorFrom(r2);
+  return r2;
+ }
+ if(!r.ok)throw await driveErrorFrom(r);
+ return r;
+}
+async function driveErrorFrom(r){
+ let msg='Erreur Google Drive ('+r.status+')';
+ try{const j=await r.json();if(j.error&&j.error.message)msg=j.error.message}catch(e){}
+ if(r.status===403&&/quota|rateLimit/i.test(msg))return new GDError('quota',msg);
+ if(r.status===403)return new GDError('forbidden',msg);
+ if(r.status===404)return new GDError('notfound',msg);
+ return new GDError('drive',msg);
+}
+
+const DRIVE='https://www.googleapis.com/drive/v3/files';
+const DRIVE_UP='https://www.googleapis.com/upload/drive/v3/files';
+
+async function findFolder(name,parentId){
+ const q=encodeURIComponent("name='"+name.replace(/'/g,"\\'")+"' and mimeType='application/vnd.google-apps.folder' and trashed=false"+(parentId?" and '"+parentId+"' in parents":''));
+ const r=await driveFetch(DRIVE+'?q='+q+'&fields=files(id,name)&spaces=drive');
+ const d=await r.json();
+ return d.files&&d.files[0]?d.files[0].id:null;
+}
+async function createFolder(name,parentId){
+ const meta={name,mimeType:'application/vnd.google-apps.folder'};
+ if(parentId)meta.parents=[parentId];
+ const r=await driveFetch(DRIVE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(meta)});
+ return (await r.json()).id;
+}
+async function ensureAppFolder(){
+ if(GS.folderId){
+  try{await driveFetch(DRIVE+'/'+GS.folderId+'?fields=id,trashed');return GS.folderId}
+  catch(e){if(e.type==='notfound')GS.folderId=null;else throw e}
+ }
+ let id=await findFolder(GD_APP_FOLDER);
+ if(!id)id=await createFolder(GD_APP_FOLDER);
+ GS.folderId=id;
+ return id;
+}
+async function ensureLibFolder(appFolderId){
+ if(GS.libFolderId){
+  try{await driveFetch(DRIVE+'/'+GS.libFolderId+'?fields=id,trashed');return GS.libFolderId}
+  catch(e){if(e.type==='notfound')GS.libFolderId=null;else throw e}
+ }
+ let id=await findFolder(GD_LIB_FOLDER,appFolderId);
+ if(!id)id=await createFolder(GD_LIB_FOLDER,appFolderId);
+ GS.libFolderId=id;
+ return id;
+}
+
+async function findDataFile(folderId){
+ if(GS.dataFileId){
+  try{
+   const r=await driveFetch(DRIVE+'/'+GS.dataFileId+'?fields=id,modifiedTime,trashed');
+   const d=await r.json();
+   if(!d.trashed)return d;
+   GS.dataFileId=null;
+  }catch(e){if(e.type==='notfound')GS.dataFileId=null;else throw e}
+ }
+ const q=encodeURIComponent("name='"+GD_DATA_FILE+"' and '"+folderId+"' in parents and trashed=false");
+ const r=await driveFetch(DRIVE+'?q='+q+'&fields=files(id,modifiedTime)&spaces=drive');
+ const d=await r.json();
+ if(d.files&&d.files[0]){GS.dataFileId=d.files[0].id;return d.files[0]}
+ return null;
+}
+async function uploadDataFile(folderId,existingId,jsonStr){
+ const boundary='kmsync'+uid();
+ const meta=existingId?{}:{name:GD_DATA_FILE,parents:[folderId],mimeType:'application/json'};
+ const body='--'+boundary+'\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n'+JSON.stringify(meta)+'\r\n--'+boundary+'\r\nContent-Type: application/json\r\n\r\n'+jsonStr+'\r\n--'+boundary+'--';
+ const url=existingId?(DRIVE_UP+'/'+existingId+'?uploadType=multipart&fields=id,modifiedTime'):(DRIVE_UP+'?uploadType=multipart&fields=id,modifiedTime');
+ const r=await driveFetch(url,{method:existingId?'PATCH':'POST',headers:{'Content-Type':'multipart/related; boundary='+boundary},body});
+ const d=await r.json();
+ GS.dataFileId=d.id;
+ return d;
+}
+async function downloadDataFile(fileId){
+ const r=await driveFetch(DRIVE+'/'+fileId+'?alt=media');
+ return await r.text();
+}
+
+/* ---------- Utilitaires ---------- */
+function collectLSForSync(){
+ const o=collectLS();
+ Object.keys(o).forEach(k=>{if(k.startsWith('me:sync:'))delete o[k]});
+ return o;
+}
+async function hashStr(s){
+ const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+ return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+/* ---------- Sauvegarde locale avant toute résolution risquée (aucune perte silencieuse) ---------- */
+async function safetyBackup(label){
+ try{
+  const id=Date.now();
+  await dbPut('backups',{id,at:new Date().toISOString(),localStorage:collectLS(),label});
+  const all=(await dbAll('backups')).sort((a,b)=>b.id-a.id);
+  for(const old of all.slice(5))await dbDel('backups',old.id);
+  if(typeof renderAutoBackups==='function')renderAutoBackups();
+ }catch(e){console.error('Échec de la sauvegarde de sécurité',e)}
+}
+
+/* ---------- Boîte de dialogue de conflit ---------- */
+function conflictDialog(){
+ return new Promise(resolve=>{
+  let d=$('#gdConflictDlg');
+  if(!d){d=document.createElement('dialog');d.id='gdConflictDlg';document.body.append(d)}
+  d.innerHTML='<h3>Conflit de synchronisation</h3><p style="margin:10px 0">Tes données ont changé à la fois sur cet appareil et sur Google Drive depuis la dernière synchronisation. Une sauvegarde de la version de cet appareil a été faite automatiquement (Réglages → Sauvegarde automatique), donc rien n\'est perdu quel que soit ton choix.</p><div class="row spread" style="margin-top:16px;flex-wrap:wrap;gap:8px"><button class="btn ghost" id="gdKeepRemote">Garder la version Google Drive</button><button class="btn" id="gdKeepLocal">Garder la version de cet appareil</button></div>';
+  d.showModal();
+  d.onkeydown=e=>{if(e.key==='Tab')trapTab(e,d)};
+  $('#gdKeepLocal',d).onclick=()=>{d.close();resolve('local')};
+  $('#gdKeepRemote',d).onclick=()=>{d.close();resolve('remote')};
+ });
+}
+
+/* ---------- Synchronisation des données (localStorage) ---------- */
+async function syncDataBlob(){
+ const folderId=await ensureAppFolder();
+ const remote=await findDataFile(folderId);
+ const localObj=collectLSForSync();
+ const localJson=JSON.stringify({version:1,deviceId:GS.deviceId,updatedAt:new Date().toISOString(),localStorage:localObj});
+ const localHash=await hashStr(JSON.stringify(localObj));
+
+ if(!remote){
+  const up=await uploadDataFile(folderId,null,localJson);
+  GS.lastPushedHash=localHash;GS.lastRemoteModified=up.modifiedTime;
+  return;
+ }
+ const remoteChanged=remote.modifiedTime!==GS.lastRemoteModified;
+ const localChanged=localHash!==GS.lastPushedHash;
+
+ if(!remoteChanged&&!localChanged)return;
+
+ if(remoteChanged&&!localChanged){
+  const text=await downloadDataFile(remote.id);
+  applyRemoteData(text);
+  GS.lastRemoteModified=remote.modifiedTime;
+  GS.lastPushedHash=await hashStr(JSON.stringify(collectLSForSync()));
+  return;
+ }
+ if(!remoteChanged&&localChanged){
+  const up=await uploadDataFile(folderId,remote.id,localJson);
+  GS.lastPushedHash=localHash;GS.lastRemoteModified=up.modifiedTime;
+  return;
+ }
+ // Les deux ont changé → conflit, jamais résolu silencieusement
+ await safetyBackup('Avant résolution de conflit Google Drive');
+ GS.lastError='conflict';renderGDriveUI();
+ const choice=await conflictDialog();
+ if(choice==='local'){
+  const up=await uploadDataFile(folderId,remote.id,localJson);
+  GS.lastPushedHash=localHash;GS.lastRemoteModified=up.modifiedTime;
+  toast('Version de cet appareil conservée et envoyée sur Drive');
+ }else{
+  const text=await downloadDataFile(remote.id);
+  applyRemoteData(text);
+  GS.lastRemoteModified=remote.modifiedTime;
+  GS.lastPushedHash=await hashStr(JSON.stringify(collectLSForSync()));
+  toast('Version Google Drive appliquée sur cet appareil');
+ }
+ GS.lastError=null;
+}
+function applyRemoteData(text){
+ let d;
+ try{d=JSON.parse(text)}catch(e){throw new GDError('invalid','Fichier de synchronisation Drive invalide')}
+ const payload=d.localStorage||{};
+ Object.keys(localStorage).filter(k=>k.startsWith('me:')&&!k.startsWith('me:sync:')).forEach(k=>{if(!(k in payload))localStorage.removeItem(k)});
+ Object.entries(payload).forEach(([k,v])=>{if(k.startsWith('me:')&&!k.startsWith('me:sync:'))localStorage.setItem(k,v)});
+ customClasses=LS.g('me:customClasses',[]);cls=LS.g('me:class',cls);SET=LS.g('me:settings',SET);
+ if(typeof applyTheme==='function')applyTheme();
+ if(typeof renderAll==='function')renderAll();
+}
+
+/* ---------- Synchronisation des fichiers de la Bibliothèque (incrémentale) ---------- */
+async function syncLibraryFiles(){
+ const appFolder=await ensureAppFolder();
+ const libFolder=await ensureLibFolder(appFolder);
+ const q=encodeURIComponent("'"+libFolder+"' in parents and trashed=false");
+ const r=await driveFetch(DRIVE+'?q='+q+'&fields=files(id,name,mimeType,size,appProperties)&spaces=drive&pageSize=1000');
+ const remoteFiles=(await r.json()).files||[];
+ const remoteByLocalId={};
+ remoteFiles.forEach(f=>{if(f.appProperties&&f.appProperties.localId)remoteByLocalId[f.appProperties.localId]=f});
+
+ const localFiles=await dbAll('files');
+ for(const f of localFiles){
+  if(f.driveFileId)continue;
+  if(remoteByLocalId[f.id]){f.driveFileId=remoteByLocalId[f.id].id;await dbPut('files',f);continue}
+  try{
+   const up=await uploadLibraryFile(libFolder,f);
+   f.driveFileId=up.id;await dbPut('files',f);
+  }catch(e){console.error('Échec envoi fichier bibliothèque',f.name,e)}
+ }
+ const localDriveIds=new Set(localFiles.map(f=>f.driveFileId).filter(Boolean));
+ for(const rf of remoteFiles){
+  if(localDriveIds.has(rf.id))continue;
+  if(rf.appProperties&&rf.appProperties.localId&&localFiles.some(f=>f.id===rf.appProperties.localId))continue;
+  if(rf.mimeType&&rf.mimeType.startsWith('application/vnd.google-apps.'))continue; // docs Google natifs non gérés (voir TROUBLESHOOTING.md)
+  try{
+   const dl=await driveFetch(DRIVE+'/'+rf.id+'?alt=media');
+   const blob=await dl.blob();
+   const id=uid();
+   await dbPut('files',{id,name:rf.name,type:rf.mimeType,size:(+rf.size)||blob.size,date:Date.now(),subject:'',chapter:'',classId:cls,fav:false,lastOpened:0,progress:0,blob,libraryType:'autre-support',homeworkType:null,tags:[],driveFileId:rf.id});
+  }catch(e){console.error('Échec récupération fichier Drive',rf.name,e)}
+ }
+ if(typeof renderLib==='function')renderLib();
+}
+async function uploadLibraryFile(libFolder,f){
+ const meta={name:f.name,parents:[libFolder],appProperties:{localId:f.id}};
+ const boundary='kmsync'+uid();
+ const metaPart='--'+boundary+'\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n'+JSON.stringify(meta)+'\r\n--'+boundary+'\r\nContent-Type: '+(f.blob.type||'application/octet-stream')+'\r\n\r\n';
+ const closing='\r\n--'+boundary+'--';
+ const body=new Blob([metaPart,f.blob,closing]);
+ const r=await driveFetch(DRIVE_UP+'?uploadType=multipart&fields=id',{method:'POST',headers:{'Content-Type':'multipart/related; boundary='+boundary},body});
+ return await r.json();
+}
+
+/* ---------- Orchestrateur ---------- */
+async function syncNow(opts){
+ opts=opts||{};
+ if(isSyncing){if(!opts.silent)toast('Une synchronisation est déjà en cours','warn');return}
+ if(!GS.connected){if(!opts.silent)toast('Connecte-toi à Google Drive avant de synchroniser','warn');return}
+ if(!navigator.onLine){GS.lastError='offline';renderGDriveUI();if(!opts.silent)toast('Hors ligne — synchronisation reportée','warn');return}
+ isSyncing=true;renderGDriveUI();
+ try{
+  await syncDataBlob();
+  await syncLibraryFiles();
+  GS.lastSyncAt=new Date().toISOString();GS.lastError=null;
+  if(!opts.silent)toast('Synchronisation Google Drive terminée');
+ }catch(e){
+  if((e.type==='auth'||e.type==='auth_required')&&!opts.silent&&!opts._retried){
+   isSyncing=false;
+   try{
+    await ensureGis();await requestToken('consent');
+    const info=await fetchUserInfo();GS.account=info;
+    return syncNow(Object.assign({},opts,{_retried:true}));
+   }catch(e2){e=e2}
+  }
+  console.error('Échec de synchronisation',e);
+  GS.lastError=e.type||'error';
+  const messages={auth:'Session Google expirée, reconnecte-toi',auth_required:'Reconnexion Google nécessaire',network:'Pas de connexion à Google Drive',quota:'Quota Google Drive dépassé',forbidden:'Accès refusé par Google Drive',notfound:'Élément introuvable sur Drive',invalid:'Données Drive invalides',drive:'Erreur Google Drive'};
+  toast(messages[e.type]||('Échec de synchronisation : '+(e.message||'erreur inconnue')),'err');
+ }finally{
+  isSyncing=false;renderGDriveUI();
+ }
+}
+function gdriveOnReconnect(){if(GS.connected)syncNow({silent:true})}
+
+/* ---------- Synchronisation automatique (uniquement pendant que l'app est ouverte) ---------- */
+function stopAutoSync(){if(autoTimer){clearInterval(autoTimer);autoTimer=null}}
+function startAutoSync(){
+ stopAutoSync();
+ const min=+GS.autoMinutes;
+ if(!min||!GS.connected)return;
+ autoTimer=setInterval(()=>{if(navigator.onLine)syncNow({silent:true})},min*60000);
+}
+
+/* ---------- Import depuis Google Drive (sélection via Google Picker, aucune simulation) ---------- */
+async function importFromDrive(){
+ if(!configured()){toast("Google Drive n'est pas encore configuré pour cette app (voir SETUP.md)",'err');return}
+ try{
+  const token=await getValidToken(true);
+  await ensurePicker();
+  const view=new google.picker.DocsView(google.picker.ViewId.DOCS).setIncludeFolders(false).setSelectFolderEnabled(false);
+  const picker=new google.picker.PickerBuilder()
+   .addView(view)
+   .setOAuthToken(token)
+   .setDeveloperKey(GD_API_KEY)
+   .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+   .setCallback(function(data){
+    if(data.action!==google.picker.Action.PICKED)return;
+    const docs=data.docs||[];
+    chooseImportType('Importer '+docs.length+' fichier(s) depuis Google Drive — dans quelle catégorie ?',LIB_IMPORT_TYPES,async function(type){
+     toast('Importation depuis Google Drive…');
+     let ok=0,skip=0,fail=0,unsupported=0;
+     const existing=await dbAll('files');
+     const already=new Set(existing.map(f=>f.driveFileId).filter(Boolean));
+     const toImport=[];
+     for(const doc of docs){
+      if(already.has(doc.id)){skip++;continue}
+      if(doc.mimeType&&doc.mimeType.startsWith('application/vnd.google-apps.')){unsupported++;continue}
+      try{
+       const dl=await driveFetch(DRIVE+'/'+doc.id+'?alt=media');
+       const blob=await dl.blob();
+       const file=new File([blob],doc.name,{type:doc.mimeType||blob.type});
+       file.__driveFileId=doc.id;
+       toImport.push(file);
+      }catch(e){console.error('Échec import Drive',doc.name,e);fail++}
+     }
+     if(toImport.length){
+      const ids=await importFiles(toImport,{libraryType:type});
+      for(let i=0;i<ids.length;i++){
+       const rec=await dbGet('files',ids[i]);
+       if(rec&&toImport[i]&&toImport[i].__driveFileId){rec.driveFileId=toImport[i].__driveFileId;await dbPut('files',rec)}
+      }
+      ok=ids.length;
+     }
+     const parts=[];
+     if(ok)parts.push(ok+' importé(s)');
+     if(skip)parts.push(skip+' déjà présent(s)');
+     if(unsupported)parts.push(unsupported+' non pris en charge (document Google natif)');
+     if(fail)parts.push(fail+' échec(s)');
+     toast(parts.join(', ')||'Aucun fichier importé',fail&&!ok?'err':(skip||unsupported?'warn':'ok'));
+    });
+   })
+   .build();
+  picker.setVisible(true);
+ }catch(e){
+  console.error('Import Google Drive impossible',e);
+  toast('Import Google Drive impossible : '+(e.message||e.type||'erreur inconnue'),'err');
+ }
+}
+
+/* ---------- Interface (carte Réglages → Google Drive) ---------- */
+function fmtDate(iso){if(!iso)return null;try{return new Date(iso).toLocaleString('fr-FR',{dateStyle:'medium',timeStyle:'short'})}catch(e){return null}}
+function renderGDriveUI(){
+ const statusBox=$('#gdriveStatus'),actionsBox=$('#gdriveActions'),autoBox=$('#gdriveAutoBox');
+ if(!statusBox)return;
+ if(!configured()){
+  statusBox.innerHTML='<p class="muted" style="font-size:13px">Fonctionnalité prête côté application mais pas encore configurée pour ce déploiement (identifiants Google manquants — voir <b>SETUP.md</b>).</p>';
+  actionsBox.innerHTML='';autoBox.innerHTML='';
+  return;
+ }
+ if(!GS.connected){
+  statusBox.innerHTML='<p class="muted" style="font-size:13px">Non connecté.</p>';
+  actionsBox.innerHTML='<button class="btn" id="gdriveConnectBtn">Se connecter avec Google</button>';
+  const b=$('#gdriveConnectBtn');if(b)b.onclick=connectGoogle;
+  autoBox.innerHTML='';
+  return;
+ }
+ const acc=GS.account||{};
+ const statusLine=isSyncing?'Synchronisation en cours…':!navigator.onLine?'Hors ligne':GS.lastError==='conflict'?'Conflit détecté':GS.lastError?'Erreur lors de la dernière synchronisation':'Connecté';
+ const statusColor=isSyncing?'var(--p)':!navigator.onLine?'#c78a00':GS.lastError?'#c0392b':'#2e8b57';
+ statusBox.innerHTML='<div class="row" style="align-items:center;gap:10px">'+(acc.picture?('<img src="'+esc(acc.picture)+'" alt="" style="width:32px;height:32px;border-radius:50%">'):'')+'<div><b>'+esc(acc.name||acc.email||'Compte Google')+'</b><div style="font-size:12px;color:'+statusColor+'">'+esc(statusLine)+'</div></div></div><p class="muted" style="font-size:12px;margin-top:8px">Dernière synchronisation : '+(fmtDate(GS.lastSyncAt)||'jamais')+'</p>';
+ actionsBox.innerHTML='<button class="btn" id="gdriveSyncBtn"'+(isSyncing?' disabled':'')+'>Synchroniser maintenant</button><button class="btn ghost" id="gdriveImportBtn">Importer depuis Google Drive</button><button class="btn ghost" id="gdriveDisconnectBtn">Se déconnecter</button>';
+ $('#gdriveSyncBtn').onclick=()=>syncNow({silent:false});
+ $('#gdriveImportBtn').onclick=importFromDrive;
+ $('#gdriveDisconnectBtn').onclick=disconnectGoogle;
+ autoBox.innerHTML='<label style="font-size:13px">Synchronisation automatique<br><select id="gdriveAutoSel" style="margin-top:4px"><option value="0">Désactivée</option><option value="10">Toutes les 10 minutes</option><option value="30">Toutes les 30 minutes</option><option value="60">Toutes les 60 minutes</option></select></label><p class="muted" style="font-size:12px;margin-top:6px">Ne fonctionne que pendant que l\'application est ouverte. À la réouverture, une synchronisation est relancée automatiquement.</p>';
+ $('#gdriveAutoSel').value=String(GS.autoMinutes);
+ $('#gdriveAutoSel').onchange=e=>{GS.autoMinutes=+e.target.value;startAutoSync();toast('Fréquence de synchronisation mise à jour')};
+}
+
+/* ---------- Démarrage ---------- */
+window.gdriveOnReconnect=gdriveOnReconnect;
+window.renderGDriveUI=renderGDriveUI;
+if(GS.connected&&configured()){
+ // Tentative silencieuse au démarrage : n'affiche aucune fenêtre si la session Google n'est plus valide (l'utilisateur devra alors recliquer sur "Se connecter avec Google")
+ getValidToken(false).then(function(){return fetchUserInfo()}).then(function(info){GS.account=info;renderGDriveUI();return syncNow({silent:true})}).then(startAutoSync)
+  .catch(function(e){console.warn('Reconnexion Google silencieuse impossible au démarrage',e);renderGDriveUI()});
+}
+})();
 
 /* ================= EXPORT CALENDRIER NATIF (.ICS) =================
    KENNY'S MOAS — Ronde 9
@@ -2088,7 +2837,7 @@ window.KMICS=(function(){
       push('DTSTAMP:'+now);
       push('DTSTART;VALUE=DATE:'+ymd(h.due));
       push('DTEND;VALUE=DATE:'+ymd(addDays(h.due,1)));
-      push('SUMMARY:'+esc((h.subject?'📚 '+h.subject+' — ':'📚 ')+(h.title||'Devoir')));
+      push('SUMMARY:'+esc((h.subject?h.subject+' — ':'')+(h.title||'Devoir')));
       if(h.subject)push('CATEGORIES:'+esc(h.subject));
       push('TRANSP:TRANSPARENT');
       // Si un rappel existe déjà dans l'appli, on le conserve.
@@ -2119,7 +2868,7 @@ window.KMICS=(function(){
         push('DTSTART;VALUE=DATE:'+ymd(e.date));
         push('DTEND;VALUE=DATE:'+ymd(addDays(e.date,1)));
       }
-      push('SUMMARY:'+esc((e.type==='conges'?'🌴 ':e.type==='controle'?'🎯 ':e.type==='examen'?'📝 ':e.type==='revision'?'⏱️ ':'📌 ')+(e.title||'Événement')));
+      push('SUMMARY:'+esc(e.title||'Événement'));
       if(e.subject)push('CATEGORIES:'+esc(e.subject));
       if(e.desc)push('DESCRIPTION:'+esc(e.desc));
       if(e.fileId)push('X-KENNY-MOAS-FILE-ID:'+esc(e.fileId));
@@ -2164,7 +2913,7 @@ window.KMICS=(function(){
           if(dow(g)===firstDow&&inRange(g,first,until))ex.push(dt(g,hm));
         }
         if(ex.length)push('EXDATE:'+ex.join(','));
-        push('SUMMARY:'+esc('🏫 '+c.subject+(c.room?' ('+c.room+')':'')));
+        push('SUMMARY:'+esc(c.subject+(c.room?' ('+c.room+')':'')));
         push('CATEGORIES:'+esc(c.subject));
         push('END:VEVENT');
       }
@@ -2202,394 +2951,6 @@ $('#icsExportBtn')?.addEventListener('click',()=>KMICS.download());
 $('#icsPlanBtn')?.addEventListener('click',()=>KMICS.download());
 })();
 
-</script>
-<script>
-/* ================= KENNY'S MOAS v2 — AUTH GOOGLE (auth.js) =================
-   Connexion Google 100% côté navigateur, via Google Identity Services (GIS).
-   Aucun secret, aucun backend : Google gère tout, gratuit pour toujours.
-
-   Scope utilisé : drive.file
-   → L'app ne voit QUE les fichiers qu'elle a elle-même créés sur le Drive
-     de l'utilisateur. Elle n'a jamais accès au reste du Drive.
-
-   AVANT DE DÉPLOYER, il faut :
-   1. Aller sur https://console.cloud.google.com/apis/credentials
-   2. Créer un "OAuth Client ID" de type "Web application"
-   3. Ajouter ton URL GitHub Pages dans "Authorized JavaScript origins"
-      (ex : https://tonnom.github.io)
-   4. Copier le Client ID généré et le coller ci-dessous (GOOGLE_CLIENT_ID)
-   Ce Client ID est PUBLIC — il peut être dans le code source sans risque
-   (contrairement à un "Client Secret", qui lui ne doit jamais y être).
-============================================================================ */
-
-window.KMAuth = (function () {
-  'use strict';
-
-  const GOOGLE_CLIENT_ID = '1083758494315-c8os41lu0pmavpquffcc5dm6sjtjdj12.apps.googleusercontent.com';
-  const SCOPE = 'https://www.googleapis.com/auth/drive.file';
-  const TOKEN_STORAGE_KEY = 'km:driveToken'; // {accessToken, expiresAt}
-
-  let tokenClient = null;
-  let gisReady = false;
-  let onStatusChange = () => {};
-
-  function loadGisScript() {
-    return new Promise((resolve, reject) => {
-      if (window.google && window.google.accounts && window.google.accounts.oauth2) {
-        resolve();
-        return;
-      }
-      const s = document.createElement('script');
-      s.src = 'https://accounts.google.com/gsi/client';
-      s.async = true;
-      s.defer = true;
-      s.onload = resolve;
-      s.onerror = () => reject(new Error('Impossible de charger Google Identity Services (hors-ligne ?)'));
-      document.head.appendChild(s);
-    });
-  }
-
-  function getStoredToken() {
-    try {
-      const raw = localStorage.getItem(TOKEN_STORAGE_KEY);
-      if (!raw) return null;
-      const t = JSON.parse(raw);
-      if (!t.accessToken || !t.expiresAt) return null;
-      return t;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  function storeToken(accessToken, expiresInSeconds) {
-    const expiresAt = Date.now() + (expiresInSeconds * 1000) - 60000; // marge 1 min
-    localStorage.setItem(TOKEN_STORAGE_KEY, JSON.stringify({ accessToken, expiresAt }));
-  }
-
-  function clearToken() {
-    localStorage.removeItem(TOKEN_STORAGE_KEY);
-  }
-
-  function isConnected() {
-    const t = getStoredToken();
-    return !!(t && t.expiresAt > Date.now());
-  }
-
-  function getAccessToken() {
-    const t = getStoredToken();
-    return t ? t.accessToken : null;
-  }
-
-  async function init() {
-    await loadGisScript();
-    tokenClient = google.accounts.oauth2.initTokenClient({
-      client_id: GOOGLE_CLIENT_ID,
-      scope: SCOPE,
-      callback: (resp) => {
-        if (resp.error) {
-          console.error('Erreur OAuth Google :', resp.error);
-          onStatusChange('error', resp.error);
-          return;
-        }
-        storeToken(resp.access_token, resp.expires_in);
-        onStatusChange('connected');
-      }
-    });
-    gisReady = true;
-  }
-
-  function connect() {
-    if (!gisReady) {
-      console.warn('KMAuth pas encore initialisé, réessaie dans un instant');
-      return;
-    }
-    tokenClient.requestAccessToken({ prompt: 'consent' });
-  }
-
-  // Renouvellement silencieux : appelé automatiquement quand le token approche
-  // de l'expiration. Si le consentement a déjà été donné, aucune fenêtre ne
-  // s'affiche (Google renouvelle en arrière-plan via son cookie de session).
-  function refreshSilently() {
-    if (!gisReady || !getStoredToken()) return;
-    tokenClient.requestAccessToken({ prompt: '' });
-  }
-
-  function disconnect() {
-    const t = getStoredToken();
-    if (t && window.google && google.accounts.oauth2.revoke) {
-      google.accounts.oauth2.revoke(t.accessToken, () => {});
-    }
-    clearToken();
-    onStatusChange('disconnected');
-  }
-
-  function onChange(fn) {
-    onStatusChange = fn;
-  }
-
-  return { init, connect, disconnect, isConnected, getAccessToken, refreshSilently, onChange };
-})();
-
-</script>
-<script>
-/* ================= KENNY'S MOAS v2 — SYNC DRIVE (drive-sync.js) =================
-   Auto-backup vers Google Drive, toutes les 30s + à la fermeture de l'onglet.
-   Une seule sauvegarde conservée : "backup.json" est écrasé à chaque sync
-   (pas d'historique de fichiers).
-
-   Dépend de : window.KMAuth (auth.js), et des fonctions déjà présentes
-   dans index.html : collectLS() et todayISO().
-================================================================================ */
-
-window.KMDriveSync = (function () {
-  'use strict';
-
-  const FILE_NAME = 'backup.json';
-  const FOLDER_NAME = "KENNY'S MOAS";
-  const SYNC_INTERVAL_MS = 30000;
-
-  const IDS_STORAGE_KEY = 'km:driveIds'; // {folderId, fileId} — persistés pour éviter les doublons après reload
-
-  function loadStoredIds() {
-    try {
-      const raw = localStorage.getItem(IDS_STORAGE_KEY);
-      return raw ? JSON.parse(raw) : {};
-    } catch (e) {
-      return {};
-    }
-  }
-
-  function saveStoredIds(ids) {
-    localStorage.setItem(IDS_STORAGE_KEY, JSON.stringify(ids));
-  }
-
-  // Échappe les apostrophes et anti-slashs pour les requêtes Drive (q=...).
-  // Sans ça, un nom contenant une apostrophe (comme "KENNY'S MOAS") casse
-  // la syntaxe de la requête et la recherche échoue silencieusement.
-  function escapeForDriveQuery(str) {
-    return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-  }
-
-  const storedIds = loadStoredIds();
-  let folderId = storedIds.folderId || null;
-  let fileId = storedIds.fileId || null;
-  let syncTimer = null;
-  let syncing = false;
-  let lastSyncOk = null;
-
-  function authHeader() {
-    return { Authorization: 'Bearer ' + window.KMAuth.getAccessToken() };
-  }
-
-  async function driveFetch(url, options = {}) {
-    const res = await fetch(url, {
-      ...options,
-      headers: { ...(options.headers || {}), ...authHeader() }
-    });
-    if (res.status === 401) {
-      // Token expiré malgré le renouvellement silencieux : on force un refresh
-      window.KMAuth.refreshSilently();
-      throw new Error('Token expiré, resynchronisation au prochain cycle');
-    }
-    return res;
-  }
-
-  async function findOrCreateFolder() {
-    if (folderId) return folderId;
-    const q = encodeURIComponent(
-      `name='${escapeForDriveQuery(FOLDER_NAME)}' and mimeType='application/vnd.google-apps.folder' and trashed=false`
-    );
-    const res = await driveFetch(`https://www.googleapis.com/drive/v3/files?q=${q}&spaces=drive&fields=files(id,name)`);
-    const data = await res.json();
-    if (data.files && data.files.length) {
-      folderId = data.files[0].id;
-      saveStoredIds({ folderId, fileId });
-      return folderId;
-    }
-    const createRes = await driveFetch('https://www.googleapis.com/drive/v3/files', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: FOLDER_NAME, mimeType: 'application/vnd.google-apps.folder' })
-    });
-    if (!createRes.ok) throw new Error('Échec création dossier Drive : ' + createRes.status);
-    const created = await createRes.json();
-    folderId = created.id;
-    saveStoredIds({ folderId, fileId });
-    return folderId;
-  }
-
-  async function findExistingBackupFile(fid) {
-    const q = encodeURIComponent(
-      `name='${escapeForDriveQuery(FILE_NAME)}' and '${fid}' in parents and trashed=false`
-    );
-    const res = await driveFetch(`https://www.googleapis.com/drive/v3/files?q=${q}&spaces=drive&fields=files(id,name)`);
-    const data = await res.json();
-    const found = data.files && data.files.length ? data.files[0].id : null;
-    if (found) { fileId = found; saveStoredIds({ folderId, fileId }); }
-    return found;
-  }
-
-  function buildBackupPayload() {
-    // Snapshot léger (localStorage seulement, pas les fichiers de bibliothèque
-    // — trop volumineux pour un upload toutes les 30s). Même format que
-    // l'export manuel complet, en cohérence avec le reste de l'app.
-    return {
-      version: 3,
-      exportedAt: new Date().toISOString(),
-      source: 'auto-drive-sync',
-      localStorage: collectLS()
-    };
-  }
-
-  async function uploadBackup() {
-    const fid = await findOrCreateFolder();
-    if (!fileId) fileId = await findExistingBackupFile(fid);
-
-    const payload = JSON.stringify(buildBackupPayload());
-    const metadata = fileId ? {} : { name: FILE_NAME, parents: [fid] };
-    const boundary = 'kmboundary';
-    const body =
-      `--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n` +
-      JSON.stringify(metadata) +
-      `\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n` +
-      payload +
-      `\r\n--${boundary}--`;
-
-    const url = fileId
-      ? `https://www.googleapis.com/upload/drive/v3/files/${fileId}?uploadType=multipart`
-      : `https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart`;
-
-    const res = await driveFetch(url, {
-      method: fileId ? 'PATCH' : 'POST',
-      headers: { 'Content-Type': `multipart/related; boundary=${boundary}` },
-      body
-    });
-    if (!res.ok) throw new Error('Échec upload Drive : ' + res.status);
-    const data = await res.json();
-    fileId = data.id;
-    saveStoredIds({ folderId, fileId });
-    return data;
-  }
-
-  async function syncNow() {
-    if (syncing || !window.KMAuth.isConnected()) return;
-    syncing = true;
-    try {
-      await uploadBackup();
-      lastSyncOk = Date.now();
-      updateStatusUI(true);
-    } catch (e) {
-      console.warn('Sync Drive échouée, on continue en local :', e.message);
-      updateStatusUI(false);
-    } finally {
-      syncing = false;
-    }
-  }
-
-  function updateStatusUI(ok) {
-    const el = document.getElementById('driveSyncStatus');
-    if (!el) return;
-    el.textContent = ok
-      ? '☁️ Sauvegardé sur Drive'
-      : '⚠️ Sync en attente (reprise au prochain cycle)';
-    el.className = ok ? 'drive-sync-ok' : 'drive-sync-warn';
-  }
-
-  function start() {
-    stop();
-    syncNow(); // premier sync immédiat après connexion
-    syncTimer = setInterval(syncNow, SYNC_INTERVAL_MS);
-  }
-
-  function stop() {
-    if (syncTimer) clearInterval(syncTimer);
-    syncTimer = null;
-  }
-
-  // Sync à la fermeture / mise en arrière-plan (mobile-safe, contrairement à beforeunload)
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden' && window.KMAuth.isConnected()) {
-      syncNow();
-    }
-  });
-
-  async function restoreFromDrive() {
-    const fid = await findOrCreateFolder();
-    const bkId = await findExistingBackupFile(fid);
-    if (!bkId) throw new Error('Aucune sauvegarde trouvée sur Drive');
-    const res = await driveFetch(`https://www.googleapis.com/drive/v3/files/${bkId}?alt=media`);
-    if (!res.ok) throw new Error('Échec de la récupération : ' + res.status);
-    const data = await res.json();
-    if (data.localStorage) {
-      Object.entries(data.localStorage).forEach(([k, v]) => localStorage.setItem(k, v));
-    }
-    return data;
-  }
-
-  return { start, stop, syncNow, restoreFromDrive };
-})();
-
-</script>
-<script>
-/* ================= CÂBLAGE GOOGLE DRIVE (v2-github-drive) ================= */
-(function(){
-  const connectBtn = document.getElementById('driveConnectBtn');
-  const disconnectBtn = document.getElementById('driveDisconnectBtn');
-  const restoreBtn = document.getElementById('driveRestoreBtn');
-  const statusEl = document.getElementById('driveSyncStatus');
-  if(!connectBtn) return;
-
-  function refreshButtons(){
-    const connected = window.KMAuth.isConnected();
-    connectBtn.classList.toggle('hidden', connected);
-    disconnectBtn.classList.toggle('hidden', !connected);
-    restoreBtn.classList.toggle('hidden', !connected);
-  }
-
-  window.KMAuth.init().then(refreshButtons).catch(e=>{
-    console.warn('Google Identity Services indisponible :', e.message);
-    if(statusEl) statusEl.textContent = '⚠️ Connexion Google indisponible (hors-ligne ?)';
-  });
-
-  window.KMAuth.onChange((status)=>{
-    refreshButtons();
-    if(status==='connected'){
-      if(typeof toast==='function') toast('Connecté à Google Drive');
-      window.KMDriveSync.start();
-    } else if(status==='disconnected'){
-      window.KMDriveSync.stop();
-      if(statusEl) statusEl.textContent='';
-      if(typeof toast==='function') toast('Déconnecté de Google Drive');
-    } else if(status==='error'){
-      if(typeof toast==='function') toast('Échec de connexion à Google','err');
-    }
-  });
-
-  connectBtn.onclick = ()=>window.KMAuth.connect();
-  disconnectBtn.onclick = ()=>{
-    if(typeof confirmDlg==='function'){
-      confirmDlg('Déconnecter Google Drive ? L\'auto-sauvegarde s\'arrêtera (tes données restent en local).', ()=>window.KMAuth.disconnect());
-    } else window.KMAuth.disconnect();
-  };
-  restoreBtn.onclick = ()=>{
-    const doRestore = async ()=>{
-      try{
-        await window.KMDriveSync.restoreFromDrive();
-        customClasses=LS.g('me:customClasses',[]);cls=LS.g('me:class',cls);SET=LS.g('me:settings',SET);applyTheme();await renderAll();
-        if(typeof toast==='function') toast('Données restaurées depuis Drive');
-      }catch(e){
-        console.error(e);
-        if(typeof toast==='function') toast('Restauration impossible : '+e.message,'err');
-      }
-    };
-    if(typeof confirmDlg==='function'){
-      confirmDlg('Restaurer depuis Drive ? Tes données locales actuelles seront remplacées par la dernière sauvegarde Drive. Cette action est irréversible.', doRestore, {danger:true, okLabel:'Restaurer'});
-    } else doRestore();
-  };
-
-  // Reprend l'auto-sync si déjà connecté d'une session précédente
-  if(window.KMAuth.isConnected()) window.KMDriveSync.start();
-})();
 </script>
 </body>
 </html>

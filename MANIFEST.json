@@ -1,0 +1,55 @@
+{
+  "project": "KENNY'S MOAS",
+  "releaseLabel": "google-drive-sync",
+  "sessionDate": "2026-09-11",
+  "description": "Ajout de la connexion Google et de la synchronisation Google Drive (bidirectionnelle, incrémentale, avec gestion des conflits) sur l'application existante.",
+  "mainEntryPoints": {
+    "browser": "index.html",
+    "desktopApp": "app.py",
+    "pwaManifest": "manifest.webmanifest",
+    "serviceWorker": "sw.js"
+  },
+  "keyDocs": [
+    "README.md",
+    "SETUP.md",
+    "HANDOFF_TO_NEXT_AI.md",
+    "CHANGELOG.md",
+    "TROUBLESHOOTING.md",
+    "PROJECT_INVENTORY.md",
+    "FINAL_VERIFICATION.md"
+  ],
+  "newFeatureFiles": {
+    "note": "Le code de synchronisation Google Drive est intégré dans index.html (bloc 'SYNCHRONISATION GOOGLE DRIVE'), pas dans des fichiers séparés — voir HANDOFF_TO_NEXT_AI.md section 4.1.",
+    "modifiedFiles": ["index.html", "app.py", "sw.js"],
+    "addedFiles": [
+      ".gitignore",
+      "README.md",
+      "SETUP.md",
+      "HANDOFF_TO_NEXT_AI.md",
+      "CHANGELOG.md",
+      "TROUBLESHOOTING.md",
+      "PROJECT_INVENTORY.md",
+      "MANIFEST.json",
+      "FINAL_VERIFICATION.md"
+    ],
+    "removedFiles": []
+  },
+  "externalConfigRequired": {
+    "required": true,
+    "what": "Client ID OAuth Google + clé API Google (gratuits, propres au projet Google Cloud de l'utilisateur)",
+    "where": "index.html, constantes GD_CLIENT_ID / GD_API_KEY dans le bloc SYNCHRONISATION GOOGLE DRIVE",
+    "instructions": "SETUP.md"
+  },
+  "secrets": {
+    "containsSecrets": false,
+    "note": "Aucun mot de passe, clé privée ou token persistant sensible dans ce projet. Le Client ID et la clé API Google sont publics par conception (voir SETUP.md)."
+  },
+  "integrityNote": "Le SHA-256 du fichier ZIP livré (kennys-moas-google-drive-sync-final.zip) est indiqué dans FINAL_VERIFICATION.md. C'est une somme de contrôle d'intégrité, pas une signature numérique.",
+  "automatedTestsRun": [
+    "node --check (script JS principal extrait de index.html)",
+    "python3 -m ast / py_compile (app.py)",
+    "vérification d'équilibre des balises HTML (section/div/dialog)"
+  ],
+  "manualEndToEndTestsRun": false,
+  "manualEndToEndTestsReason": "Environnement de développement sans accès réseau sortant ni navigateur graphique réel — voir HANDOFF_TO_NEXT_AI.md section 9."
+}
