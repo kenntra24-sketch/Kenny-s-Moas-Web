@@ -1,0 +1,16 @@
+# Dépendances et compilations locales du code source
+source/node_modules/
+source/dist/
+source/build/
+source/.vite/
+source/*.tsbuildinfo
+node_modules/
+
+# Divers
+.env
+.env.*
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+*.log

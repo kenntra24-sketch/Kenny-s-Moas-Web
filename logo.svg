@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="KENNY'S MOAS">
+  <rect width="512" height="512" rx="112" fill="#24345c"/>
+  <g transform="translate(256 256) scale(1) translate(-256 -256)" fill="none" stroke="#f7f1e3" stroke-width="46" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M186 132v248"/><path d="M330 138 198 262l136 118"/></g>
+  <circle cx="406" cy="128" r="30" fill="#3f7d56" stroke="#f7f1e3" stroke-width="10"/>
+</svg>

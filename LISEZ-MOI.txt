@@ -1,0 +1,11 @@
+KENNY'S MOAS — DÉMARRER
+=======================
+UTILISER L'APPLICATION
+  Windows : double-clique sur LANCER.bat (nécessite Python) → ton navigateur s'ouvre sur http://127.0.0.1:8765.
+            Garde la fenêtre noire ouverte ; ferme-la pour arrêter.
+  Secours sans Python : double-clique sur index.html (le lecteur PDF et le mode hors-ligne ne marchent pas dans ce mode).
+  En ligne : GitHub Pages (voir README.md, section « Mettre en ligne »).
+
+Il n'y a qu'UNE page d'entrée : index.html, à la racine. Le code source (pour modifier l'appli) est dans le dossier source/.
+
+GOOGLE DRIVE : les identifiants sont dans config.local.js (racine) et source/public/config.local.js. Détails dans README.md.
