@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnostic Google Drive — KENNY'S MOAS</title>
+<style>
+ body{font:16px/1.5 system-ui,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;color:#1d2433;background:#f6f3ec}
+ h1{font-size:22px;color:#24345c} .row{background:#fff;border-radius:12px;padding:12px 16px;margin:10px 0;border:1px solid #ddd6c6}
+ .ok{color:#17803d;font-weight:700}.ko{color:#b3261e;font-weight:700} code{background:#eee8d9;padding:2px 6px;border-radius:6px;word-break:break-all}
+ small{color:#5b6475}
+</style></head><body>
+<h1>Diagnostic Google Drive</h1>
+<p><small>Cette page ne contacte pas Google : elle vérifie seulement ce que le site envoie.</small></p>
+<div id="out"></div>
+<script src="./config.local.js"></script>
+<script>
+(function(){
+  var out=document.getElementById('out'), c=window.KM_GOOGLE||{};
+  function row(ok,title,detail){out.insertAdjacentHTML('beforeend','<div class="row"><span class="'+(ok?'ok':'ko')+'">'+(ok?'✔ ':'✘ ')+title+'</span>'+(detail?'<br>'+detail:'')+'</div>');}
+  var id=c.clientId||'', key=c.apiKey||'';
+  row(!!c.clientId,'config.local.js chargé', c.clientId?'':'Fichier absent du dépôt ou vide.');
+  var okFmt=/^\d{8,15}-[a-z0-9]{20,40}\.apps\.googleusercontent\.com$/.test(id);
+  row(okFmt,'Format de l\'ID client', okFmt?'<code>'+id+'</code>':'Valeur lue : <code>'+id+'</code><br>Un ID valide commence par des chiffres, puis un tiret, puis ~32 caractères, et finit par <code>.apps.googleusercontent.com</code>. Pas de mot « client » devant, pas d\'espace.');
+  var okKey=/^AIza[0-9A-Za-z_-]{35}$/.test(key);
+  row(okKey,'Format de la clé API', okKey?'Commence par AIza… (39 caractères).':'Une clé API commence par <code>AIza</code> et fait 39 caractères.');
+  var o=location.origin;
+  row(true,'Adresse à autoriser dans Google Cloud','Origine JavaScript autorisée à ajouter : <code>'+o+'</code><br><small>Sans « / » à la fin et sans le nom du dépôt.</small>');
+  row(location.protocol==='https:'||/^(localhost|127\.0\.0\.1)$/.test(location.hostname),'Protocole', location.protocol==='file:'?'Tu as ouvert le fichier directement : Google Drive ne marche pas ainsi. Utilise l\'adresse GitHub Pages ou LANCER.bat.':'OK');
+})();
+</script></body></html>

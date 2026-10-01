@@ -1,3 +1,9 @@
+## v1.5.0-P5b-FIX — 01/10/2026
+- **Correctif Google Drive** : l'ID client de `config.local.js` commençait par le mot « client » (erreur 401 invalid_client). Corrigé.
+- Ajout de la page `legacy/` (lien « synchronisation avancée » qui donnait une erreur 404 sur GitHub Pages).
+- Ajout de `diagnostic.html` (vérifie le format de l'ID/clé et indique l'origine à autoriser dans Google Cloud).
+- Guide GITHUB-PAGES.md mis à jour ; cache du service worker passé en v22.
+
 ## 1.5.0-p5b — Emploi du temps : plusieurs modèles, horaires, export .ics, rappels, cours du jour
 - **Plusieurs emplois du temps** : créer (modèle TA1 ou grille vide), dupliquer, renommer, supprimer, choisir l'actif (liste en haut de l'écran). L'emploi du temps actif reste dans `me:<classe>:timetable` ; les autres sont rangés dans la NOUVELLE clé `me:<classe>:timetables`. Aucun emploi du temps n'est jamais écrasé (créer/changer écrit d'abord la liste rangée, puis l'actif) ; « Annuler » après suppression.
 - **Horaires modifiables** (bouton « Horaires ») : heure de début/fin et nom de chaque créneau, ajout d'un créneau ou d'une pause, suppression d'un créneau inutilisé ; validation (début < fin, pas de chevauchement). Les cours déjà placés suivent.

@@ -8,4 +8,4 @@ UTILISER L'APPLICATION
 
 Il n'y a qu'UNE page d'entrée : index.html, à la racine. Le code source (pour modifier l'appli) est dans le dossier source/.
 
-GOOGLE DRIVE : les identifiants sont dans config.local.js (racine) et source/public/config.local.js. Détails dans README.md.
+GOOGLE DRIVE : identifiants dans config.local.js. En cas de problème, ouvre diagnostic.html (sur ton site GitHub) puis lis GITHUB-PAGES.md.

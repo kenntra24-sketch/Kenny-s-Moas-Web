@@ -4,7 +4,7 @@
      les fichiers générés par Vite (noms hachés) : l'app démarre donc hors-ligne dès la 2e visite.
    - Navigation hors-ligne : repli sur index.html.
    Incrémenter CACHE à chaque livraison pour forcer la mise à jour côté utilisateurs. */
-const CACHE = 'kennys-moas-react-v21';
+const CACHE = 'kennys-moas-react-v22';
 const BASE = self.registration.scope;   // dossier où vit l'appli (racine du domaine OU sous-dossier GitHub Pages)
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'logo.svg',
   'icon-192-maskable.png', 'icon-512-maskable.png', 'pdf.min.mjs', 'pdf.worker.min.mjs',
